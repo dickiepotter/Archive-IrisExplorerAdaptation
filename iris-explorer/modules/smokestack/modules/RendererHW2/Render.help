@@ -1,0 +1,918 @@
+
+     NAME
+            Render
+
+     DESCRIPTION
+            This module displays geometry data. Multiple inputs may be
+            fanned in  to  Render,  and  the  input  objects  will  be
+            separately managed and updated.
+
+            The Render module is built using the Inventor SceneViewer,
+            which allows a number of different viewing  paradigms.  To
+            access  all  the  functions of the SceneViewer, the Render
+            control panel must be popped up into  its  own  window.  A
+            more  limited  amount  of interaction is still possible in
+            the mini control panel on the map editor.
+
+            The Render window has a viewing area in the center, a menu
+            across  the top, some icons on the right edge, and viewing
+            controls on the other edges.  The  viewing  controls  will
+            change  with  the  viewer  that  is  selected;  the  other
+            features will remain the same. The "decorations"  are  not
+            present when the control panel is on the map editor.
+
+            There  is  also a popup menu available in the viewing area
+            that can be accessed with the  right  mouse  button.  This
+            menu is also available in the mini control panel.
+
+            The eight icons on the right edge of the control panel are
+            buttons  that  activate,  from  top  to  bottom:  picking,
+            viewing,  help, home, set home, view all, seek, and camera
+            type. Here is a brief description of these commands:
+
+            Picking/Viewing
+                   There are two major modes in  Render,  viewing  and
+                   selection/picking.  In  viewing  mode,  the  camera
+                   parameters - position, direction,  field  of  view,
+                   etc.  -  can be changed. It is important to keep in
+                   mind that in this mode it is not  camera,  not  the
+                   objects in the scene, that is moving.
+
+                   Selection/picking mode does not involve the camera.
+                   In this mode, mouse and button  events  affect  the
+                   selection  of  objects, attachment of manipulators,
+                   and querying objects through picking.
+
+                   The Picking and Viewing icons choose between  these
+                   two   modes.   Click   on   the   arrow  to  enable
+                   selection/picking. Click  on  the  hand  to  enable
+                   viewing.
+
+                   Selection is done by clicking the left mouse button
+                   on an  object  in  the  scene.  When  something  is
+                   selected,  a  red  box  will be drawn around it. To
+                   deselect,  click  on  something  else  or  on   the
+
+            Help   The  Help button brings up a help screen describing
+                   the  different  viewers.  You  must  have  Inventor
+                   installed   on   your  machine  for  this  to  work
+                   correctly.
+
+            Home and Set Home
+                   The Home button (house icon) returns the camera  to
+                   the previous set of parameters saved with Set Home,
+                   or to the initial view, if this hasn't been  saved.
+                   Set  Home  (house  +  arrow icon) saves the current
+                   state of the camera for later recall with Home.
+
+            View All
+                   The View All button finds the  geometry  in  Render
+                   and  modifies  the  camera  parameters  to create a
+                   reasonable  view  that  shows  everything  on   the
+                   screen.
+
+            Seek   The  Seek button changes the cursor to a crosshair.
+                   When the mouse button is pressed, the view will  be
+                   changed  to  put  the object under the crosshair in
+                   the center of the  screen.  If  the  object  has  a
+                   normal  vector  associated  with  it, the resulting
+                   view will be along the normal.
+
+                   Seek is a temporary mode  that  stays  active  only
+                   until  the  mouse  button is pressed in the viewing
+                   area. If there is no object under the crosshair, no
+                   camera changes are performed.
+
+            Camera Type
+                   The  Camera  Type  button  toggles  between using a
+                   perspective and an orthographic camera. Use of this
+                   button  when  an  input  camera  is wired is highly
+                   discouraged.
+
+            The menu bar at the top allows access to other functions:
+
+            File
+                   Save
+
+                          This menu item saves  the  current  geometry
+                          into  the last specified file. If a save has
+                          not been previously done,  it  brings  up  a
+                          file  browser.  The geometry is saved in the
+                          Inventor ASCII  format,  and  can  be  quite
+                          large.
+
+                   Save As...
+                          This  menu  item brings up a file browser to
+                          save the current geometry. The 3D scene (all
+                          the  geometry  in  the Render window) may be
+                          saved either as an Open Inventor file (.iv),
+
+                          "Save Options..." menu described below.
+
+                   Save Options...
+                          This menu item brings up  a  cascading  menu
+                          where  various  options can be selected. You
+                          can choose to save the current  geometry  in
+                          "Explorer"  or  "Inventor" format. Saving as
+                          "Explorer" shared geometry format (with cxSo
+                          style  node  and  field names) allows shared
+                          manipulation of the data when read back into
+                          Explorer;   Saving  as  "Inventor"  geometry
+                          format (without cxSo) allows the data to  be
+                          handled  by other Inventor programs.  Toggle
+                          options  are  also   provided   to   include
+                          "Camera"   and/or  "Lights"  and/or  "Screen
+                          Geometry" with the saved  geometry.  "Screen
+                          Geometry"  refers  to  geometry  read in via
+                          Render's "Screen" port. You may wish to  set
+                          these, depending on which viewer is going to
+                          be used  to  read  the  saved  geometry.  If
+                          ivview  is  used and you wish to include the
+                          "Screen Geometry" you must also include  the
+                          "Camera"   to   correctly   view  the  saved
+                          geometry.  If  SceneViewer  is  used,   then
+                          "Screen Geometry" cannot be viewed correctly
+                          and is best not included.  SceneViewer  also
+                          ignores  the  "Camera",  it  is best to read
+                          camera    information    via    its    "Read
+                          Environment..." option. SceneViewer can read
+                          environments saved from  Render,  see  "Save
+                          Environment..." below. If the saved geometry
+                          is going to  be  read  back  into  a  Render
+                          module,  via  its  "Input" port, then do not
+                          include  "Screen  Geometry",  it   will   be
+                          rendered   incorrectly.   If   an   included
+                          "Camera" is found  Render  will  adjust  its
+                          camera to that of the included "Camera".
+
+                   Read Environment...
+                          This  menu  item reads in a previously saved
+                          environment  -  camera,  lights,  and   some
+                          rendering options. The format is an Inventor
+                          file   with   a   specific    scene    graph
+                          organization.  This  proper format is easily
+                          created with  the  "Save  Environment"  menu
+                          selection.   Render  can  read  environments
+                          saved by SceneViewer.
+
+                   Save Environment...
+                          This menu item saves the current environment
+                          -   camera,   lights,   and  some  rendering
+                          options. The environment may be read  in  to
+                          the  Render  module  later  with  the  "Read
+
+                          can also be used with SceneViewer.
+
+                   Print...
+                          This   menu  item  brings  up  the  Inventor
+                          printing dialog,  where  you  may  select  a
+                          printer    and    hardcopy   specifications.
+                          PostScript may also be dumped to a file.
+
+            Edit
+
+                   Pick Parent
+                          This menu item selects the  parent  node  of
+                          the currently selected node.
+
+                   Pick All
+                          This  menu  item  selects  all  nodes in the
+                          scene. Note that only geometry received  via
+                          the "Input" port is selected, while geometry
+                          received via the  "Annotation"  or  "Screen"
+                          ports is not selected.
+
+                   Copy   This menu item copies all the selected nodes
+                          into the  "Inventor  clipboard",  which  can
+                          subsequently    be    pasted    into   other
+                          applications.
+
+                   Single Selection
+                          If this menu item is chosen  then  only  one
+                          scene node can be selected at a time.
+
+                   Toggle Selection
+                          If  this  menu  item is chosen then multiple
+                          scene nodes can be selected. Picking a  node
+                          toggles its selection state on/off.
+
+                   Shift Selection
+                          If  this  menu  item is chosen then multiple
+                          scene nodes can be selected, by pressing the
+                          "shift"  key  whilst  making a selection. If
+                          the "shift" key  is  not  pressed  then  all
+                          previous   selections   will   be  cancelled
+                          (deselected).
+
+            Viewing
+
+                   Pick/Edit
+                          This menu  item  toggles  the  mode  between
+                          viewing  and  selection/picking. It performs
+                          the same function  as  the  arrow  and  hand
+                          icons  on  the  right  edge  of  the control
+                          panel.
+
+                          When viewing is active, the  camera  may  be
+
+                          mode,  objects  may  be  manipulated  within
+                          Render or queried through picking.
+
+                   User Pick Mode
+                          When viewing is not active, either selection
+                          or picking may be done.  Selection refers to
+                          selecting  and  manipulating  objects within
+                          Render -  attaching  manipulators,  changing
+                          material  properties, etc. Items of geometry
+                          that are selected are also passed out of the
+                          module  via the Picked Geometry output port.
+                          Picking transfers information  about  events
+                          within  the  module  through the Pick output
+                          port. The User Pick Mode menu  item  toggles
+                          between these two interpretations of events.
+                          When User Pick Mode is on, mouse button  and
+                          keyboard  events  trigger  an output of pick
+                          information through the Pick output port.
+
+                   Examiner
+                          The  Examiner  is  one  of   four   mutually
+                          exclusive  viewers.  A  viewer is a paradigm
+                          for manipulating the camera. The Examiner is
+                          selected by default when Render is executed.
+
+                          The Examiner  implements  a  "crystal  ball"
+                          interface,  allowing  rotation of the camera
+                          about a center point while  the  left  mouse
+                          button  is  pressed.  The center of rotation
+                          may be translated by moving the  mouse  with
+                          the middle button pressed.
+
+                          Press  the  Help  icon while the Examiner is
+                          active to get more  information  about  this
+                          viewer.
+
+                   Fly    The  Fly  viewer  is  intended  to  simulate
+                          constrained flight through space.  The  left
+                          and   middle   mouse  buttons  increase  and
+                          decrease speed exponentially. The  direction
+                          of  flight  is  controlled  with  the  mouse
+                          position.
+
+                          The Fly viewer does not give dynamic control
+                          over  roll.  It  is  constrained  to  use  a
+                          constant "up" vector.
+
+                          Press the Help icon while the Fly viewer  is
+                          active  to  get  more information about this
+                          viewer.
+
+                   Walk   The Walk viewer simulates a  walkthrough  by
+                          allowing  motion  and camera pointing with a
+
+                          button  to move forward and backward or turn
+                          left  and  right.  Press  the  middle  mouse
+                          button to control the direction of sight.
+
+                          Press the Help icon while the Walk viewer is
+                          active to get more  information  about  this
+                          viewer.
+
+                   Plane  The  Plane  viewer  lets  you manipulate the
+                          camera with respect to  the  viewing  plane.
+                          The  camera can also be aligned to the major
+                          axes.
+
+                          Press the Help icon while the  Plane  viewer
+                          is active to get more information about this
+                          viewer.
+
+                   View Selection
+                          This menu item works like View  All,  except
+                          it  only  considers  the  currently selected
+                          object.
+
+                   Fog    This menu item toggles fog  effects.  It  is
+                          only  active  on  machines  with  a hardware
+                          accumulation buffer.
+
+                   Antialiasing
+                          This menu item toggles antialiasing.  It  is
+                          only  active  on  machines  with  a hardware
+                          accumulation buffer.
+
+                   Screen Door Transparency
+                          There are four mutually exclusive  types  of
+                          transparency   selectable.  The  default  is
+                          screen door transparency, which is supported
+                          on  most  machines. Screen door transparency
+                          is generally the cheapest transparency mode.
+
+                   Blended Transparency
+                          Blended  Transparency  is active on machines
+                          which support blending. An alpha  buffer  is
+                          not needed.
+
+                          Because  of  the way blended transparency is
+                          done,  there  may  be   artifacts   when   a
+                          transparent  object obscures itself or other
+                          objects. The Blended Transparency mode takes
+                          no steps to avoid these artifacts.
+
+                   Delayed Blended Transparency
+                          Delayed  Blended  Transparency  renders  all
+                          opaque  objects   before   any   transparent
+                          objects.  This  takes care of artifacts that
+
+                          opaque objects. There may still be artifacts
+                          when a transparent object obscures itself or
+                          another transparent object.
+
+                   Sorted Blended Transparency
+                          Sorted   Blended  Transparency  renders  all
+                          opaque  objects   before   any   transparent
+                          objects,   and   then   renders  transparent
+                          objects in back to  front  order,  based  on
+                          their  bounding  box.  This  takes  care  of
+                          artifacts that occur  when  one  transparent
+                          object  obscures  another transparent object
+                          and the two objects are noninterpenetrating.
+                          Artifacts  may  still occur if a transparent
+                          object obscures itself or if two transparent
+                          objects intersect.
+
+                   Edit Background Color...
+                          This  menu  item brings up a color editor to
+                          change the background color of  the  viewing
+                          area.  This  color is saved along with other
+                          parameter settings if a map  containing  the
+                          module is saved (actually, the color will be
+                          saved only if the module is fired after  the
+                          color has been set).
+
+            Editors
+
+                   Material Editor...
+                          This menu item attaches a material editor to
+                          the currently selected object. The editor is
+                          a  popup  window  that  contains  widgets to
+                          change the appearance of the object.
+
+                          The material editor is  always  attached  to
+                          the   selected   object.  If  no  object  is
+                          currently selected, changes in the  material
+                          editor will not affect anything.
+
+                          If material parameters are specified as part
+                          of  the  object  definition,  those   values
+                          cannot  be  changed  in the material editor.
+                          For example, if colors are explicitly set on
+                          an  object by cxGeoColorAdd(3), changing the
+                          diffuse color in the  material  editor  will
+                          have  no  effect. Other parameters, however,
+                          may still be edited.
+
+                          The sphere  in  the  material  editor  is  a
+                          sample   rendering   of   the   material  as
+                          specified. Because lighting in the editor in
+                          general  is  not  the  same as in the actual
+                          scene, the appearances may  not  be  exactly
+
+                          The sliders in the editor allow changing the
+                          mix of the ambient, diffuse,  specular,  and
+                          emissive  components  of the lighting model.
+                          The color of each component may  be  changed
+                          by  attaching  a color editor with the radio
+                          and  toggle  buttons.  Activating  a   radio
+                          button   (diamond   shaped)   selects   that
+                          component alone. Activating a toggle  button
+                          (square shaped) allows changing the color of
+                          more than one component simultaneously.
+
+                          Other sliders in the material  editor  allow
+                          changing  the  shininess and transparency of
+                          the material.
+
+                   Color Editor...
+                          This menu item brings up a  graphical  color
+                          editor  that  sets  the diffuse color on the
+                          currently selected object. It  can  also  be
+                          brought  up  from  the  material  and  light
+                          editors to choose other colors.
+
+                          Use the left mouse button to select a  color
+                          in  the  color wheel area. The color pads to
+                          the left show  the  current  color  (on  the
+                          left)  and  one  saved color (on the right).
+                          This allows comparison and  easy  switching.
+                          Use  the  buttons underneath to copy one pad
+                          to the other.
+
+                          The Sliders menu allows bringing up a slider
+                          to  manipulate  intensity (Value) as well as
+                          sliders for choosing colors in  the  RGB  or
+                          HSV color spaces.
+
+                   Transform Sliders...
+                          This  menu  item attaches a Transform editor
+                          to the currently selected object. The editor
+                          is a popup window that contains widgets that
+                          can   be   used   to   change   the   scale,
+                          orientation, and location of an object.
+
+                          The transform sliders are always attached to
+                          the selected object. If there is no selected
+                          object,  changes  in  the  transform sliders
+                          will not be applied to anything.
+
+            Manips A manipulator is a graphical  object  that  can  be
+                   attached  to  the  selected object to transform it.
+                   There are several types of manipulators  which  can
+                   be selected through this menu.
+
+                   Transformer
+
+                          corners and small balls sticking out of  the
+                          middle of each face. Click and drag any face
+                          of the box for 2D translation in  the  plane
+                          of  that  face.  The  face you selected will
+                          highlight in yellow. While you drag,  yellow
+                          feedback  arrows  display the two directions
+                          of motion. Press the  <Shift>  key  and  the
+                          arrows turn orange; you may now pick between
+                          these  two  directions  to   constrain   the
+                          motion. The direction you move the cursor in
+                          will determine which  direction  is  chosen.
+                          Press the <Control> key and the dragger will
+                          translate perpendicular to that  plane.  The
+                          translation field is modified as the face is
+                          dragged.
+
+                          Click a corner to  scale  the  dragger.  The
+                          corner  you  selected  will  turn yellow and
+                          radial lines will indicate that you may move
+                          toward  and away from the center of the box.
+                          Drag radially and you will  perform  uniform
+                          scale.  Press  the  <Control>  key  to scale
+                          about the opposite  corner  instead  of  the
+                          center of the box.
+
+                          To  stretch the dragger non-uniformly, press
+                          <Shift> when you drag the corner  cube.  Now
+                          you  will see three orange arrows indicating
+                          that  your  gesture  will  determine   which
+                          direction to choose. Move the cursor and the
+                          selected arrow will turn  yellow  while  the
+                          others   disappear.  Now  the  dragger  will
+                          stretch only in the direction you  selected.
+                          Pressing  <Control>  at  the  same  time  as
+                          <Shift> allows you to  stretch  the  dragger
+                          while  keeping  the  opposite side pinned in
+                          place. When you drag a corner, this modifies
+                          the scaleFactor and possibly the translation
+                          field of the dragger.
+
+                          Click one of the spherical knobs  to  rotate
+                          the  dragger.  When  you first click, you'll
+                          see two orange lines and two purple circles.
+                          The purple circles indicate the two ways you
+                          can  rotate.  The  orange  lines  are,  once
+                          again,   the  two  choices  for  your  mouse
+                          gesture. Each line begins you moving  around
+                          one  of  the  two circles. Once you move the
+                          cursor far enough, the selected  line  turns
+                          yellow  and  you  begin rotating the dragger
+                          about the selected circle. The other  circle
+                          and line will disappear.
+
+
+                          just  press  <Shift>  while  you  drag   the
+                          spherical  knob.  There  will be no choices;
+                          instead all three  purple  circles  will  be
+                          displayed,  forming a ball that you can roll
+                          around.  Regardless  of  how   you   rotate,
+                          dragging the spherical knobs will modify the
+                          rotatation field of the  dragger.  Depending
+                          on  how  it  is centered and what transforms
+                          precede it in the scene graph,  rotation  is
+                          likely   to   affect   the  translation  and
+                          scaleFactor fields as well.
+
+                          Pressing the <Control> key will  change  the
+                          center  of  rotation in both the constrained
+                          and   unconstrained   (<Shift>)   case.   By
+                          default, rotation occurs about the center of
+                          the bounding box. With <Control>  depressed,
+                          rotation  occurs  about  the  middle  of the
+                          opposite  side  of  the  bounding  box.  The
+                          purple  feedback  will  change to illustrate
+                          this; the feedback circles increase in  size
+                          and  purple  crosshairs  sprout  at  the new
+                          rotational center.
+
+                   Trackball
+                          This manipulator appears as  three  circular
+                          ribbons  that  represent a sphere. It can be
+                          used to change the orientation of an  object
+                          about its center.  Clicking and dragging the
+                          left mouse on the trackball outside  of  the
+                          ribbons allows unconstrained rotation. Click
+                          and dragging within the  ribbons  constrains
+                          the rotation to a fixed axis.
+
+                          A custom axis may be created and oriented by
+                          holding the shift key down and clicking  and
+                          dragging  the  left mouse. The object may be
+                          scaled by  holding  the  alt  key  down  and
+                          clicking and dragging the left mouse.
+
+                   HandleBox
+                          This  manipulator appears as a wireframe box
+                          with  "handles"  at  the  vertices  and  the
+                          faces.  Clicking and dragging the left mouse
+                          on a face of the box allows  translation  in
+                          the   plane   of  that  face.  Clicking  and
+                          dragging the left mouse  on  a  face  handle
+                          allows  scaling normal to the face. Clicking
+                          and dragging the  left  mouse  on  a  vertex
+                          handle allows uniform scaling.
+
+                          If  the  alt  key  is pressed while scaling,
+                          scaling  is  performed  about  the  opposite
+
+                          box may be changed by pressing  the  control
+                          key  and  clicking  and  dragging  the  left
+                          mouse.
+
+                   Jack   This manipulator appears as a "jack," a  set
+                          of  three  axes  with  handles  at the ends.
+                          Clicking and dragging the left mouse on  the
+                          object allows free translation. Clicking and
+                          dragging the left mouse on the  axes  allows
+                          free   rotation  about  the  center  of  the
+                          object. Clicking and dragging the left mouse
+                          on the handles allows uniform scaling.
+
+                   Pick Jack
+                          This manipulator behaves in a similar way to
+                          the Jack but sends pick information  on  the
+                          "Pick"  output port. The "LatSmoke" range of
+                          modules use this pick information,  see  the
+                          relavent   module   help  page  for  further
+                          information.
+
+                          Note: the "LatSmoke" range  of  modules  are
+                          not implemented on every platform.
+
+
+                   Centerball
+                          This  manipulator  appears  as three circles
+                          which represent a sphere. It can be used  to
+                          rotate the object about an arbitrary origin.
+                          Click on one of the circles  with  the  left
+                          mouse  button to rotate the object about the
+                          axis  normal  to  the  circle  which  passes
+                          through the center of the ball. To translate
+                          the origin of rotation, click and  drag  the
+                          left mouse on one of the crossed arrows.
+
+                   TransformBox
+                          This  manipulator  is  a simpler versions of
+                          the HandleBox. It performs translation in  a
+                          plane and uniform scaling.
+
+                   TabBox This  manipulator appears as a box with tabs
+                          at the vertices and at  the  center  of  the
+                          edges.  Clicking and dragging the left mouse
+                          on any of the  faces  of  one  of  the  tabs
+                          causes  the object to be uniformly scaled in
+                          one (for edge tabs) or two (for vertex tabs)
+                          dimensions.
+
+                   None   This menu item deactivates all manipulators.
+
+                   Replace
+                          This menu item  toggles  whether  selections
+
+                          currently  selected  object   or   only   to
+                          subsequently selected objects.
+
+            Lights Up to eight lights in addition to the headlight may
+                   be created and managed in  Render.  As  lights  are
+                   created,  an  entry  in  this  menu will be made to
+                   control them.
+
+                   The menu created has  four  cascade  items.  On/Off
+                   activates and deactivates the light. Icon turns the
+                   light manipulator on and off. Edit Color brings  up
+                   a  color  editor  to change the color of the light.
+                   Remove deletes the light and its menu entry.
+
+                   Create Dir Light
+                          This menu item  creates  a  new  directional
+                          light  source.  Its manipulator looks like a
+                          light with an arrow. The  direction  of  the
+                          light   may   be  changed  by  clicking  and
+                          dragging on the arrow  head  with  the  left
+                          mouse.  The  position  of  the  icon  may be
+                          changed by  clicking  and  dragging  on  the
+                          light  with the left mouse, but the position
+                          of the light has no effect on the  lighting.
+
+                   Create Point Light
+                          This  menu  item  creates  a new point light
+                          source. Its manipulator looks like  a  light
+                          with nothing else. The position of the light
+                          may be changed by clicking and  dragging  on
+                          the light with the left mouse.
+
+                   Create Spot Light
+                          This  menu  item  creates  a  new spot light
+                          source. Its manipulator looks like  a  light
+                          with  an arrow and a skirt. The direction of
+                          the light may be  changed  by  clicking  and
+                          dragging  on  the  arrow  head with the left
+                          mouse. The position  of  the  light  may  be
+                          changed  by  clicking  and  dragging  on the
+                          light. The spread of the spot may be changed
+                          by clicking and dragging on the skirt.
+
+                   Ambient Lighting
+                          This  menu  item brings up a color editor to
+                          change the ambient lighting characteristics.
+
+                   Turn All ON
+                          This menu item turns all lights on.
+
+                   Turn All OFF
+                          This menu item turns all lights off.
+
+
+                   Show All Icons
+                          This  menu  item shows the icons for all the
+                          lights.
+
+                   Hide All Icons
+                          This menu item hides the icons for  all  the
+                          lights.
+
+            There is a popup menu available by clicking on the viewing
+            area with the right mouse button. The menu is active  both
+            in  the  large control panel and in the map editor control
+            panel. Here are the menu items:
+
+            Functions
+                   This is a cascading menu that allows easier  access
+                   to several commands.
+
+            Draw Style
+                   This is a cascading menu that allows overriding the
+                   drawing style set in the geometry. Some items allow
+                   using  a  cheaper  method  of  rendering  while the
+                   camera is in motion.
+
+                   The single, double, and interactive  items  control
+                   the  buffering of the display. On machines that can
+                   do double buffering at full color resolution,  this
+                   should  stay  at  double.  Machines  that sacrifice
+                   color resolution for double buffering may do better
+                   with single or interactive.
+
+            Viewing
+                   This menu item toggle viewing on and off.
+
+            Decoration
+                   This  menu  item  toggles  the display of the frame
+                   surrounding the viewing area.
+
+            Headlight
+                   This menu item turns the headlight on and off.
+
+            Preferences...
+                   This menu item brings up a preference sheet for the
+                   current viewer.
+
+                   It  is  possible  to  change  some  of  the default
+                   rendering options with a configuration  file.  This
+                   file should be named .Renderrc and should be in the
+                   user's home directory.
+
+                   The contents of this file must be a valid  Inventor
+                   data  file.  It will be added to the scene graph in
+                   Render before any geometry.
+
+
+                   ShapeHints
+                   {
+
+                          vertexOrdering COUNTERCLOCKWISE
+                          creaseAngle 0.0
+
+                   }
+
+                   Here is a sample configuration file:
+                   #Inventor V2.0 ascii
+
+                   # values shown are defaults
+                   DrawStyle {
+
+                          style FILLED    # poly style, may be FILLED, LINES, POINTS, INVISIBLE
+                          lineWidth 1     # line width
+                          linePattern 0xffff # line pattern
+
+                   }
+                   LightModel {
+
+                          model PHONG     # lighting model, may be BASE_COLOR, PHONG, DEPTH
+                          nearColor 1.0 1.0 1.0   # near color for DEPTH model
+                          farColor 0.0 0.0 0.0    # far color for DEPTH model
+
+                   }
+                   Complexity {
+
+                          value 0.5       # object complexity [0..1]
+                          type OBJECT_SPACE # measure, may be SCREEN_SPACE, OBJECT_SPACE, BOUNDING_BOX
+
+                   }
+
+                   More information about rendering  options  and  the
+                   data   format   may   be   found  in  the  Inventor
+                   documentation.
+
+     INPUTS
+            Input -- Geometry (Opt.)
+                   This is the port where all regular geometry  should
+                   be  wired.  The  module  uses information about the
+                   connections to update the proper geometry.
+
+            Annotation -- Geometry (Opt.)
+                   Geometry that arrives on this port is rendered into
+                   a separate z-buffer from geometry on the main port.
+                   The result is that geometry on this port is  always
+                   drawn  in  front of geometry on the main port. This
+                   may be useful for keeping annotation unobscured.
+
+            Screen -- Geometry (Opt.)
+                   Geometry that arrives on this port is  rendered  in
+                   screen coordinates, [-1,+1] in both x and y, and in
+
+                   to  draw  legends  or other information that moving
+                   the camera shouldn't affect.
+
+            Input Camera -- Geometry (Opt.)
+                   Geometry that arrives on this port is searched  for
+                   a  perspective camera. If one is found, that camera
+                   will be used to display the scene.
+
+            Snap On Redraw -- Parameter (Opt.)
+                   If this port is wired, then on every  data  change,
+                   the  image  is  snapped  and output on the Snapshot
+                   port. See Snap Widget.
+
+     WIDGETS
+            Snap -- Button
+                   This input provides an  interface  to  capture  the
+                   drawing  area display into a lattice. The widget is
+                   invisible, so it must be  activated  by  connecting
+                   from  a  suitable  parameter port (for example, the
+                   output of WidgetsButton). When  data  is  received,
+                   the drawing area pixels are grabbed from the screen
+                   and output as a lattice. The Render window must not
+                   be obscured while the snapshot is being taken.
+
+            Background Color -- Text
+                   This input provides an interface for specifying the
+                   background color. The widget is  invisible,  so  it
+                   must  be  activated  by  connecting from a suitable
+                   parameter  port  (for  example,   the   output   of
+                   WidgetsTextTypein). The port accepts a text string,
+                   which is interpreted as the name of a color  to  be
+                   used  as the background color. The background color
+                   is unchanged if the name cannot be interpreted.
+
+            Camera update -- Text
+                   Normally if the Output Camera  port  of  Render  is
+                   connected  to  another module, the output camera is
+                   updated  whenever   the   camera   position   stops
+                   changing.   This  port enables the output camera to
+                   be updated while the camera position  is  changing.
+                   The widget is invisible, so it must be activated by
+                   connecting from  a  suitable  parameter  port  (for
+                   example,  the output of WidgetsIntegerSlider).  The
+                   value passed to  the  port  is  interpreted  as  an
+                   update interval in milliseconds.  The default value
+                   of 0 means only update the output camera  when  the
+                   camera position stops changing.
+
+     OUTPUTS
+            Output Camera -- Geometry
+                   The  current camera output as geometry is available
+                   on this port. The camera is sent out  whenever  its
+                   parameters  change  and  there is a delay since the
+
+                   port  from  constantly  creating new data while the
+                   camera is in motion.  For  efficiency,  the  camera
+                   geometry  is  not created if the Output Camera port
+                   is not wired; for this reason,  there  will  be  no
+                   camera available until the first time the camera is
+                   moved after wiring the port.
+
+                   The   output   camera   is   created   using    the
+                   cxOutputDataFlush  command,  which  interferes with
+                   execution  control  of  loops.  Therefore   it   is
+                   advisable  not to wire Output Camera when Render is
+                   used  as  a  loop  controller  or  within   another
+                   controller's loop. Since the camera changes only as
+                   a result of user interaction or Input  Camera  data
+                   arrival,  neither  should  be used to create output
+                   camera data within a loop. The former action can be
+                   used  without  a  loop,  while the latter is easily
+                   duplicated by wiring the source of Input Camera  to
+                   the destination of Output Camera.
+
+            Picked Geometry -- Geometry
+                   This  port  outputs  geometry  that has been picked
+                   from the  scene.  Data  is  updated  on  this  port
+                   whenever  something  new is selected or deselected,
+                   including when "Pick  Parent"  or  "Pick  All"  are
+                   used.
+
+            Sync -- Parameter
+                   Outputs   a   parameter   to   be   used   in  loop
+                   synchronization.   The   parameter   is   generated
+                   whenever Render redraws due to new input.
+
+            Snapshot -- Lattice
+                   (2-D,   3-vector,  byte,  uniform).   This  lattice
+                   contains a snapshot of  the  screen  in  RGB  pixel
+                   order. The Render window must not be obscured while
+                   the snapshot is being taken.
+
+            Pick -- Pick
+                   Pick data is output on this port  on  mouse  button
+                   and  keyboard events when user pick mode is active.
+
+     KNOWN PROBLEMS
+            The Output  Camera  port  causes  looping  problems  (loop
+            containing  Render  fires  once,  but  does  not  iterate)
+            because of its  use  of  cxOutputDataFlush.  Do  not  wire
+            Output  Camera  when  Render  is a loop controller or used
+            within another controller's loop.
+
+            The module will not snap its input on the first arrival of
+            the  Snap  parameter. This prevents spurious snapping when
+            the module is first launched, but  means  that  you  might
+            miss the first snapshot in an animation sequence.
+
+     SEE ALSO
+            AnimateCamera, VolumeRender
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

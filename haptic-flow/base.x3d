@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Group DEF="ROOT_GROUP">
+	<Background skyColor="0 0 1" />
+
+	<ImportLibrary library='"torque\torque.dll"' />
+	<ImportLibrary library='"torque/libtorque.so"' />
+	<ImportLibrary library='"vhtk.dll"' />
+	<ImportLibrary library='"libVHTK.so"' />
+	<ImportLibrary library='"IBFVStreamSurface\ibfvss.dll"' />
+	<ImportLibrary library='"IBFVStreamSurface/libibfvss.so"' />
+	<ImportLibrary library='"KeyEventGenerator\keg.dll" "KeyEventGenerator/libkeg.so"' />
+	<ImportLibrary library='"ImprovedVectorVolume\ivv.dll" "ImprovedVectorVolume/libivv.so"' />
+
+	<!--
+	<MetadataString DEF="FILENAME" value="ieflowpath.asc" />
+
+	<ROUTE
+		fromNode="FILENAME" fromField="value"
+		toNode="VECVOL" toField="url" />
+	-->
+
+
+	<DeviceInfo>
+	<HLHapticsDevice DEF="HAPD" positionCalibration="0.00352976005524 5.59089785384e-005 0.000653294788208 0.123951092362 0.000233255006606 0.00180234899744 -0.00209078402258 -0.436432361603 -0.000420954573201 0.00348124792799 0.00176013680175 -0.774875462055 0.0 0.0 0.0 1.0" orientationCalibration="-0.852734744549 0.372199863195 -0.366484165192 5.11201334">
+
+			<Group containerField="stylus">
+				<Switch DEF="probeShapeChoice" whichChoice="0">
+				<Shape>
+					<Appearance>
+						<Material />
+					</Appearance>
+					<Sphere radius="0.005" />
+				</Shape>
+				<Shape>
+					<Appearance>
+						<Material/>
+					</Appearance>
+					<Box size="0.02 0.000001 0.02" />
+				</Shape>
+				<Transform translation="0.01 0 0">
+					<Shape>
+						<Appearance>
+							<Material/>
+						</Appearance>
+						<Box size="0.02 0.000001 0.02" />
+					</Shape>
+				</Transform>
+				</Switch>
+				<Transform translation="0 0 0.08" rotation="1 0 0 1.570796" >
+					<Shape>
+						<Appearance>
+							<Material/>
+						</Appearance>
+						<Cylinder radius="0.005" height="0.1"/>
+					</Shape>
+				</Transform>
+			</Group>
+		</HLHapticsDevice>
+	</DeviceInfo>
+
+ 
+<Transform DEF="MAIN_TRANSFORM" translation="0 0 0" scale="0.03 0.03 0.03">
+		<Shape>
+		<Appearance>
+			<Material/>
+		</Appearance>
+		<LineSet vertexCount="16">
+			<Coordinate DEF="BOX_COORDS"/><!-- point="	0 0 0
+								1 0 0
+								2 0 0
+								3 0 0
+								4 0 0
+				
+								5 0 0
+								6 0 0
+								7 0 0
+								8 0 0
+								9 0 0
+
+								10 0 0
+								11 0 0
+								12 0 0
+								13 0 0
+								14 0 0
+				
+								15 0 0
+								16 0 0
+								17 0 0
+								18 0 0
+								19 0 0
+
+								20 0 0
+				
+				" -->
+		</LineSet>
+	</Shape>
+	
+
+	<LocalInfo DEF="INFO" />
+	<LocalInfo DEF="INFO_AXIS" />
+	<Group DEF="TUBES_GROUP" />
+
+	<ForceTorqueField DEF="FF">
+		<ImprovedVectorVolume DEF="VECVOL" url="ieflowpath.asc" />
+		
+	</ForceTorqueField>
+
+	<!--
+	<EXPORT localDEF="VECVOL" AS="VECVOL"/>
+	-->
+
+
+
+
+
+
+	<PythonScript DEF="PS" url="base.py">
+		<ForceTorqueField USE="FF" containerField="references" />
+		<HLHapticsDevice USE="HAPD" containerField="references" />
+		<FieldedVectorImageVolume USE="VECVOL" containerField="references" />
+		<LocalInfo USE="INFO" containerField="references" /> 
+	</PythonScript>
+<!--
+<DirectionalLight direction=".3 0 -1"/>
+<DirectionalLight direction="-.3 0.1 -1"/>
+-->
+	<Shape>
+		<IBFVStreamSurface DEF="SS" width="20" length="20" interspace="0.1" step="0.03" seedType="2">
+			<VHTKVectorDataNode USE="VECVOL" containerFied="vectorVolume" />
+		</IBFVStreamSurface>
+	</Shape>
+<!-- stream tubes stuff -->
+	<PythonScript DEF="PUTT" url="PutStreamTubes.py">
+
+		<Group USE="TUBES_GROUP" containerField="references" />
+
+		<Appearance
+			containerField="references">
+			<Material
+			ambientIntensity="1"/>
+		</Appearance>
+
+		<StreamTubes
+			DEF="TUBES"
+			containerField="references"
+			useEuler="TRUE"
+			radius="0.01"
+			step="0.1"
+			width="kikoo"
+			maxLength="20.0" >
+			<VHTKVectorDataNode USE="VECVOL" />
+			<MagnitudeVolume>
+				<VHTKVectorDataNode USE="VECVOL" />
+				<WindowFunction
+					level="10"
+					width="50" />
+			</MagnitudeVolume>
+		</StreamTubes>
+
+	</PythonScript>
+
+<!-- stream tubes stuff end -->
+	<PythonScript DEF="FILE_LOADER" url="IrisReader.py">
+		<ImprovedVectorVolume USE="VECVOL" containerField="references" />
+		<Coordinate USE="BOX_COORDS" containerField="references"/>
+		<IBFVStreamSurface USE="SS" containerField="references" />
+		<!-- <PythonScript USE="PS" containerField="references" /> -->
+		<StreamTubes USE="TUBES" containerField="references" />
+	</PythonScript>
+
+	<ROUTE
+	fromNode="HAPD" fromField="trackerOrientation"
+	toNode="PS" toField="seedPos" />
+	<ROUTE
+	fromNode="HAPD" fromField="trackerPosition"
+	toNode="PS" toField="seedPos" />
+	<!--<ROUTE
+	fromNode="SS" fromField="seedType"
+	toNode="PS" toField="seedPos" /> -->
+	<ROUTE
+	fromNode="PS" fromField="seedPos"
+	toNode="INFO" toField="position" />
+	<ROUTE
+	fromNode="INFO" fromField="position"
+	toNode="SS" toField="source" /> 
+
+	<ROUTE
+	fromNode="PS" fromField="paddleAxis"
+	toNode="INFO_AXIS" toField="position" />
+	<ROUTE
+	fromNode="INFO_AXIS" fromField="position"
+	toNode="SS" toField="seedOrientation" />
+</Transform>
+	<PythonScript DEF="STATESCRIPT" url="state.py">
+		<Switch USE="probeShapeChoice" containerField="references"/>
+		<IBFVStreamSurface USE="SS" containerField="references"/>
+	</PythonScript>
+
+	<!-- Keys -->
+	
+	<!--
+	<KeyEventGenerator DEF="KEY_TEXTURE" keys="Tt" />
+	<KeyEventGenerator DEF="KEY_WIREFRAME" keys="Ww" />
+	<KeyEventGenerator DEF="KEY_INTERSPACE_UP" keys="I" />
+	<KeyEventGenerator DEF="KEY_INTERSPACE_DOWN" keys="i" />
+	<KeyEventGenerator DEF="KEY_STEP_UP" keys="S" />
+	<KeyEventGenerator DEF="KEY_STEP_DOWN" keys="s" />
+	<KeyEventGenerator DEF="KEY_WIDTH_UP" keys="H" />
+	<KeyEventGenerator DEF="KEY_WIDTH_DOWN" keys="h" />
+	<KeyEventGenerator DEF="KEY_LENGTH_UP" keys="G" />
+	<KeyEventGenerator DEF="KEY_LENGTH_DOWN" keys="g" />
+	<KeyEventGenerator DEF="KEY_SEEDTYPE_UP" keys="E" />
+	<KeyEventGenerator DEF="KEY_SEEDTYPE_DOWN" keys="e" />
+	<KeyEventGenerator DEF="KEY_PUTRIBBON" keys="rR" />
+	<KeyEventGenerator DEF="KEY_PUTTUBE" keys="uU" />
+	-->
+	<KeyEventGenerator DEF="KEY_INPUT" keys="Ii" />
+	<KeyEventGenerator DEF="KEY_OUTPUT" keys="Oo" />
+	<KeyEventGenerator DEF="KEY_GRAPHICS" keys="Gg" />
+	<KeyEventGenerator DEF="KEY_PUTTUBE" keys="Tt" />
+
+
+
+
+	<!--
+	<FloatUpdater DEF="UPDATE_INTERSPACE" offset="0.001" />
+	<FloatUpdater DEF="UPDATE_STEP" offset="0.01" />
+	<IntUpdater DEF="UPDATE_WIDTH" offset="1" />
+	<IntUpdater DEF="UPDATE_LENGTH" offset="1" />
+	<IntUpdater DEF="UPDATE_SEEDTYPE" offset="1" />
+	-->
+	<IntUpdater DEF="UPDATE_INPUT" value="-1" offset="1" />
+	<IntUpdater DEF="UPDATE_OUTPUT" value="-1" offset="1" />
+	<IntUpdater DEF="UPDATE_GRAPHICS" value="-1" offset="1" />
+
+
+	<!-- bools -->
+	<!--
+	<ROUTE
+	fromNode="KEY_TEXTURE" fromField="event"
+	toNode="SS" toField="enableTexture" />
+	<ROUTE
+	fromNode="KEY_WIREFRAME" fromField="event"
+	toNode="SS" toField="wireFrame" />
+	<ROUTE
+	fromNode="KEY_PUTRIBBON" fromField="event"
+	toNode="PUT" toField="putStreamRibbons" />
+	<ROUTE
+	fromNode="INFO" fromField="position"
+	toNode="PUT" toField="putStreamRibbons" />
+	<ROUTE
+	fromNode="KEY_PUTTUBE" fromField="event"
+	toNode="PUTT" toField="putStreamTubes" />
+	<ROUTE
+	fromNode="INFO" fromField="position"
+	toNode="PUTT" toField="putStreamTubes" />
+	-->
+	<ROUTE
+	fromNode="KEY_PUTTUBE" fromField="event"
+	toNode="PUTT" toField="putStreamTubes" />
+	<ROUTE
+	fromNode="INFO" fromField="position"
+	toNode="PUTT" toField="putStreamTubes" />
+	
+	<ROUTE
+	fromNode="KEY_INPUT" fromField="event"
+	toNode="UPDATE_INPUT" toField="increase" />
+	<ROUTE
+	fromNode="UPDATE_INPUT" fromField="value"
+	toNode="STATESCRIPT" toField="state" />
+	<ROUTE
+	fromNode="KEY_OUTPUT" fromField="event"
+	toNode="UPDATE_OUTPUT" toField="increase" />
+	<ROUTE
+	fromNode="UPDATE_OUTPUT" fromField="value"
+	toNode="STATESCRIPT" toField="state" />
+	<ROUTE
+	fromNode="KEY_GRAPHICS" fromField="event"
+	toNode="UPDATE_GRAPHICS" toField="increase" />
+	<ROUTE
+	fromNode="UPDATE_GRAPHICS" fromField="value"
+	toNode="STATESCRIPT" toField="state" />
+
+	<!-- floats & ints -->
+	<!--
+	<ROUTE
+	fromNode="KEY_INTERSPACE_UP" fromField="event"
+	toNode="UPDATE_INTERSPACE" toField="increase" />
+	<ROUTE
+	fromNode="KEY_INTERSPACE_DOWN" fromField="event"
+	toNode="UPDATE_INTERSPACE" toField="decrease" />
+	<ROUTE
+	fromNode="SS" fromField="interspace" 
+	toNode="UPDATE_INTERSPACE" toField="value" />
+	<ROUTE
+	fromNode="UPDATE_INTERSPACE" fromField="value"
+	toNode="SS" toField="interspace" />
+
+	<ROUTE
+	fromNode="KEY_STEP_UP" fromField="event"
+	toNode="UPDATE_STEP" toField="increase" />
+	<ROUTE
+	fromNode="KEY_STEP_DOWN" fromField="event"
+	toNode="UPDATE_STEP" toField="decrease" />
+	<ROUTE
+	fromNode="SS" fromField="step" 
+	toNode="UPDATE_STEP" toField="value" />
+	<ROUTE
+	fromNode="UPDATE_STEP" fromField="value"
+	toNode="SS" toField="step" />
+
+	<ROUTE
+	fromNode="KEY_WIDTH_UP" fromField="event"
+	toNode="UPDATE_WIDTH" toField="increase" />
+	<ROUTE
+	fromNode="KEY_WIDTH_DOWN" fromField="event"
+	toNode="UPDATE_WIDTH" toField="decrease" />
+	<ROUTE
+	fromNode="SS" fromField="width" 
+	toNode="UPDATE_WIDTH" toField="value" />
+	<ROUTE
+	fromNode="UPDATE_WIDTH" fromField="value"
+	toNode="SS" toField="width" />
+
+	<ROUTE
+	fromNode="KEY_LENGTH_UP" fromField="event"
+	toNode="UPDATE_LENGTH" toField="increase" />
+	<ROUTE
+	fromNode="KEY_LENGTH_DOWN" fromField="event"
+	toNode="UPDATE_LENGTH" toField="decrease" />
+	<ROUTE
+	fromNode="SS" fromField="length" 
+	toNode="UPDATE_LENGTH" toField="value" />
+	<ROUTE
+	fromNode="UPDATE_LENGTH" fromField="value"
+	toNode="SS" toField="length" />
+
+	<ROUTE
+	fromNode="KEY_SEEDTYPE_UP" fromField="event"
+	toNode="UPDATE_SEEDTYPE" toField="increase" />
+	<ROUTE
+	fromNode="KEY_SEEDTYPE_DOWN" fromField="event"
+	toNode="UPDATE_SEEDTYPE" toField="decrease" />
+	<ROUTE
+	fromNode="SS" fromField="seedType" 
+	toNode="UPDATE_SEEDTYPE" toField="value" />
+	<ROUTE
+	fromNode="UPDATE_SEEDTYPE" fromField="value"
+	toNode="SS" toField="seedType" />
+	-->
+	
+	<!-- end keys -->
+
+	<!--
+	<LocalInfo DEF="textPos" position="-0.2 -0.2 0" />
+	
+	<Transform DEF="textTrans" >
+	<Billboard axisOfRotation="0 1 0">
+		<Shape>
+			<Appearance>
+				<Material/>
+			</Appearance>
+			<Text DEF="kikoo" string="kikoo">
+				<FontStyle family="TYPEWRITER" size="0.02"/>
+			</Text>
+		</Shape>
+	</Billboard>
+	</Transform>
+
+	<ROUTE
+		fromNode="textPos" fromField="position"
+		toNode="textTrans" toField="translation" />
+	<ROUTE
+		fromNode="textTrans" fromField="translation"
+		toNode="PS" toField="vecstring" />
+	<ROUTE
+		fromNode="PS" fromField="vecstring"
+		toNode="kikoo" toField="string" />
+	-->
+
+
+
+</Group>

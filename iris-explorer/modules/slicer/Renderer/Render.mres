@@ -1,0 +1,977 @@
+#!/usr/explorer/bin/explorer cxModuleResources ascii 5.0
+#Tag 0x10604
+# name Render
+# makefile 
+# includeDirs . -I$(CXSYSINCLUDE)
+# userLibs Render.lib
+# aout Render
+# mcwType cx_mcw_MFC
+# mdwFileName Render.mdw.c
+# reWrapOkay cx_true
+# collaborative cx_false
+# linkageType cx_linkage_cplusplus
+# filename SoFotisGeneric.cpp SoFotis3Dragger.cpp event.cpp Render.rc
+# language cx_lang_cplusplus
+# numFunctions 1
+# inPort cxGeometry
+# inPort cxGeometry
+# inPort cxGeometry
+# inPort cxGeometry
+# inPort cxParameter
+# inPort cxParameter
+# inPort cxParameter
+# inPort cxParameter
+# inPort cxParameter
+# inPort cxParameter
+# inPort cxParameter
+# inPort cxParameter
+# inPort cxParameter
+# outPort cxGeometry
+# outPort cxGeometry
+# outPort cxParameter
+# outPort cxLattice
+# outPort cxPick
+# typeLibs libcxGeometry.a
+# typeLibs libcxLattice.a
+# typeLibs libcxParameter.a
+# typeLibs libcxPick.a
+# installFileList 
+
+(cxModuleResources
+    {	(moduleInfo =cxAdminRes
+	    {	(name "Render")
+		(type =cxModuleClass
+		    {	(className "")
+		    }
+		)
+		(author "")
+		(creationDate =cxDate "Mon Nov 15 14:48:14 1999\n")
+		(lastModDate =cxDate "Fri Dec 13 16:00:13 2002\n")
+		(institution "")
+		(permissions =cxModulePerms
+		    {	(code 0)
+		    }
+		)
+		(machines =cxMachineSet
+		    {	(numMachines 1)
+			(machines @0)
+		    }
+		)
+	    }
+	)
+	(sourceInfo =cxSourceRes
+	    {	(buildInfo =cxBuildRes
+		    {	(makefile =cxFileName "")
+			(includeDirs ". -I$(CXSYSINCLUDE)")
+			(userLibs "Render.lib")
+			(headers =cxFileName "")
+			(mcwType =cxMcwType cx_mcw_MFC)
+			(mcwFileName =cxFileName "")
+			(mdwFileName =cxFileName "Render.mdw.c")
+			(semiWrapped =cxBoolean cx_false)
+			(reWrapOkay =cxBoolean cx_true)
+			(linkageType =cxLinkageType cx_linkage_cplusplus)
+		    }
+		)
+		(numFunctions 1)
+		(functionInfo @1)
+		(hooks =cxHookFuncRes
+		    {	(init "render_init")
+			(remove "")
+			(connectInput NULL)
+			(connectOutput "render_connect_output")
+			(disconnectInput "render_disconnect_input")
+			(disconnectOutput "render_disconnect_output")
+			(create NULL)
+		    }
+		)
+	    }
+	)
+	(documentInfo =cxDocumentRes
+	    {	(manPage =cxFileName "Render.doc")
+		(samples 1)
+		(sampleInfo @2)
+	    }
+	)
+	(nPortIn 13)
+	(portInInfo @3)
+	(nPortOut 5)
+	(portOutInfo @4)
+	(panels 1)
+	(conPanInfo @5)
+	(execInfo =cxExecRes
+	    {	(aout =cxFileName "Render")
+		(firingRule =cxFiringRule
+		    {	(text NULL)
+		    }
+		)
+		(noStdio =cxBoolean cx_false)
+		(controlType =cxControlType cx_control_repeat)
+	    }
+	)
+    }
+)
+(@0 =cxPortedMachine [1] cx_ported_sgi)
+(@1 =cxFunctionRes [1]
+    {	(name "render")
+	(filename =cxFileName "SoFotisGeneric.cpp SoFotis3Dragger.cpp event.cpp Render.rc")
+	(mdwAInfo =cxFunctionArgInfo
+	    {	(hasReturn =cxBoolean cx_false)
+		(ret cx_false
+		)
+		(numArgs 0)
+	    }
+	)
+	(mdwEInfo =cxFunctionErrCodeInfo
+	    {	(returnCodeOrigin =cxReturnCodeSource
+		cx_return_code_unconnected)
+		(rc cx_return_code_unconnected
+		)
+		(testVal 0)
+		(comparesIsSuccess =cxBoolean cx_false)
+	    }
+	)
+	(mdwPInfo =cxFunctionOPortInfo
+	    {	(numPorts 5)
+		(ports @6)
+	    }
+	)
+	(direction =cxFunctionDirection cx_func_forward)
+	(language =cxFunctionLanguage cx_lang_cplusplus)
+	(clippingFlag =cxErrorCode cx_err_none)
+    }
+)
+(@2 =cxModuleName [1]
+    {	(name "picking.map")
+    }
+)
+(@3 =cxPortRes [13]
+    {	(type "cxGeometry")
+	(name "Input")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_true)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @7)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxGeometry")
+	(name "Annotation")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_true)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @8)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxGeometry")
+	(name "Screen")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_true)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @9)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxGeometry")
+	(name "Input Camera")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_true)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @10)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "Snap")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_true)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "Snap On Redraw")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_true)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "Window")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "Background Color")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_true)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "Viewing")
+	(invisible =cxBoolean cx_true)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_true)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "UserPickMode")
+	(invisible =cxBoolean cx_true)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_true)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "Camera update")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_true)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "Decoration")
+	(invisible =cxBoolean cx_true)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_true)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "Save camera")
+	(invisible =cxBoolean cx_true)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_true)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+)
+(@4 =cxPortRes [5]
+    {	(type "cxGeometry")
+	(name "Output Camera")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_output)
+	(p cx_port_output
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @11)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxGeometry")
+	(name "Picked Geometry")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_output)
+	(p cx_port_output
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @12)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "Sync")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_output)
+	(p cx_port_output
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxLattice")
+	(name "Snapshot")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_output)
+	(p cx_port_output
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @13)
+		(nConstr 7)
+		(constraints @14)
+	    }
+	)
+    }
+    {	(type "cxPick")
+	(name "Pick")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_output)
+	(p cx_port_output
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @15)
+		(nConstr 0)
+	    }
+	)
+    }
+)
+(@5 =cxConPanRes [1]
+    {	(instIcon =cxIcon
+	    {	(style cx_icon_xbm)
+		(u cx_icon_xbm
+		    {	(file =cxFileName NULL)
+		    }
+		)
+	    }
+	)
+	(frame
+	    {	(title "Render")
+		(style "")
+		(fgColor "")
+		(bgColor "")
+		(textColor "")
+	    }
+	)
+	(style =cxFrameStyle cx_frame_full)
+	(disabled =cxBoolean cx_false)
+	(helpMapped =cxBoolean cx_false)
+	(fireEdMapped =cxBoolean cx_false)
+	(size =cxWidgetSize
+	    {	(width 0)
+		(height 0)
+	    }
+	)
+	(position =cxWidgetPos
+	    {	(x 0)
+		(y 0)
+	    }
+	)
+	(numWidgets 8)
+	(widgets @16)
+	(menuBarRes @17)
+    }
+)
+(@6 =cxFunctionOPortDetail [5]
+    {	(portID 0)
+	(numFields 0)
+    }
+    {	(portID 0)
+	(numFields 0)
+    }
+    {	(portID 0)
+	(numFields 0)
+    }
+    {	(portID 0)
+	(numFields 0)
+    }
+    {	(portID 0)
+	(numFields 0)
+    }
+)
+(@7 [1] "cxGeometry")
+(@8 [1] "cxGeometry")
+(@9 [1] "cxGeometry")
+(@10 [1] "cxGeometry")
+(@11 [1] "cxGeometry")
+(@12 [1] "cxGeometry")
+(@13 [1] "cxLattice")
+(@14 =cxMemberConstraint [7]
+    {	(memberName "->data")
+	(nRange 1)
+	(range @18)
+    }
+    {	(memberName "->coord")
+	(nRange 1)
+	(range @19)
+    }
+    {	(memberName "->nDim")
+	(nRange 1)
+	(range @20)
+    }
+    {	(memberName "->data->nDataVar")
+	(nRange 1)
+	(range @21)
+    }
+    {	(memberName "->data->primType")
+	(nRange 1)
+	(range @22)
+    }
+    {	(memberName "->coord->coordType")
+	(nRange 1)
+	(range @23)
+    }
+    {	(memberName "->coord->c.cx_coord_curvilinear.nCoordVar")
+	(nRange 1)
+	(range @24)
+    }
+)
+(@15 [1] "cxPick")
+(@16 =cxWidgetRes [8]
+    {	(name "Background Color")
+	(port "Background Color")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_text)
+	(label "Background Color")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_set)
+	(honorHeight =cxTriStateBoolean cx_set)
+	(fixedWidth =cxTriStateBoolean cx_not_set)
+	(fixedHeight =cxTriStateBoolean cx_set)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 0)
+			(height 0)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 0)
+			(y 0)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 63)
+			(height 60)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 25)
+			(y 90)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_text
+	    {	(initVal "")
+	    }
+	)
+    }
+    {	(name "Viewing")
+	(port "Viewing")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_toggle_button)
+	(label "Viewing")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_set)
+	(honorHeight =cxTriStateBoolean cx_set)
+	(fixedWidth =cxTriStateBoolean cx_set)
+	(fixedHeight =cxTriStateBoolean cx_set)
+	(stackingOrder 1)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 0)
+			(height 0)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 0)
+			(y 0)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 75)
+			(height 15)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 140)
+			(y 95)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_toggle_button
+	    {	(initVal =cxBoolean cx_true)
+	    }
+	)
+    }
+    {	(name "UserPickMode")
+	(port "UserPickMode")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_toggle_button)
+	(label "UserPickMode")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_set)
+	(honorHeight =cxTriStateBoolean cx_set)
+	(fixedWidth =cxTriStateBoolean cx_set)
+	(fixedHeight =cxTriStateBoolean cx_set)
+	(stackingOrder 2)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 0)
+			(height 0)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 0)
+			(y 0)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 75)
+			(height 15)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 140)
+			(y 60)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_toggle_button
+	    {	(initVal =cxBoolean cx_false)
+	    }
+	)
+    }
+    {	(name "Save camera")
+	(port "Save camera")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_text)
+	(label "Save camera")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_set)
+	(honorHeight =cxTriStateBoolean cx_set)
+	(fixedWidth =cxTriStateBoolean cx_not_set)
+	(fixedHeight =cxTriStateBoolean cx_set)
+	(stackingOrder 3)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 0)
+			(height 0)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 0)
+			(y 0)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 150)
+			(height 60)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 65)
+			(y 80)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_text
+	    {	(initVal "")
+	    }
+	)
+    }
+    {	(name "Window")
+	(port "Window")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_gl)
+	(label "Window")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_set)
+	(honorHeight =cxTriStateBoolean cx_set)
+	(fixedWidth =cxTriStateBoolean cx_not_set)
+	(fixedHeight =cxTriStateBoolean cx_not_set)
+	(stackingOrder 4)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 0)
+			(height 0)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 0)
+			(y 0)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 360)
+			(height 275)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 10)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_gl
+	)
+    }
+    {	(name "Snap")
+	(port "Snap")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_button)
+	(label "Snap")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_set)
+	(honorHeight =cxTriStateBoolean cx_set)
+	(fixedWidth =cxTriStateBoolean cx_set)
+	(fixedHeight =cxTriStateBoolean cx_set)
+	(stackingOrder 5)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 0)
+			(height 0)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 0)
+			(y 0)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 1)
+			(height 1)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 10)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_button
+	)
+    }
+    {	(name "Camera update")
+	(port "Camera update")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_text)
+	(label "Camera update")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_set)
+	(honorHeight =cxTriStateBoolean cx_set)
+	(fixedWidth =cxTriStateBoolean cx_not_set)
+	(fixedHeight =cxTriStateBoolean cx_set)
+	(stackingOrder 6)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 0)
+			(height 0)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 0)
+			(y 0)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 115)
+			(height 40)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 30)
+			(y 140)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_text
+	    {	(initVal "")
+	    }
+	)
+    }
+    {	(name "Decoration")
+	(port "Decoration")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_toggle_button)
+	(label "Decoration")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_set)
+	(honorHeight =cxTriStateBoolean cx_set)
+	(fixedWidth =cxTriStateBoolean cx_set)
+	(fixedHeight =cxTriStateBoolean cx_set)
+	(stackingOrder 7)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 0)
+			(height 0)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 0)
+			(y 0)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 75)
+			(height 15)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 35)
+			(y 30)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_toggle_button
+	    {	(initVal =cxBoolean cx_true)
+	    }
+	)
+    }
+)
+(@17 =cxMenuBarRes [1]
+    {	(hidingDefaultHelp =cxBoolean cx_true)
+	(numMenus 0)
+    }
+)
+(@18 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@19 =cxRange [1]
+    {	(lo "0")
+	(hi NULL)
+    }
+)
+(@20 =cxRange [1]
+    {	(lo "2")
+	(hi "2")
+    }
+)
+(@21 =cxRange [1]
+    {	(lo "3")
+	(hi "3")
+    }
+)
+(@22 =cxRange [1]
+    {	(lo "cx_prim_byte")
+	(hi "cx_prim_byte")
+    }
+)
+(@23 =cxRange [1]
+    {	(lo "cx_coord_uniform")
+	(hi "cx_coord_uniform")
+    }
+)
+(@24 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)

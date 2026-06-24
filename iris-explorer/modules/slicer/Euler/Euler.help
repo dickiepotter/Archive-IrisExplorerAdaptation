@@ -1,0 +1,54 @@
+
+     NAME
+            Euler
+
+     DESCRIPTION
+            <Replace this with your module description>
+
+     WIDGETS
+            vector -- Text
+                   <Describe the purpose of the widget here>
+
+            saved angle -- Text
+                   <Describe the purpose of the widget here>
+
+     OUTPUTS
+            Output -- Lattice
+                   (2-D,  1-vector,  float).  <Describe the purpose of
+                   the port here>
+
+     KNOWN PROBLEMS
+            <Describe any known problems/limitations here>
+
+     SEE ALSO
+            <List associated or related modules here>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

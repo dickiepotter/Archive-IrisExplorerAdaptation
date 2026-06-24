@@ -1,0 +1,77 @@
+NAME
+FV
+
+DESCRIPTION
+Cell-centred finite volume scheme for the
+3D advection equation with a point source.
+
+INPUTS
+WIDGETS
+control---Radio Box
+reset, pause, run
+Simulation control
+
+convectX---Slider
+Convection velocity: x-component
+
+convectY---Slider
+Convection velocity: y-component 
+
+convectZ---Slider
+Convection velocity: z-component
+
+Grid Size---Slider
+Number of grid lines per unit length of the domain.
+Disabled unless Control is set to Restart.
+
+X1---Slider
+Minimum x-coordinate
+
+X2---Slider
+Maximum x-coordinate 
+
+Y1---Slider
+Minimum y-coordinate 
+
+Y2---Slider
+Maximum y-coordinate 
+
+Z1---Slider
+Minimum z-coordinate 
+
+Z2---Slider
+Maximum z-coordinate
+
+timeZero---Slider
+Simulation start time
+
+timeMax---Slider
+Simulationn end time
+
+CFL---Slider
+CFL number - used to control the timestep size
+
+Run---Button
+Displays the current timestep 
+
+update---Slider
+Number of steps before parameters are updated from the panel 
+
+output---Slider
+Number of steps before a Pyramid file is output
+
+
+OUTPUTS
+
+Output---Pyramid
+(3-layer, 1..-baseLat, 3-D compression, unique-compression type)
+Mesh and solution data from the simulation
+
+
+PROBLEMS
+CFL parameter should be less than 0.1 otherwise
+Stability problems may occur
+
+
+SEE ALSO
+

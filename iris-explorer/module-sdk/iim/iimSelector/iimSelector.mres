@@ -1,0 +1,201 @@
+#!/usr/explorer/bin/explorer cxModuleResources ascii 5.0
+#Tag 0x10604
+# name iimSelector
+# makefile 
+# includeDirs 
+# userLibs 
+# aout iimSelector
+# mcwType cx_mcw_default
+# mdwFileName 
+# reWrapOkay cx_false
+# collaborative cx_false
+# linkageType cx_linkage_cplusplus
+# filename mouseinteractor.cpp glovedinteractor.cpp genericinteractor.cpp
+# language cx_lang_cplusplus
+# numFunctions 1
+# inPort cxParameter
+# outPort cxGeometry
+# typeLibs libcxGeometry.a
+# typeLibs libcxParameter.a
+# installFileList 
+
+(cxModuleResources
+    {	(moduleInfo =cxAdminRes
+	    {	(name "iimSelector")
+		(type =cxModuleClass
+		    {	(className "")
+		    }
+		)
+		(author "")
+		(creationDate =cxDate "")
+		(lastModDate =cxDate "Tue Aug 14 17:59:17 2007\n")
+		(institution "")
+		(permissions =cxModulePerms
+		    {	(code 0)
+		    }
+		)
+		(machines =cxMachineSet
+		    {	(numMachines 1)
+			(machines @0)
+		    }
+		)
+	    }
+	)
+	(sourceInfo =cxSourceRes
+	    {	(buildInfo =cxBuildRes
+		    {	(makefile =cxFileName "")
+			(includeDirs "")
+			(userLibs "")
+			(headers =cxFileName "")
+			(mcwType =cxMcwType cx_mcw_default)
+			(mcwFileName =cxFileName "")
+			(mdwFileName =cxFileName "")
+			(semiWrapped =cxBoolean cx_false)
+			(reWrapOkay =cxBoolean cx_false)
+			(linkageType =cxLinkageType cx_linkage_cplusplus)
+		    }
+		)
+		(numFunctions 1)
+		(functionInfo @1)
+		(hooks =cxHookFuncRes
+		    {	(init "initHook")
+			(remove NULL)
+			(connectInput NULL)
+			(connectOutput NULL)
+			(disconnectInput NULL)
+			(disconnectOutput NULL)
+			(create NULL)
+		    }
+		)
+	    }
+	)
+	(documentInfo =cxDocumentRes
+	    {	(manPage =cxFileName "iimSelector.doc")
+		(samples 0)
+	    }
+	)
+	(nPortIn 1)
+	(portInInfo @2)
+	(nPortOut 1)
+	(portOutInfo @3)
+	(panels 1)
+	(conPanInfo @4)
+	(execInfo =cxExecRes
+	    {	(aout =cxFileName "iimSelector")
+		(firingRule =cxFiringRule
+		    {	(text NULL)
+		    }
+		)
+		(noStdio =cxBoolean cx_false)
+		(controlType =cxControlType cx_control_none)
+	    }
+	)
+    }
+)
+(@0 =cxPortedMachine [1] cx_ported_sgi)
+(@1 =cxFunctionRes [1]
+    {	(name "mainFunc")
+	(filename =cxFileName "mouseinteractor.cpp glovedinteractor.cpp genericinteractor.cpp")
+	(mdwAInfo =cxFunctionArgInfo
+	    {	(hasReturn =cxBoolean cx_false)
+		(ret cx_false
+		)
+		(numArgs 0)
+	    }
+	)
+	(mdwEInfo =cxFunctionErrCodeInfo
+	    {	(returnCodeOrigin =cxReturnCodeSource
+		cx_return_code_unconnected)
+		(rc cx_return_code_unconnected
+		)
+		(testVal 0)
+		(comparesIsSuccess =cxBoolean cx_false)
+	    }
+	)
+	(mdwPInfo =cxFunctionOPortInfo
+	    {	(numPorts 1)
+		(ports @5)
+	    }
+	)
+	(direction =cxFunctionDirection cx_func_forward)
+	(language =cxFunctionLanguage cx_lang_cplusplus)
+	(clippingFlag =cxErrorCode cx_err_none)
+    }
+)
+(@2 =cxPortRes [1]
+    {	(type "cxParameter")
+	(name "input")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_true)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+)
+(@3 =cxPortRes [1]
+    {	(type "cxGeometry")
+	(name "geometry")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_output)
+	(p cx_port_output
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @6)
+		(nConstr 0)
+	    }
+	)
+    }
+)
+(@4 =cxConPanRes [1]
+    {	(instIcon =cxIcon
+	    {	(style cx_icon_xbm)
+		(u cx_icon_xbm
+		    {	(file =cxFileName NULL)
+		    }
+		)
+	    }
+	)
+	(frame
+	    {	(title "")
+		(style "")
+		(fgColor "")
+		(bgColor "")
+		(textColor "")
+	    }
+	)
+	(style =cxFrameStyle cx_frame_full)
+	(disabled =cxBoolean cx_false)
+	(helpMapped =cxBoolean cx_false)
+	(fireEdMapped =cxBoolean cx_false)
+	(size =cxWidgetSize
+	    {	(width 0)
+		(height 0)
+	    }
+	)
+	(position =cxWidgetPos
+	    {	(x 0)
+		(y 0)
+	    }
+	)
+	(numWidgets 0)
+    }
+)
+(@5 =cxFunctionOPortDetail [1]
+    {	(portID 0)
+	(numFields 0)
+    }
+)
+(@6 [1] "cxGeometry")

@@ -1,0 +1,289 @@
+#!/usr/explorer/bin/explorer cxModuleResources ascii 5.0
+#Tag 0x10604
+# name imMain
+# makefile 
+# includeDirs NULL
+# userLibs NULL
+# aout imMain
+# mcwType cx_mcw_default
+# mdwFileName imMain.mdw.c
+# reWrapOkay cx_true
+# collaborative cx_false
+# linkageType cx_linkage_cplusplus
+# filename UserFunction.cpp
+# language cx_lang_cplusplus
+# numFunctions 1
+# inPort cxLattice
+# inPort cxGeometry
+# outPort cxGeometry
+# typeLibs libcxGeometry.a
+# typeLibs libcxLattice.a
+# installFileList 
+
+(cxModuleResources
+    {	(moduleInfo =cxAdminRes
+	    {	(name "imMain")
+		(type =cxModuleClass
+		    {	(className "")
+		    }
+		)
+		(author "")
+		(creationDate =cxDate "Thu Aug 09 12:56:14 2007\n")
+		(lastModDate =cxDate "Thu Aug 16 17:59:59 2007\n")
+		(institution "")
+		(permissions =cxModulePerms
+		    {	(code 0)
+		    }
+		)
+		(machines =cxMachineSet
+		    {	(numMachines 1)
+			(machines @0)
+		    }
+		)
+	    }
+	)
+	(sourceInfo =cxSourceRes
+	    {	(buildInfo =cxBuildRes
+		    {	(makefile =cxFileName "")
+			(includeDirs NULL)
+			(userLibs NULL)
+			(headers =cxFileName "")
+			(mcwType =cxMcwType cx_mcw_default)
+			(mcwFileName =cxFileName "")
+			(mdwFileName =cxFileName "imMain.mdw.c")
+			(semiWrapped =cxBoolean cx_false)
+			(reWrapOkay =cxBoolean cx_true)
+			(linkageType =cxLinkageType cx_linkage_cplusplus)
+		    }
+		)
+		(numFunctions 1)
+		(functionInfo @1)
+		(hooks =cxHookFuncRes
+		    {	(init "Init")
+			(remove "Remove")
+			(connectInput "ConnectInput")
+			(connectOutput "ConnectOutput")
+			(disconnectInput "DiconnectInput")
+			(disconnectOutput "DisconnectOutput")
+			(create "Create")
+		    }
+		)
+	    }
+	)
+	(documentInfo =cxDocumentRes
+	    {	(manPage =cxFileName "imMain.doc")
+		(samples 0)
+	    }
+	)
+	(nPortIn 2)
+	(portInInfo @2)
+	(nPortOut 1)
+	(portOutInfo @3)
+	(panels 1)
+	(conPanInfo @4)
+	(execInfo =cxExecRes
+	    {	(aout =cxFileName "imMain")
+		(firingRule =cxFiringRule
+		    {	(text NULL)
+		    }
+		)
+		(noStdio =cxBoolean cx_false)
+		(controlType =cxControlType cx_control_none)
+	    }
+	)
+    }
+)
+(@0 =cxPortedMachine [1] cx_ported_sgi)
+(@1 =cxFunctionRes [1]
+    {	(name "UserFunction")
+	(filename =cxFileName "UserFunction.cpp")
+	(mdwAInfo =cxFunctionArgInfo
+	    {	(hasReturn =cxBoolean cx_false)
+		(ret cx_false
+		)
+		(numArgs 0)
+	    }
+	)
+	(mdwEInfo =cxFunctionErrCodeInfo
+	    {	(returnCodeOrigin =cxReturnCodeSource
+		cx_return_code_unconnected)
+		(rc cx_return_code_unconnected
+		)
+		(testVal 0)
+		(comparesIsSuccess =cxBoolean cx_false)
+	    }
+	)
+	(mdwPInfo =cxFunctionOPortInfo
+	    {	(numPorts 1)
+		(ports @5)
+	    }
+	)
+	(direction =cxFunctionDirection cx_func_forward)
+	(language =cxFunctionLanguage cx_lang_cplusplus)
+	(clippingFlag =cxErrorCode cx_err_none)
+    }
+)
+(@2 =cxPortRes [2]
+    {	(type "cxLattice")
+	(name "latInput")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_true)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @6)
+		(nConstr 7)
+		(constraints @7)
+	    }
+	)
+    }
+    {	(type "cxGeometry")
+	(name "geomInput")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_true)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @8)
+		(nConstr 0)
+	    }
+	)
+    }
+)
+(@3 =cxPortRes [1]
+    {	(type "cxGeometry")
+	(name "geomOutput")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_output)
+	(p cx_port_output
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @9)
+		(nConstr 0)
+	    }
+	)
+    }
+)
+(@4 =cxConPanRes [1]
+    {	(instIcon =cxIcon
+	    {	(style cx_icon_xbm)
+		(u cx_icon_xbm
+		    {	(file =cxFileName NULL)
+		    }
+		)
+	    }
+	)
+	(frame
+	    {	(title "")
+		(style "")
+		(fgColor "")
+		(bgColor "")
+		(textColor "")
+	    }
+	)
+	(style =cxFrameStyle cx_frame_full)
+	(disabled =cxBoolean cx_false)
+	(helpMapped =cxBoolean cx_false)
+	(fireEdMapped =cxBoolean cx_false)
+	(size =cxWidgetSize
+	    {	(width 0)
+		(height 0)
+	    }
+	)
+	(position =cxWidgetPos
+	    {	(x 0)
+		(y 0)
+	    }
+	)
+	(numWidgets 0)
+    }
+)
+(@5 =cxFunctionOPortDetail [1]
+    {	(portID 0)
+	(numFields 0)
+    }
+)
+(@6 [1] "cxLattice")
+(@7 =cxMemberConstraint [7]
+    {	(memberName "->data")
+	(nRange 1)
+	(range @10)
+    }
+    {	(memberName "->coord")
+	(nRange 1)
+	(range @11)
+    }
+    {	(memberName "->nDim")
+	(nRange 1)
+	(range @12)
+    }
+    {	(memberName "->data->nDataVar")
+	(nRange 1)
+	(range @13)
+    }
+    {	(memberName "->data->primType")
+	(nRange 1)
+	(range @14)
+    }
+    {	(memberName "->coord->coordType")
+	(nRange 1)
+	(range @15)
+    }
+    {	(memberName "->coord->c.cx_coord_curvilinear.nCoordVar")
+	(nRange 1)
+	(range @16)
+    }
+)
+(@8 [1] "cxGeometry")
+(@9 [1] "cxGeometry")
+(@10 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@11 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@12 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@13 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@14 =cxRange [1]
+    {	(lo "cx_prim_byte")
+	(hi "cx_prim_double")
+    }
+)
+(@15 =cxRange [1]
+    {	(lo "cx_coord_uniform")
+	(hi "cx_coord_curvilinear")
+    }
+)
+(@16 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)

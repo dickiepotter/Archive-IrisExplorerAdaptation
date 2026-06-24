@@ -1,0 +1,108 @@
+
+     NAME
+            PyrToGeom
+
+     DESCRIPTION
+            This  module  takes  pyramid data and interprets layers as
+            points,  edges,   polygons,   and   polyhedra,   producing
+            appropriate geometry output.  It will take pyramids of any
+            number of layers, displaying up to  the  first  four.   0D
+            display is vertices, 1D is vectors, 2D is polygons, and 3D
+            is  external  faces   (faces   belonging   to   only   one
+            polyhedron).
+
+            The  coordinates  of the base lattice are assumed to be in
+            3D.  Extra coordinates  will  be  discarded,  and  missing
+            coordinates will be supplied as zero.
+
+            The  Dimension  input  determines  how the pyramid will be
+            displayed.  If the dimension requested is higher than  the
+            dimensionality  of  the pyramid, the dimensionality of the
+            pyramid will be  used,  up  to  a  maximum  of  2D.  If  a
+            dimension  greater  than  two  is requested, then only the
+            unshared (i.e., external) faces are displayed.
+
+            The geometry can be given colors from the base lattice  or
+            from  data  at  the  layer  being displayed, if any. If an
+            optional colormap is present, the Coloring  switch  allows
+            passing a channel selected by the component slider through
+            the colormap, or direct interpretation of the lattice data
+            as  color.   In  direct  interpretation,  a single channel
+            becomes greyscale, two channels map to red and  cyan,  and
+            three  or more channels become RGB with the extra channels
+            ignored.
+
+            If an optional transform is fed  in,  the  nodes  will  be
+            transformed before being output as geometry.
+
+            Compressed  pyramid  data  are  accepted for input and all
+            levels of compression are processed efficiently.
+
+     INPUTS
+            Input -- Pyramid
+                   (1..-layer,  1..-baseLat,   n-D   compression,   n-
+                   compression  type).   This  is the input pyramid to
+                   convert.
+
+            Colormap -- Lattice (Opt.)
+                   (1-D,  4-vector,  float).   This  is  an   optional
+                   colormap.   It  can  be  turned on and off with the
+                   Coloring input.
+
+            Transform -- Lattice (Opt.)
+                   (2-D,  1-vector,  float).   This  is  an   optional
+                   transformation  that  will  be  applied to the node
+
+     WIDGETS
+            Dimension -- Option Menu
+                   (0,   1,   2,   3).    This   input   chooses   the
+                   dimensionality of the geometric representation.
+                   0         display vertices
+                   1         display edges
+                   2         display polygons
+                   3         display external (unshared) polygons
+
+            Component -- Slider
+                   This chooses a channel of the data lattice to which
+                   to apply a colormap.  This input is  ignored  if  a
+                   colormap is not present or colormap application has
+                   been deselected.
+
+            Coloring -- Option Menu
+                   (Colormap,   R-G-B,   Texture).     This    toggles
+                   application  of  a  colormap  to  the  base lattice
+                   channel  selected  by  Component.  If  texture   is
+                   selected,  the data is passed through a texture map
+                   to give the appearance  of  banded  contours.  This
+                   option  is  only  available for data defined on the
+                   base lattice.
+
+            Level -- Radio Box
+                   (Vertex Data, Level  Data).   This  option  selects
+                   whether  to color the geometry according to data at
+                   the  base  lattice  or  data  at  the  layer  being
+                   displayed, if it exists.
+
+            Csize -- Slider
+                   If  texture  mapping  is  used, the number of color
+                   bands is set to 2**n colors, where n is  the  value
+                   of  the  Csize  widget. This widget is only visible
+                   when texture mapping is in force.
+
+     OUTPUTS
+            Output -- Geometry
+                   This is the output geometry.
+
+     KNOWN PROBLEMS
+            Using  2D  display  on  a  4-layer  pyramid  creates  many
+            internal  faces  that are obscured when rendered. Using 3D
+            display (unshared faces) suppresses creation  of  goemetry
+            for  any face that appears twice.  PyrToGeom uses the same
+            code as ExteriorPyr to perform  this  calculation.  If  no
+            colormap  is present, and texture coloring is selected, it
+            will use a default colormap with a data range  of  0.0  to
+            1.0, which may not coincide with the actual data range.
+
+     SEE ALSO
+            CropPyr,  ExteriorPyr, IsosurfacePyr, LatToGeom, LatToPyr,
+            ReadPyr, Render

@@ -1,0 +1,302 @@
+#!/usr/explorer/bin/explorer cxModuleResources ascii 5.0
+#Tag 0x10604
+# name iimRenderLite
+# makefile 
+# includeDirs 
+# userLibs 
+# aout iimRenderLite
+# mcwType cx_mcw_XWindows
+# mdwFileName iimRenderLite.mdw.c
+# reWrapOkay cx_true
+# collaborative cx_false
+# linkageType cx_linkage_cplusplus
+# filename renderlite.cpp
+# language cx_lang_cplusplus
+# numFunctions 1
+# inPort cxGeometry
+# inPort cxParameter
+# typeLibs libcxGeometry.a
+# typeLibs libcxParameter.a
+# installFileList 
+
+(cxModuleResources
+    {	(moduleInfo =cxAdminRes
+	    {	(name "iimRenderLite")
+		(type =cxModuleClass
+		    {	(className "")
+		    }
+		)
+		(author "")
+		(creationDate =cxDate "")
+		(lastModDate =cxDate "Tue Aug 14 17:57:04 2007\n")
+		(institution "")
+		(permissions =cxModulePerms
+		    {	(code 0)
+		    }
+		)
+		(machines =cxMachineSet
+		    {	(numMachines 1)
+			(machines @0)
+		    }
+		)
+	    }
+	)
+	(sourceInfo =cxSourceRes
+	    {	(buildInfo =cxBuildRes
+		    {	(makefile =cxFileName "")
+			(includeDirs "")
+			(userLibs "")
+			(headers =cxFileName "")
+			(mcwType =cxMcwType cx_mcw_XWindows)
+			(mcwFileName =cxFileName "")
+			(mdwFileName =cxFileName "iimRenderLite.mdw.c")
+			(semiWrapped =cxBoolean cx_false)
+			(reWrapOkay =cxBoolean cx_true)
+			(linkageType =cxLinkageType cx_linkage_cplusplus)
+		    }
+		)
+		(numFunctions 1)
+		(functionInfo @1)
+		(hooks =cxHookFuncRes
+		    {	(init "render_init")
+			(remove "render_Remove")
+			(connectInput "render_connect_input")
+			(connectOutput "render_connect_output")
+			(disconnectInput "render_disconnect_input")
+			(disconnectOutput "render_disconnect_output")
+			(create "render_create")
+		    }
+		)
+	    }
+	)
+	(documentInfo =cxDocumentRes
+	    {	(manPage =cxFileName "iimRenderLite.doc")
+		(samples 1)
+		(sampleInfo @2)
+	    }
+	)
+	(nPortIn 2)
+	(portInInfo @3)
+	(nPortOut 0)
+	(panels 1)
+	(conPanInfo @4)
+	(execInfo =cxExecRes
+	    {	(aout =cxFileName "iimRenderLite")
+		(firingRule =cxFiringRule
+		    {	(text NULL)
+		    }
+		)
+		(noStdio =cxBoolean cx_false)
+		(controlType =cxControlType cx_control_none)
+	    }
+	)
+    }
+)
+(@0 =cxPortedMachine [1] cx_ported_sgi)
+(@1 =cxFunctionRes [1]
+    {	(name "renderlite")
+	(filename =cxFileName "renderlite.cpp")
+	(mdwAInfo =cxFunctionArgInfo
+	    {	(hasReturn =cxBoolean cx_false)
+		(ret cx_false
+		)
+		(numArgs 4)
+		(arg @5)
+	    }
+	)
+	(mdwEInfo =cxFunctionErrCodeInfo
+	    {	(returnCodeOrigin =cxReturnCodeSource
+		cx_return_code_unconnected)
+		(rc cx_return_code_unconnected
+		)
+		(testVal 0)
+		(comparesIsSuccess =cxBoolean cx_false)
+	    }
+	)
+	(mdwPInfo =cxFunctionOPortInfo
+	    {	(numPorts 0)
+	    }
+	)
+	(direction =cxFunctionDirection cx_func_forward)
+	(language =cxFunctionLanguage cx_lang_cplusplus)
+	(clippingFlag =cxErrorCode cx_err_none)
+    }
+)
+(@2 =cxModuleName [1]
+    {	(name "")
+    }
+)
+(@3 =cxPortRes [2]
+    {	(type "cxGeometry")
+	(name "geometry")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_true)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @6)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "window")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+)
+(@4 =cxConPanRes [1]
+    {	(instIcon =cxIcon
+	    {	(style cx_icon_xbm)
+		(u cx_icon_xbm
+		    {	(file =cxFileName NULL)
+		    }
+		)
+	    }
+	)
+	(frame
+	    {	(title "")
+		(style "")
+		(fgColor "")
+		(bgColor "")
+		(textColor "")
+	    }
+	)
+	(style =cxFrameStyle cx_frame_full)
+	(disabled =cxBoolean cx_false)
+	(helpMapped =cxBoolean cx_false)
+	(fireEdMapped =cxBoolean cx_false)
+	(size =cxWidgetSize
+	    {	(width 0)
+		(height 0)
+	    }
+	)
+	(position =cxWidgetPos
+	    {	(x 0)
+		(y 0)
+	    }
+	)
+	(numWidgets 1)
+	(widgets @7)
+    }
+)
+(@5 =cxFunctionArg [4]
+    {	(name "geo")
+	(type "cxGeometry")
+	(array =cxBoolean cx_false)
+	(byReference =cxBoolean cx_false)
+	(freeWhenDone =cxBoolean cx_false)
+	(rw =cxRDWRType cx_arg_rdwr)
+	(argOrigin =cxArgSource cx_arg_port)
+	(in cx_arg_port
+	    {	(portNum 0)
+		(field "")
+	    }
+	)
+    }
+    {	(name "geoFlag")
+	(type "cx_var_integer")
+	(array =cxBoolean cx_false)
+	(byReference =cxBoolean cx_false)
+	(freeWhenDone =cxBoolean cx_false)
+	(rw =cxRDWRType cx_arg_rdwr)
+	(argOrigin =cxArgSource cx_arg_data_changed)
+	(in cx_arg_data_changed
+	    {	(portNum 0)
+	    }
+	)
+    }
+    {	(name "window")
+	(type "cx_var_long")
+	(array =cxBoolean cx_false)
+	(byReference =cxBoolean cx_false)
+	(freeWhenDone =cxBoolean cx_false)
+	(rw =cxRDWRType cx_arg_rdwr)
+	(argOrigin =cxArgSource cx_arg_port)
+	(in cx_arg_port
+	    {	(portNum 1)
+		(field "->p.cx_param_long.val")
+	    }
+	)
+    }
+    {	(name "windowFlag")
+	(type "cx_var_integer")
+	(array =cxBoolean cx_false)
+	(byReference =cxBoolean cx_false)
+	(freeWhenDone =cxBoolean cx_false)
+	(rw =cxRDWRType cx_arg_rdwr)
+	(argOrigin =cxArgSource cx_arg_data_changed)
+	(in cx_arg_data_changed
+	    {	(portNum 1)
+	    }
+	)
+    }
+)
+(@6 [1] "cxGeometry")
+(@7 =cxWidgetRes [1]
+    {	(name NULL)
+	(port "window")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_gl)
+	(label "window")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_not_set)
+	(fixedHeight =cxTriStateBoolean cx_not_set)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 0)
+			(height 0)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 0)
+			(y 0)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 372)
+			(height 372)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 10)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_gl
+	)
+    }
+)

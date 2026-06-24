@@ -1,0 +1,448 @@
+#!/usr/explorer/bin/explorer cxModuleResources ascii 5.0
+#Tag 0x10604
+# name IrisModuleManagedPrototype
+# makefile 
+# includeDirs NULL
+# userLibs NULL
+# aout IrisModuleManagedPrototype
+# mcwType cx_mcw_default
+# mdwFileName 
+# reWrapOkay cx_false
+# collaborative cx_false
+# linkageType cx_linkage_cplusplus
+# filename UserFunction.Cpp
+# language cx_lang_cplusplus
+# numFunctions 1
+# inPort cxLattice
+# inPort cxGeometry
+# inPort cxParameter
+# outPort cxLattice
+# outPort cxGeometry
+# typeLibs libcxGeometry.a
+# typeLibs libcxLattice.a
+# typeLibs libcxParameter.a
+# installFileList 
+
+(cxModuleResources
+    {	(moduleInfo =cxAdminRes
+	    {	(name "IrisModuleManagedPrototype")
+		(type =cxModuleClass
+		    {	(className "")
+		    }
+		)
+		(author "")
+		(creationDate =cxDate "Fri Aug 10 14:34:59 2007\n")
+		(lastModDate =cxDate "Fri Aug 10 15:53:53 2007\n")
+		(institution "")
+		(permissions =cxModulePerms
+		    {	(code 0)
+		    }
+		)
+		(machines =cxMachineSet
+		    {	(numMachines 1)
+			(machines @0)
+		    }
+		)
+	    }
+	)
+	(sourceInfo =cxSourceRes
+	    {	(buildInfo =cxBuildRes
+		    {	(makefile =cxFileName "")
+			(includeDirs NULL)
+			(userLibs NULL)
+			(headers =cxFileName "")
+			(mcwType =cxMcwType cx_mcw_default)
+			(mcwFileName =cxFileName "")
+			(mdwFileName =cxFileName "")
+			(semiWrapped =cxBoolean cx_false)
+			(reWrapOkay =cxBoolean cx_false)
+			(linkageType =cxLinkageType cx_linkage_cplusplus)
+		    }
+		)
+		(numFunctions 1)
+		(functionInfo @1)
+		(hooks =cxHookFuncRes
+		    {	(init "Init")
+			(remove "Remove")
+			(connectInput "ConnectIn")
+			(connectOutput "ConnectOut")
+			(disconnectInput "DisconnectIn")
+			(disconnectOutput "DisconnectOut")
+			(create "Create")
+		    }
+		)
+	    }
+	)
+	(documentInfo =cxDocumentRes
+	    {	(manPage =cxFileName "IrisModuleManagedPrototype.doc")
+		(samples 0)
+	    }
+	)
+	(nPortIn 3)
+	(portInInfo @2)
+	(nPortOut 2)
+	(portOutInfo @3)
+	(panels 1)
+	(conPanInfo @4)
+	(execInfo =cxExecRes
+	    {	(aout =cxFileName "IrisModuleManagedPrototype")
+		(firingRule =cxFiringRule
+		    {	(text NULL)
+		    }
+		)
+		(noStdio =cxBoolean cx_false)
+		(controlType =cxControlType cx_control_none)
+	    }
+	)
+    }
+)
+(@0 =cxPortedMachine [1] cx_ported_sgi)
+(@1 =cxFunctionRes [1]
+    {	(name "UserFunction")
+	(filename =cxFileName "UserFunction.Cpp")
+	(mdwAInfo =cxFunctionArgInfo
+	    {	(hasReturn =cxBoolean cx_true)
+		(ret cx_true
+		    {	(name "retVal")
+			(type "cx_var_integer")
+			(array =cxBoolean cx_false)
+		    }
+		)
+		(numArgs 3)
+		(arg @5)
+	    }
+	)
+	(mdwEInfo =cxFunctionErrCodeInfo
+	    {	(returnCodeOrigin =cxReturnCodeSource
+		cx_return_code_unconnected)
+		(rc cx_return_code_unconnected
+		)
+		(testVal 0)
+		(comparesIsSuccess =cxBoolean cx_false)
+	    }
+	)
+	(mdwPInfo =cxFunctionOPortInfo
+	    {	(numPorts 2)
+		(ports @6)
+	    }
+	)
+	(direction =cxFunctionDirection cx_func_forward)
+	(language =cxFunctionLanguage cx_lang_cplusplus)
+	(clippingFlag =cxErrorCode cx_err_none)
+    }
+)
+(@2 =cxPortRes [3]
+    {	(type "cxLattice")
+	(name "lattice")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @7)
+		(nConstr 7)
+		(constraints @8)
+	    }
+	)
+    }
+    {	(type "cxGeometry")
+	(name "geom")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @9)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "param")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+)
+(@3 =cxPortRes [2]
+    {	(type "cxLattice")
+	(name "latOut")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_output)
+	(p cx_port_output
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @10)
+		(nConstr 7)
+		(constraints @11)
+	    }
+	)
+    }
+    {	(type "cxGeometry")
+	(name "geomOut")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_output)
+	(p cx_port_output
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @12)
+		(nConstr 0)
+	    }
+	)
+    }
+)
+(@4 =cxConPanRes [1]
+    {	(instIcon =cxIcon
+	    {	(style cx_icon_xbm)
+		(u cx_icon_xbm
+		    {	(file =cxFileName NULL)
+		    }
+		)
+	    }
+	)
+	(frame
+	    {	(title "")
+		(style "")
+		(fgColor "")
+		(bgColor "")
+		(textColor "")
+	    }
+	)
+	(style =cxFrameStyle cx_frame_full)
+	(disabled =cxBoolean cx_false)
+	(helpMapped =cxBoolean cx_false)
+	(fireEdMapped =cxBoolean cx_false)
+	(size =cxWidgetSize
+	    {	(width 0)
+		(height 0)
+	    }
+	)
+	(position =cxWidgetPos
+	    {	(x 0)
+		(y 0)
+	    }
+	)
+	(numWidgets 0)
+    }
+)
+(@5 =cxFunctionArg [3]
+    {	(name "geomIn")
+	(type "cxGeneric")
+	(array =cxBoolean cx_false)
+	(byReference =cxBoolean cx_false)
+	(freeWhenDone =cxBoolean cx_false)
+	(rw =cxRDWRType cx_arg_rdwr)
+	(argOrigin =cxArgSource cx_arg_port)
+	(in cx_arg_port
+	    {	(portNum 1)
+		(field "")
+	    }
+	)
+    }
+    {	(name "latOut")
+	(type "cxLattice")
+	(array =cxBoolean cx_false)
+	(byReference =cxBoolean cx_false)
+	(freeWhenDone =cxBoolean cx_false)
+	(rw =cxRDWRType cx_arg_rdwr)
+	(argOrigin =cxArgSource cx_arg_unconnected)
+	(in cx_arg_unconnected
+	)
+    }
+    {	(name "latIn")
+	(type "cxLattice")
+	(array =cxBoolean cx_false)
+	(byReference =cxBoolean cx_false)
+	(freeWhenDone =cxBoolean cx_false)
+	(rw =cxRDWRType cx_arg_rdwr)
+	(argOrigin =cxArgSource cx_arg_port)
+	(in cx_arg_port
+	    {	(portNum 0)
+		(field "")
+	    }
+	)
+    }
+)
+(@6 =cxFunctionOPortDetail [2]
+    {	(portID 0)
+	(numFields 1)
+	(portField @13)
+    }
+    {	(portID 0)
+	(numFields 0)
+    }
+)
+(@7 [1] "cxLattice")
+(@8 =cxMemberConstraint [7]
+    {	(memberName "->data")
+	(nRange 1)
+	(range @14)
+    }
+    {	(memberName "->coord")
+	(nRange 1)
+	(range @15)
+    }
+    {	(memberName "->nDim")
+	(nRange 1)
+	(range @16)
+    }
+    {	(memberName "->data->nDataVar")
+	(nRange 1)
+	(range @17)
+    }
+    {	(memberName "->data->primType")
+	(nRange 1)
+	(range @18)
+    }
+    {	(memberName "->coord->coordType")
+	(nRange 1)
+	(range @19)
+    }
+    {	(memberName "->coord->c.cx_coord_curvilinear.nCoordVar")
+	(nRange 1)
+	(range @20)
+    }
+)
+(@9 [1] "cxGeometry")
+(@10 [1] "cxLattice")
+(@11 =cxMemberConstraint [7]
+    {	(memberName "->data")
+	(nRange 1)
+	(range @21)
+    }
+    {	(memberName "->coord")
+	(nRange 1)
+	(range @22)
+    }
+    {	(memberName "->nDim")
+	(nRange 1)
+	(range @23)
+    }
+    {	(memberName "->data->nDataVar")
+	(nRange 1)
+	(range @24)
+    }
+    {	(memberName "->data->primType")
+	(nRange 1)
+	(range @25)
+    }
+    {	(memberName "->coord->coordType")
+	(nRange 1)
+	(range @26)
+    }
+    {	(memberName "->coord->c.cx_coord_curvilinear.nCoordVar")
+	(nRange 1)
+	(range @27)
+    }
+)
+(@12 [1] "cxGeometry")
+(@13 =cxOPortField [1]
+    {	(fieldDest "")
+	(fieldOrigin =cxFieldSource cx_field_func)
+	(f cx_field_func
+	    {	(argNum 1)
+	    }
+	)
+    }
+)
+(@14 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@15 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@16 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@17 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@18 =cxRange [1]
+    {	(lo "cx_prim_byte")
+	(hi "cx_prim_double")
+    }
+)
+(@19 =cxRange [1]
+    {	(lo "cx_coord_uniform")
+	(hi "cx_coord_curvilinear")
+    }
+)
+(@20 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@21 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@22 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@23 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@24 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@25 =cxRange [1]
+    {	(lo "cx_prim_byte")
+	(hi "cx_prim_double")
+    }
+)
+(@26 =cxRange [1]
+    {	(lo "cx_coord_uniform")
+	(hi "cx_coord_curvilinear")
+    }
+)
+(@27 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)

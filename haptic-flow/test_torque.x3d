@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Group>
+
+	<ImportLibrary library='"torque\torque.dll"' />
+	<DeviceInfo>
+	<!--	<HLHapticsDevice DEF="HAPD" positionCalibration="1e-3 0 0 0 0 1e-3 0 0 0 0 1e-3 0 0 0 0 1" > -->
+<HLHapticsDevice DEF="HAPD" positionCalibration="0.0012 0 0 0 0 0.000848528137423857 -0.000848528137423857 -0.2 0 0.000848528137423857 0.000848528137423857 -0.1 0 0 0 1" orientationCalibration="1 0 0 0.785398163397448">
+
+			<Group containerField="stylus">
+				<Transform translation="0.02 0 0">
+					<Shape>
+						<Appearance>
+							<Material/>
+						</Appearance>
+						<!--<Sphere radius="0.005"/> -->
+						<Box size="0.02 0.000001 0.02" />
+					</Shape>
+				</Transform>
+				<Transform translation="0 0 0.08" rotation="1 0 0 1.570796" >
+					<Shape>
+						<Appearance>
+							<Material/>
+						</Appearance>
+						<Cylinder radius="0.005" height="0.1"/>
+					</Shape>
+				</Transform>
+			</Group>
+		</HLHapticsDevice>
+	</DeviceInfo>
+    
+	<ForceTorqueField DEF="FF" />
+
+	<PythonScript url="test_torque.py">
+		<ForceTorqueField USE="FF" containerField="references" />
+		<HLHapticsDevice USE="HAPD" containerField="references" />
+	</PythonScript>
+
+<!--
+	<ROUTE fromNode="PS" fromField="calculated_force"
+		toNode="FF" toField="force" />
+	<ROUTE fromNode="HAPD" fromField="trackerOrientation"
+		toNode="PS" toField="calculated_force" />
+-->
+
+</Group>

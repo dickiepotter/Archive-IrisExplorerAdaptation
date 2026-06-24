@@ -1,0 +1,26 @@
+# Build artifacts (this is a source archive — generated binaries are not tracked)
+*.obj
+*.exe
+*.dll
+*.so
+*.lib
+*.exp
+*.ilk
+*.pdb
+*.pch
+*.res
+*.RES
+.sconsign
+*.sconsign
+vc60.pch
+
+# Visual Studio / IDE
+*.aps
+*.ncb
+*.suo
+*.user
+.vs/
+
+# OS noise
+Thumbs.db
+.DS_Store

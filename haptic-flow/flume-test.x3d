@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Group DEF="ROOT_GROUP"> 
+	<DeviceInfo>
+	<HLHapticsDevice DEF="HAPD" positionCalibration="0.00352976005524 5.59089785384e-005 0.000653294788208 0.123951092362 0.000233255006606 0.00180234899744 -0.00209078402258 -0.436432361603 -0.000420954573201 0.00348124792799 0.00176013680175 -0.774875462055 0.0 0.0 0.0 1.0" orientationCalibration="-0.852734744549 0.372199863195 -0.366484165192 5.11201334">
+
+			<Group containerField="stylus">
+				<Transform translation="0.01 0 0">
+					<Shape>
+						<Appearance>
+							<Material/>
+						</Appearance>
+						<Box size="0.02 0.000001 0.02" />
+					</Shape>
+				</Transform>
+				<Transform translation="0 0 0.08" rotation="1 0 0 1.570796" >
+					<Shape>
+						<Appearance>
+							<Material/>
+						</Appearance>
+						<Cylinder radius="0.005" height="0.1"/>
+					</Shape>
+				</Transform>
+			</Group>
+		</HLHapticsDevice>
+	</DeviceInfo>
+
+<Transform translation="0 0 0" scale="0.7 0.7 0.7">
+<!--
+	<Shape>
+		<Appearance>
+			<Material/>
+		</Appearance>
+		<LineSet vertexCount="20">
+			<Coordinate point="	 0.3  0.15  0.3
+						 0.3  0.15 -0.3
+						 0.3 -0.15 -0.3
+						 0.3 -0.15  0.3
+						 0.3  0.15  0.3
+
+						-0.3  0.15  0.3
+						-0.3  0.15 -0.3
+						-0.3 -0.15 -0.3
+						-0.3 -0.15  0.3
+						-0.3  0.15  0.3
+
+						-0.3  0.15  0.3
+						-0.3  0.15 -0.3
+						 0.3  0.15 -0.3
+						 0.3  0.15  0.3
+						-0.3  0.15  0.3
+
+						-0.3 -0.15  0.3
+						-0.3 -0.15 -0.3
+						 0.3 -0.15 -0.3
+						 0.3 -0.15  0.3
+						-0.3 -0.15  0.3"
+
+			/>
+		</LineSet>
+	</Shape>
+-->
+
+	<LocalInfo DEF="INFO" />
+	<LocalInfo DEF="INFO_AXIS" />
+	<Group DEF="RIBBONS_GROUP" />
+	<Group DEF="TUBES_GROUP" />
+	<ForceTorqueField DEF="FF">
+		<FieldedVectorImageVolume DEF="VECVOL">
+			<VectorVolume  url="flume.raw" containerField="imageObject">
+				<RawImageLoader width="40" height="20" depth="10" bitsPerPixel="96"
+					pixelType="VEC3" pixelComponentType="SIGNED"
+					pixelSize="0.015 0.015 0.06" />
+			</VectorVolume>
+		</FieldedVectorImageVolume>	
+	</ForceTorqueField>
+
+	<ROUTE
+	fromNode="INFO" fromField="position"
+	toNode="VECVOL" toField="vector" />
+
+	<PythonScript DEF="PS" url="flume.py">
+		<ForceTorqueField USE="FF" containerField="references" />
+		<HLHapticsDevice USE="HAPD" containerField="references" />
+		<FieldedVectorImageVolume USE="VECVOL" containerField="references" />
+		<LocalInfo USE="INFO" containerField="references" /> 
+	</PythonScript>
+<DirectionalLight direction=".3 0 -1"/>
+<DirectionalLight direction="-.3 0.1 -1"/>
+	<Shape>
+		<IBFVStreamSurface DEF="SS" width="20" length="280" interspace="0.007" step="0.01">
+			<VHTKVectorDataNode USE="VECVOL" containerFied="vectorVolume" />
+		</IBFVStreamSurface>
+	</Shape>
+
+	<Shape>
+		<Appearance>
+			<Material transparency="0.8"/>
+		</Appearance>	
+		<Box size="0.6 0.3 0.6"/>
+	</Shape>
+
+<!-- stream ribbons stuff -->
+	<PythonScript DEF="PUT" url="PutStreamRibbons.py">
+
+		<Group USE="RIBBONS_GROUP" containerField="references" />
+
+		<Appearance
+			containerField="references">
+			<Material
+			ambientIntensity="1"/>
+		</Appearance>
+
+		<StreamRibbons
+			containerField="references"
+			useEuler="FALSE"
+			width="0.01"
+			step="0.001"
+			maxLength="1.0" >
+			<VHTKVectorDataNode USE="VECVOL" />
+			<MagnitudeVolume>
+				<VHTKVectorDataNode USE="VECVOL" />
+				<WindowFunction
+					level="1"
+					width="2" />
+			</MagnitudeVolume>
+		</StreamRibbons>
+
+	</PythonScript>
+
+<!-- stream ribbons stuff end -->
+<!-- stream tubes stuff -->
+	<PythonScript DEF="PUTT" url="PutStreamTubes.py">
+
+		<Group USE="TUBES_GROUP" containerField="references" />
+
+		<Appearance
+			containerField="references">
+			<Material
+			ambientIntensity="1"/>
+		</Appearance>
+
+		<StreamTubes
+			containerField="references"
+			useEuler="FALSE"
+			width="0.01"
+			step="0.001"
+			maxLength="1.0" >
+			<VHTKVectorDataNode USE="VECVOL" />
+			<MagnitudeVolume>
+				<VHTKVectorDataNode USE="VECVOL" />
+				<WindowFunction
+					level="1"
+					width="2" />
+			</MagnitudeVolume>
+		</StreamTubes>
+
+	</PythonScript>
+
+<!-- stream tubes stuff end -->
+
+<!--
+	<ROUTE
+	fromNode="HAPD" fromField="trackerPosition"
+	toNode="INFO" toField="position" />
+	<ROUTE
+	fromNode="INFO" fromField="position"
+	toNode="SS" toField="source" /> 
+-->
+	<ROUTE
+	fromNode="HAPD" fromField="trackerOrientation"
+	toNode="PS" toField="seedPos" />
+	<ROUTE
+	fromNode="HAPD" fromField="trackerPosition"
+	toNode="PS" toField="seedPos" />
+	<ROUTE
+	fromNode="SS" fromField="seedType"
+	toNode="PS" toField="seedPos" />
+	<ROUTE
+	fromNode="PS" fromField="seedPos"
+	toNode="INFO" toField="position" />
+	<ROUTE
+	fromNode="INFO" fromField="position"
+	toNode="SS" toField="source" /> 
+
+	<ROUTE
+	fromNode="PS" fromField="paddleAxis"
+	toNode="INFO_AXIS" toField="position" />
+	<ROUTE
+	fromNode="INFO_AXIS" fromField="position"
+	toNode="SS" toField="seedOrientation" />
+</Transform>
+
+	<KeyEventGenerator DEF="KEY_TEXTURE" keys="Tt" />
+	<KeyEventGenerator DEF="KEY_WIREFRAME" keys="Ww" />
+	<KeyEventGenerator DEF="KEY_INTERSPACE_UP" keys="I" />
+	<KeyEventGenerator DEF="KEY_INTERSPACE_DOWN" keys="i" />
+	<KeyEventGenerator DEF="KEY_STEP_UP" keys="S" />
+	<KeyEventGenerator DEF="KEY_STEP_DOWN" keys="s" />
+	<KeyEventGenerator DEF="KEY_WIDTH_UP" keys="H" />
+	<KeyEventGenerator DEF="KEY_WIDTH_DOWN" keys="h" />
+	<KeyEventGenerator DEF="KEY_LENGTH_UP" keys="G" />
+	<KeyEventGenerator DEF="KEY_LENGTH_DOWN" keys="g" />
+	<KeyEventGenerator DEF="KEY_SEEDTYPE_UP" keys="E" />
+	<KeyEventGenerator DEF="KEY_SEEDTYPE_DOWN" keys="e" />
+	<KeyEventGenerator DEF="KEY_PUTRIBBON" keys="rR" />
+	<KeyEventGenerator DEF="KEY_PUTTUBE" keys="uU" />
+
+
+
+	<FloatUpdater DEF="UPDATE_INTERSPACE" offset="0.001" />
+	<FloatUpdater DEF="UPDATE_STEP" offset="0.01" />
+	<IntUpdater DEF="UPDATE_WIDTH" offset="1" />
+	<IntUpdater DEF="UPDATE_LENGTH" offset="1" />
+	<IntUpdater DEF="UPDATE_SEEDTYPE" offset="1" />
+
+
+	<!-- bools -->
+	<ROUTE
+	fromNode="KEY_TEXTURE" fromField="event"
+	toNode="SS" toField="enableTexture" />
+	<ROUTE
+	fromNode="KEY_WIREFRAME" fromField="event"
+	toNode="SS" toField="wireFrame" />
+	<ROUTE
+	fromNode="KEY_PUTRIBBON" fromField="event"
+	toNode="PUT" toField="putStreamRibbons" />
+	<ROUTE
+	fromNode="INFO" fromField="position"
+	toNode="PUT" toField="putStreamRibbons" />
+	<ROUTE
+	fromNode="KEY_PUTTUBE" fromField="event"
+	toNode="PUTT" toField="putStreamTubes" />
+	<ROUTE
+	fromNode="INFO" fromField="position"
+	toNode="PUTT" toField="putStreamTubes" />
+
+	<!-- floats & ints -->
+	<ROUTE
+	fromNode="KEY_INTERSPACE_UP" fromField="event"
+	toNode="UPDATE_INTERSPACE" toField="increase" />
+	<ROUTE
+	fromNode="KEY_INTERSPACE_DOWN" fromField="event"
+	toNode="UPDATE_INTERSPACE" toField="decrease" />
+	<ROUTE
+	fromNode="SS" fromField="interspace" 
+	toNode="UPDATE_INTERSPACE" toField="value" />
+	<ROUTE
+	fromNode="UPDATE_INTERSPACE" fromField="value"
+	toNode="SS" toField="interspace" />
+
+	<ROUTE
+	fromNode="KEY_STEP_UP" fromField="event"
+	toNode="UPDATE_STEP" toField="increase" />
+	<ROUTE
+	fromNode="KEY_STEP_DOWN" fromField="event"
+	toNode="UPDATE_STEP" toField="decrease" />
+	<ROUTE
+	fromNode="SS" fromField="step" 
+	toNode="UPDATE_STEP" toField="value" />
+	<ROUTE
+	fromNode="UPDATE_STEP" fromField="value"
+	toNode="SS" toField="step" />
+
+	<ROUTE
+	fromNode="KEY_WIDTH_UP" fromField="event"
+	toNode="UPDATE_WIDTH" toField="increase" />
+	<ROUTE
+	fromNode="KEY_WIDTH_DOWN" fromField="event"
+	toNode="UPDATE_WIDTH" toField="decrease" />
+	<ROUTE
+	fromNode="SS" fromField="width" 
+	toNode="UPDATE_WIDTH" toField="value" />
+	<ROUTE
+	fromNode="UPDATE_WIDTH" fromField="value"
+	toNode="SS" toField="width" />
+
+	<ROUTE
+	fromNode="KEY_LENGTH_UP" fromField="event"
+	toNode="UPDATE_LENGTH" toField="increase" />
+	<ROUTE
+	fromNode="KEY_LENGTH_DOWN" fromField="event"
+	toNode="UPDATE_LENGTH" toField="decrease" />
+	<ROUTE
+	fromNode="SS" fromField="length" 
+	toNode="UPDATE_LENGTH" toField="value" />
+	<ROUTE
+	fromNode="UPDATE_LENGTH" fromField="value"
+	toNode="SS" toField="length" />
+
+	<ROUTE
+	fromNode="KEY_SEEDTYPE_UP" fromField="event"
+	toNode="UPDATE_SEEDTYPE" toField="increase" />
+	<ROUTE
+	fromNode="KEY_SEEDTYPE_DOWN" fromField="event"
+	toNode="UPDATE_SEEDTYPE" toField="decrease" />
+	<ROUTE
+	fromNode="SS" fromField="seedType" 
+	toNode="UPDATE_SEEDTYPE" toField="value" />
+	<ROUTE
+	fromNode="UPDATE_SEEDTYPE" fromField="value"
+	toNode="SS" toField="seedType" />
+
+</Group>

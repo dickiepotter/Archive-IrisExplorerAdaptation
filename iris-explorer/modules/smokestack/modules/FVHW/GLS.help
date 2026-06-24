@@ -1,0 +1,132 @@
+
+NAME
+GLS
+
+DESCRIPTION
+<Replace this with your module description>
+
+INPUTS
+convect -- Parameter (Opt.)
+<Describe the purpose of the port here>
+
+WIDGETS
+timeZero -- Slider
+<Describe the purpose of the widget here>
+
+timeMax -- Slider
+<Describe the purpose of the widget here>
+
+CFL -- Slider
+<Describe the purpose of the widget here>
+
+output -- Slider
+<Describe the purpose of the widget here>
+
+convectX -- Slider
+<Describe the purpose of the widget here>
+
+convectY -- Slider
+<Describe the purpose of the widget here>
+
+convectZ -- Slider
+<Describe the purpose of the widget here>
+
+Run -- Button
+<Describe the purpose of the widget here>
+
+Control -- Radio Box
+(Reset, Pause, Run).  <Describe the purpose of the widget here>
+
+update -- Slider
+<Describe the purpose of the widget here>
+
+Grid Size -- Slider
+<Describe the purpose of the widget here>
+
+X1 -- Slider
+<Describe the purpose of the widget here>
+
+X2 -- Slider
+<Describe the purpose of the widget here>
+
+Y1 -- Slider
+<Describe the purpose of the widget here>
+
+Y2 -- Slider
+<Describe the purpose of the widget here>
+
+Z1 -- Slider
+<Describe the purpose of the widget here>
+
+Z2 -- Slider
+<Describe the purpose of the widget here>
+
+OUTPUTS
+Output -- Pyramid
+(3-layer, 1..-baseLat, 3-D compression, unique-compression type).
+<Describe the purpose of the port here>
+
+KNOWN PROBLEMS
+<Describe any known problems/limitations here>
+
+SEE ALSO
+<List associated or related modules here>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

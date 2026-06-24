@@ -1,0 +1,54 @@
+
+     NAME
+            CropPyr
+
+     DESCRIPTION
+            CropPyr is used to select a portion of a pyramid datatype.
+            The selection  is  performed  in  physical  space  and  is
+            accomplished by using the [x,y,z] min and max dials.
+
+
+            Cropping is performed at the highest level of the pyramid.
+            Elements at the highest level either are passed through or
+            not,  based on whether the coordinates of the base lattice
+            entries it references are within the bounding box.  If any
+            coordinate lies outside the bounding box, the element will
+            not be passed along.
+
+     INPUTS
+            Input -- Pyramid
+                   (1..-layer,  1..-baseLat,   n-D   compression,   n-
+                   compression type).  This is the input pyramid.
+
+     WIDGETS
+            X Min -- Dial
+                   This is the minimum x value of the bounding box.
+
+            X Max -- Dial
+                   This is the maximum x value of the bounding box.
+
+            Y Min -- Dial
+                   This is the minimum y value of the bounding box.
+
+            Y Max -- Dial
+                   This is the maximum y value of the bounding box.
+
+            Z Min -- Dial
+                   This is the minimum z value of the bounding box.
+
+            Z Max -- Dial
+                   This is the maximum z value of the bounding box.
+
+     OUTPUTS
+            Output -- Pyramid
+                   (1..-layer,   1..-baseLat,   n-D   compression,  n-
+                   compression type).   This  is  the  cropped  output
+                   pyramid.
+
+     KNOWN PROBLEMS
+            Cropping is performed at the highest level of the pyramid.
+            This means that if the highest  level  contains  a  single
+            entry  that  references  everything,  the  output  of this
+            module will be everything or nothing.
+
+     SEE ALSO

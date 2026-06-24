@@ -1,0 +1,151 @@
+#!/usr/explorer/bin/explorer cxModuleResources ascii 5.0
+#Tag 0x10604
+# name IrisModuleTemplate
+# makefile 
+# includeDirs NULL
+# userLibs NULL
+# aout IrisModuleTemplate
+# mcwType cx_mcw_default
+# mdwFileName IrisModuleTemplate.mdw.c
+# reWrapOkay cx_true
+# collaborative cx_false
+# linkageType cx_linkage_cplusplus
+# filename IrisModuleTemplate.cpp
+# language cx_lang_cplusplus
+# numFunctions 1
+# installFileList 
+
+(cxModuleResources
+    {	(moduleInfo =cxAdminRes
+	    {	(name "IrisModuleTemplate")
+		(type =cxModuleClass
+		    {	(className "")
+		    }
+		)
+		(author "")
+		(creationDate =cxDate "Thu Aug 09 12:56:14 2007\n")
+		(lastModDate =cxDate "Thu Aug 09 13:02:20 2007\n")
+		(institution "")
+		(permissions =cxModulePerms
+		    {	(code 0)
+		    }
+		)
+		(machines =cxMachineSet
+		    {	(numMachines 1)
+			(machines @0)
+		    }
+		)
+	    }
+	)
+	(sourceInfo =cxSourceRes
+	    {	(buildInfo =cxBuildRes
+		    {	(makefile =cxFileName "")
+			(includeDirs NULL)
+			(userLibs NULL)
+			(headers =cxFileName "")
+			(mcwType =cxMcwType cx_mcw_default)
+			(mcwFileName =cxFileName "")
+			(mdwFileName =cxFileName "IrisModuleTemplate.mdw.c")
+			(semiWrapped =cxBoolean cx_false)
+			(reWrapOkay =cxBoolean cx_true)
+			(linkageType =cxLinkageType cx_linkage_cplusplus)
+		    }
+		)
+		(numFunctions 1)
+		(functionInfo @1)
+		(hooks =cxHookFuncRes
+		    {	(init "Init")
+			(remove "Remove")
+			(connectInput "ConnectInput")
+			(connectOutput "ConnectOutput")
+			(disconnectInput "DiconnectInput")
+			(disconnectOutput "DisconnectOutput")
+			(create "Create")
+		    }
+		)
+	    }
+	)
+	(documentInfo =cxDocumentRes
+	    {	(manPage =cxFileName "IrisModuleTemplate.doc")
+		(samples 0)
+	    }
+	)
+	(nPortIn 0)
+	(nPortOut 0)
+	(panels 1)
+	(conPanInfo @2)
+	(execInfo =cxExecRes
+	    {	(aout =cxFileName "IrisModuleTemplate")
+		(firingRule =cxFiringRule
+		    {	(text NULL)
+		    }
+		)
+		(noStdio =cxBoolean cx_false)
+		(controlType =cxControlType cx_control_none)
+	    }
+	)
+    }
+)
+(@0 =cxPortedMachine [1] cx_ported_sgi)
+(@1 =cxFunctionRes [1]
+    {	(name "UserFunction")
+	(filename =cxFileName "IrisModuleTemplate.cpp")
+	(mdwAInfo =cxFunctionArgInfo
+	    {	(hasReturn =cxBoolean cx_false)
+		(ret cx_false
+		)
+		(numArgs 0)
+	    }
+	)
+	(mdwEInfo =cxFunctionErrCodeInfo
+	    {	(returnCodeOrigin =cxReturnCodeSource
+		cx_return_code_unconnected)
+		(rc cx_return_code_unconnected
+		)
+		(testVal 0)
+		(comparesIsSuccess =cxBoolean cx_false)
+	    }
+	)
+	(mdwPInfo =cxFunctionOPortInfo
+	    {	(numPorts 0)
+	    }
+	)
+	(direction =cxFunctionDirection cx_func_forward)
+	(language =cxFunctionLanguage cx_lang_cplusplus)
+	(clippingFlag =cxErrorCode cx_err_none)
+    }
+)
+(@2 =cxConPanRes [1]
+    {	(instIcon =cxIcon
+	    {	(style cx_icon_xbm)
+		(u cx_icon_xbm
+		    {	(file =cxFileName NULL)
+		    }
+		)
+	    }
+	)
+	(frame
+	    {	(title "")
+		(style "")
+		(fgColor "")
+		(bgColor "")
+		(textColor "")
+	    }
+	)
+	(style =cxFrameStyle cx_frame_full)
+	(disabled =cxBoolean cx_false)
+	(helpMapped =cxBoolean cx_false)
+	(fireEdMapped =cxBoolean cx_false)
+	(size =cxWidgetSize
+	    {	(width 0)
+		(height 0)
+	    }
+	)
+	(position =cxWidgetPos
+	    {	(x 0)
+		(y 0)
+	    }
+	)
+	(numWidgets 0)
+    }
+)

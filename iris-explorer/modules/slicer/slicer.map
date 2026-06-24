@@ -1,0 +1,3036 @@
+#!/usr/explorer/bin/explorer cxNetResources ascii 5.0
+#Tag 0x10603
+
+(cxNetResources
+    {	(appState =cxNRApp
+	    {	(isMainWinMapped =cxBoolean cx_false)
+		(isNetEdMapped =cxBoolean cx_false)
+		(isLibrarianMapped =cxBoolean cx_false)
+	    }
+	)
+	(numModules 10)
+	(modules @0)
+	(numConnects 12)
+	(connects @1)
+	(numInputs 0)
+	(numOutputs 0)
+	(startupScript NULL)
+    }
+)
+(@0 =cxNRModule [10]
+    {	(name "InsertInteractor")
+	(instanceName "InsertInteractor")
+	(parent "netRoot")
+	(host "localhost")
+	(path "H:\\research\\fotis\\insertInteractorHW")
+	(isSelected =cxBoolean cx_true)
+	(isEnabled =cxBoolean cx_true)
+	(openedGroup =cxBoolean cx_true)
+	(isLoopController =cxBoolean cx_false)
+	(numPanels 1)
+	(panelState @2)
+	(numInAliases 0)
+	(numOutAliases 0)
+	(numPFuncs 0)
+    }
+    {	(name "Render")
+	(instanceName "Render")
+	(parent "netRoot")
+	(host "localhost")
+	(path "H:\\research\\fotis\\Renderer")
+	(isSelected =cxBoolean cx_true)
+	(isEnabled =cxBoolean cx_true)
+	(openedGroup =cxBoolean cx_true)
+	(isLoopController =cxBoolean cx_false)
+	(numPanels 1)
+	(panelState @3)
+	(numInAliases 0)
+	(numOutAliases 0)
+	(numPFuncs 0)
+    }
+    {	(name "Euler")
+	(instanceName "Euler")
+	(parent "netRoot")
+	(host "localhost")
+	(path "H:\\research\\fotis\\Euler")
+	(isSelected =cxBoolean cx_true)
+	(isEnabled =cxBoolean cx_true)
+	(openedGroup =cxBoolean cx_true)
+	(isLoopController =cxBoolean cx_false)
+	(numPanels 1)
+	(panelState @4)
+	(numInAliases 0)
+	(numOutAliases 0)
+	(numPFuncs 0)
+    }
+    {	(name "IsosurfaceLat")
+	(instanceName "IsosurfaceLat")
+	(parent "netRoot")
+	(host "localhost")
+	(path "${EXPLORERHOME}/modules")
+	(isSelected =cxBoolean cx_true)
+	(isEnabled =cxBoolean cx_true)
+	(openedGroup =cxBoolean cx_true)
+	(isLoopController =cxBoolean cx_false)
+	(numPanels 1)
+	(panelState @5)
+	(numInAliases 0)
+	(numOutAliases 0)
+	(numPFuncs 0)
+    }
+    {	(name "ReadLat")
+	(instanceName "ReadLat")
+	(parent "netRoot")
+	(host "localhost")
+	(path "${EXPLORERHOME}/modules")
+	(isSelected =cxBoolean cx_true)
+	(isEnabled =cxBoolean cx_true)
+	(openedGroup =cxBoolean cx_true)
+	(isLoopController =cxBoolean cx_false)
+	(numPanels 1)
+	(panelState @6)
+	(numInAliases 0)
+	(numOutAliases 0)
+	(numPFuncs 0)
+    }
+    {	(name "EditBoundingBox")
+	(instanceName "EditBoundingBox")
+	(parent "netRoot")
+	(host "localhost")
+	(path "${EXPLORERHOME}/modules")
+	(isSelected =cxBoolean cx_true)
+	(isEnabled =cxBoolean cx_true)
+	(openedGroup =cxBoolean cx_true)
+	(isLoopController =cxBoolean cx_false)
+	(numPanels 1)
+	(panelState @7)
+	(numInAliases 0)
+	(numOutAliases 0)
+	(numPFuncs 0)
+    }
+    {	(name "ProbeLat")
+	(instanceName "ProbeLat")
+	(parent "netRoot")
+	(host "localhost")
+	(path "${EXPLORERHOME}/modules")
+	(isSelected =cxBoolean cx_true)
+	(isEnabled =cxBoolean cx_true)
+	(openedGroup =cxBoolean cx_true)
+	(isLoopController =cxBoolean cx_false)
+	(numPanels 1)
+	(panelState @8)
+	(numInAliases 0)
+	(numOutAliases 0)
+	(numPFuncs 0)
+    }
+    {	(name "CastCoordLat")
+	(instanceName "CastCoordLat")
+	(parent "netRoot")
+	(host "localhost")
+	(path "${EXPLORERHOME}/modules")
+	(isSelected =cxBoolean cx_true)
+	(isEnabled =cxBoolean cx_true)
+	(openedGroup =cxBoolean cx_true)
+	(isLoopController =cxBoolean cx_false)
+	(numPanels 1)
+	(panelState @9)
+	(numInAliases 0)
+	(numOutAliases 0)
+	(numPFuncs 0)
+    }
+    {	(name "PyrToGeom")
+	(instanceName "PyrToGeom")
+	(parent "netRoot")
+	(host "localhost")
+	(path "${EXPLORERHOME}/modules")
+	(isSelected =cxBoolean cx_true)
+	(isEnabled =cxBoolean cx_true)
+	(openedGroup =cxBoolean cx_true)
+	(isLoopController =cxBoolean cx_false)
+	(numPanels 1)
+	(panelState @10)
+	(numInAliases 0)
+	(numOutAliases 0)
+	(numPFuncs 0)
+    }
+    {	(name "GenerateColormap")
+	(instanceName "GenerateColormap")
+	(parent "netRoot")
+	(host "localhost")
+	(path "${EXPLORERHOME}/modules")
+	(isSelected =cxBoolean cx_true)
+	(isEnabled =cxBoolean cx_true)
+	(openedGroup =cxBoolean cx_true)
+	(isLoopController =cxBoolean cx_false)
+	(numPanels 1)
+	(panelState @11)
+	(numInAliases 0)
+	(numOutAliases 0)
+	(numPFuncs 0)
+    }
+)
+(@1 =cxNRConnect [12]
+    {	(source =cxNRDest
+	    {	(module "InsertInteractor")
+		(port "geometry")
+	    }
+	)
+	(destination =cxNRDest
+	    {	(module "Render")
+		(port "Input")
+	    }
+	)
+    }
+    {	(source =cxNRDest
+	    {	(module "ReadLat")
+		(port "Output")
+	    }
+	)
+	(destination =cxNRDest
+	    {	(module "EditBoundingBox")
+		(port "In")
+	    }
+	)
+    }
+    {	(source =cxNRDest
+	    {	(module "EditBoundingBox")
+		(port "Out")
+	    }
+	)
+	(destination =cxNRDest
+	    {	(module "IsosurfaceLat")
+		(port "Input")
+	    }
+	)
+    }
+    {	(source =cxNRDest
+	    {	(module "CastCoordLat")
+		(port "Output")
+	    }
+	)
+	(destination =cxNRDest
+	    {	(module "ProbeLat")
+		(port "Input")
+	    }
+	)
+    }
+    {	(source =cxNRDest
+	    {	(module "ProbeLat")
+		(port "Output")
+	    }
+	)
+	(destination =cxNRDest
+	    {	(module "PyrToGeom")
+		(port "Input")
+	    }
+	)
+    }
+    {	(source =cxNRDest
+	    {	(module "GenerateColormap")
+		(port "Colormap")
+	    }
+	)
+	(destination =cxNRDest
+	    {	(module "PyrToGeom")
+		(port "Colormap")
+	    }
+	)
+    }
+    {	(source =cxNRDest
+	    {	(module "EditBoundingBox")
+		(port "Out")
+	    }
+	)
+	(destination =cxNRDest
+	    {	(module "CastCoordLat")
+		(port "Input")
+	    }
+	)
+    }
+    {	(source =cxNRDest
+	    {	(module "EditBoundingBox")
+		(port "Out")
+	    }
+	)
+	(destination =cxNRDest
+	    {	(module "GenerateColormap")
+		(port "Data In")
+	    }
+	)
+    }
+    {	(source =cxNRDest
+	    {	(module "PyrToGeom")
+		(port "Output")
+	    }
+	)
+	(destination =cxNRDest
+	    {	(module "Render")
+		(port "Input")
+	    }
+	)
+    }
+    {	(source =cxNRDest
+	    {	(module "IsosurfaceLat")
+		(port "Surface")
+	    }
+	)
+	(destination =cxNRDest
+	    {	(module "Render")
+		(port "Input")
+	    }
+	)
+    }
+    {	(source =cxNRDest
+	    {	(module "Euler")
+		(port "Interactor")
+	    }
+	)
+	(destination =cxNRDest
+	    {	(module "InsertInteractor")
+		(port "input")
+	    }
+	)
+    }
+    {	(source =cxNRDest
+	    {	(module "Euler")
+		(port "Output")
+	    }
+	)
+	(destination =cxNRDest
+	    {	(module "ProbeLat")
+		(port "Transform")
+	    }
+	)
+    }
+)
+(@2 =cxNRPanel [1]
+    {	(title "")
+	(maxiSize =cxWidgetSize
+	    {	(width 104)
+		(height 53)
+	    }
+	)
+	(maxiPosition =cxWidgetPos
+	    {	(x -441)
+		(y 130)
+	    }
+	)
+	(isMaxiMapped =cxBoolean cx_false)
+	(miniPosition =cxWidgetPos
+	    {	(x 547)
+		(y 10)
+	    }
+	)
+	(isMicro =cxBoolean cx_true)
+	(numWidgets 0)
+    }
+)
+(@3 =cxNRPanel [1]
+    {	(title "Render")
+	(maxiSize =cxWidgetSize
+	    {	(width 578)
+		(height 500)
+	    }
+	)
+	(maxiPosition =cxWidgetPos
+	    {	(x -495)
+		(y 208)
+	    }
+	)
+	(isMaxiMapped =cxBoolean cx_true)
+	(miniPosition =cxWidgetPos
+	    {	(x 876)
+		(y 10)
+	    }
+	)
+	(isMicro =cxBoolean cx_true)
+	(numWidgets 8)
+	(widgets @12)
+    }
+)
+(@4 =cxNRPanel [1]
+    {	(title "")
+	(maxiSize =cxWidgetSize
+	    {	(width 275)
+		(height 175)
+	    }
+	)
+	(maxiPosition =cxWidgetPos
+	    {	(x -267)
+		(y 280)
+	    }
+	)
+	(isMaxiMapped =cxBoolean cx_false)
+	(miniPosition =cxWidgetPos
+	    {	(x 335)
+		(y 10)
+	    }
+	)
+	(isMicro =cxBoolean cx_true)
+	(numWidgets 3)
+	(widgets @13)
+    }
+)
+(@5 =cxNRPanel [1]
+    {	(title "")
+	(maxiSize =cxWidgetSize
+	    {	(width 309)
+		(height 306)
+	    }
+	)
+	(maxiPosition =cxWidgetPos
+	    {	(x -278)
+		(y 87)
+	    }
+	)
+	(isMaxiMapped =cxBoolean cx_false)
+	(miniPosition =cxWidgetPos
+	    {	(x 585)
+		(y 159)
+	    }
+	)
+	(isMicro =cxBoolean cx_true)
+	(numWidgets 7)
+	(widgets @14)
+    }
+)
+(@6 =cxNRPanel [1]
+    {	(title "")
+	(maxiSize =cxWidgetSize
+	    {	(width 204)
+		(height 65)
+	    }
+	)
+	(maxiPosition =cxWidgetPos
+	    {	(x 153)
+		(y 299)
+	    }
+	)
+	(isMaxiMapped =cxBoolean cx_false)
+	(miniPosition =cxWidgetPos
+	    {	(x 10)
+		(y 101)
+	    }
+	)
+	(isMicro =cxBoolean cx_true)
+	(numWidgets 2)
+	(widgets @15)
+    }
+)
+(@7 =cxNRPanel [1]
+    {	(title "")
+	(maxiSize =cxWidgetSize
+	    {	(width 130)
+		(height 205)
+	    }
+	)
+	(maxiPosition =cxWidgetPos
+	    {	(x 329)
+		(y 0)
+	    }
+	)
+	(isMaxiMapped =cxBoolean cx_false)
+	(miniPosition =cxWidgetPos
+	    {	(x 151)
+		(y 101)
+	    }
+	)
+	(isMicro =cxBoolean cx_true)
+	(numWidgets 6)
+	(widgets @16)
+    }
+)
+(@8 =cxNRPanel [1]
+    {	(title "")
+	(maxiSize =cxWidgetSize
+	    {	(width 330)
+		(height 190)
+	    }
+	)
+	(maxiPosition =cxWidgetPos
+	    {	(x -463)
+		(y 79)
+	    }
+	)
+	(isMaxiMapped =cxBoolean cx_false)
+	(miniPosition =cxWidgetPos
+	    {	(x 545)
+		(y 52)
+	    }
+	)
+	(isMicro =cxBoolean cx_true)
+	(numWidgets 3)
+	(widgets @17)
+    }
+)
+(@9 =cxNRPanel [1]
+    {	(title "")
+	(maxiSize =cxWidgetSize
+	    {	(width 104)
+		(height 80)
+	    }
+	)
+	(maxiPosition =cxWidgetPos
+	    {	(x 73)
+		(y 0)
+	    }
+	)
+	(isMaxiMapped =cxBoolean cx_false)
+	(miniPosition =cxWidgetPos
+	    {	(x 337)
+		(y 52)
+	    }
+	)
+	(isMicro =cxBoolean cx_true)
+	(numWidgets 1)
+	(widgets @18)
+    }
+)
+(@10 =cxNRPanel [1]
+    {	(title "")
+	(maxiSize =cxWidgetSize
+	    {	(width 280)
+		(height 305)
+	    }
+	)
+	(maxiPosition =cxWidgetPos
+	    {	(x -239)
+		(y 0)
+	    }
+	)
+	(isMaxiMapped =cxBoolean cx_false)
+	(miniPosition =cxWidgetPos
+	    {	(x 682)
+		(y 101)
+	    }
+	)
+	(isMicro =cxBoolean cx_true)
+	(numWidgets 5)
+	(widgets @19)
+    }
+)
+(@11 =cxNRPanel [1]
+    {	(title "")
+	(maxiSize =cxWidgetSize
+	    {	(width 270)
+		(height 465)
+	    }
+	)
+	(maxiPosition =cxWidgetPos
+	    {	(x -35)
+		(y -98)
+	    }
+	)
+	(isMaxiMapped =cxBoolean cx_false)
+	(miniPosition =cxWidgetPos
+	    {	(x 442)
+		(y 101)
+	    }
+	)
+	(isMicro =cxBoolean cx_true)
+	(numWidgets 11)
+	(widgets @20)
+    }
+)
+(@12 =cxWidgetRes [8]
+    {	(name "Camera update")
+	(port "Camera update")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_text)
+	(label "Camera update")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 89)
+			(height 20)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 20)
+			(y 125)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 179)
+			(height 40)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 40)
+			(y 251)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_text
+	    {	(initVal "")
+	    }
+	)
+    }
+    {	(name "Background Color")
+	(port "Background Color")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_text)
+	(label "Background Color")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 48)
+			(height 30)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 16)
+			(y 85)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 97)
+			(height 60)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 33)
+			(y 171)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_text
+	    {	(initVal "RGB 0.71667 0.71667 0.71667")
+	    }
+	)
+    }
+    {	(name "Snap")
+	(port "Snap")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_button)
+	(label "Snap")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 1)
+			(height 1)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 5)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 2)
+			(height 2)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 10)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_button
+	)
+    }
+    {	(name "Window")
+	(port "Window")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_gl)
+	(label "Window")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 278)
+			(height 240)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 5)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 557)
+			(height 480)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 10)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_gl
+	)
+    }
+    {	(name "UserPickMode")
+	(port "UserPickMode")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_toggle_button)
+	(label "UserPickMode")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 37)
+			(height 7)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 116)
+			(y 51)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 75)
+			(height 15)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 232)
+			(y 103)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_toggle_button
+	    {	(initVal =cxBoolean cx_false)
+	    }
+	)
+    }
+    {	(name "Save camera")
+	(port "Save camera")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_text)
+	(label "Save camera")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 116)
+			(height 30)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 47)
+			(y 77)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 232)
+			(height 60)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 95)
+			(y 154)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_text
+	    {	(initVal "#Inventor V2.1 ascii\n\n\n PerspectiveCamera {\n  viewportMapping ADJUST_CAMERA\n  position -2.88954 -2.7836 3.67773\n  orientation 0.731019 -0.280355 -0.622103  1.26219\n  aspectRatio 1\n  nearDistance 3.22092\n  farDistance 6.61769\n  focalDistance 5.55101\n  heightAngle 0.785398\n \n}\n")
+	    }
+	)
+    }
+    {	(name "Viewing")
+	(port "Viewing")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_toggle_button)
+	(label "Viewing")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 37)
+			(height 7)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 116)
+			(y 82)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 75)
+			(height 15)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 232)
+			(y 164)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_toggle_button
+	    {	(initVal =cxBoolean cx_false)
+	    }
+	)
+    }
+    {	(name "Decoration")
+	(port "Decoration")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_toggle_button)
+	(label "Decoration")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 37)
+			(height 7)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 34)
+			(y 25)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 75)
+			(height 15)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 69)
+			(y 50)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_toggle_button
+	    {	(initVal =cxBoolean cx_true)
+	    }
+	)
+    }
+)
+(@13 =cxWidgetRes [3]
+    {	(name "ResetXY")
+	(port "ResetXY")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_button)
+	(label "ResetXY")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 80)
+			(height 45)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 27)
+			(y 17)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 160)
+			(height 90)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 55)
+			(y 35)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_button
+	)
+    }
+    {	(name "saved angle")
+	(port "saved angle")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_text)
+	(label "saved angle")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 127)
+			(height 30)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 52)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 255)
+			(height 60)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 105)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_text
+	    {	(initVal "##$ -0.325058 0.325058 0.000000 0.888074")
+	    }
+	)
+    }
+    {	(name "vector")
+	(port "vector")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_text)
+	(label "vector")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 127)
+			(height 30)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 5)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 255)
+			(height 60)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 10)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_text
+	    {	(initVal "-1.000000 -1.000000 1.000000")
+	    }
+	)
+    }
+)
+(@14 =cxWidgetRes [7]
+    {	(name "Csize")
+	(port "Csize")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_slider)
+	(label "Csize")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 38)
+			(height 35)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 60)
+			(y 112)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 77)
+			(height 70)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 120)
+			(y 225)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_slider
+	    {	(d =cxWidgetScalar
+		    {	(discrete =cxBoolean cx_false)
+			(boundedMin =cxBoolean cx_false)
+			(boundedMax =cxBoolean cx_false)
+			(dataType =cxPrimType cx_prim_long)
+			(t cx_prim_long
+			    {	(minVal 1)
+				(maxVal 6)
+				(step 0)
+				(initVal 2)
+			    }
+			)
+			(orientation =cxOrientation cx_horizontal)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Flip Normal?")
+	(port "Flip Normal?")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_option_menu)
+	(label "Flip Normal?")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 38)
+			(height 40)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 60)
+			(y 80)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 77)
+			(height 80)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 120)
+			(y 160)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_option_menu
+	    {	(d =cxWidgetOptionMenu
+		    {	(nMembers 2)
+			(members @21)
+			(initVal 0)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Color Style")
+	(port "Color Style")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_radio_box)
+	(label "Color Style")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 43)
+			(height 30)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 112)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 86)
+			(height 60)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 225)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_radio_box
+	    {	(d =cxWidgetRadioBox
+		    {	(nMembers 2)
+			(members @22)
+			(initVal 0)
+			(orientation =cxOrientation cx_horizontal)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Threshold")
+	(port "Threshold")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_dial)
+	(label "Threshold")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 38)
+			(height 62)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 6)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 77)
+			(height 124)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 11)
+			(y 13)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_dial
+	    {	(d =cxWidgetScalar
+		    {	(discrete =cxBoolean cx_false)
+			(boundedMin =cxBoolean cx_false)
+			(boundedMax =cxBoolean cx_false)
+			(dataType =cxPrimType cx_prim_double)
+			(t cx_prim_double
+			    {	(minVal 0)
+				(maxVal 27)
+				(step 0)
+				(initVal 1.5)
+			    }
+			)
+			(orientation =cxOrientation cx_horizontal)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Smooth?")
+	(port "Smooth?")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_option_menu)
+	(label "Smooth?")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 38)
+			(height 30)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 80)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 77)
+			(height 60)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 160)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_option_menu
+	    {	(d =cxWidgetOptionMenu
+		    {	(nMembers 2)
+			(members @23)
+			(initVal 1)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Surface Variable")
+	(port "Surface Variable")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_slider)
+	(label "Surface Variable")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 38)
+			(height 62)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 110)
+			(y 5)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 77)
+			(height 124)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 221)
+			(y 10)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_slider
+	    {	(d =cxWidgetScalar
+		    {	(discrete =cxBoolean cx_false)
+			(boundedMin =cxBoolean cx_false)
+			(boundedMax =cxBoolean cx_false)
+			(dataType =cxPrimType cx_prim_long)
+			(t cx_prim_long
+			    {	(minVal 0)
+				(maxVal 0)
+				(step 0)
+				(initVal 0)
+			    }
+			)
+			(orientation =cxOrientation cx_vertical)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Color Variable")
+	(port "Color Variable")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_slider)
+	(label "Color Variable")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 38)
+			(height 62)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 60)
+			(y 5)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 77)
+			(height 124)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 120)
+			(y 10)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_slider
+	    {	(d =cxWidgetScalar
+		    {	(discrete =cxBoolean cx_false)
+			(boundedMin =cxBoolean cx_false)
+			(boundedMax =cxBoolean cx_false)
+			(dataType =cxPrimType cx_prim_long)
+			(t cx_prim_long
+			    {	(minVal 0)
+				(maxVal 0)
+				(step 0)
+				(initVal 0)
+			    }
+			)
+			(orientation =cxOrientation cx_vertical)
+		    }
+		)
+	    }
+	)
+    }
+)
+(@15 =cxWidgetRes [2]
+    {	(name "Step")
+	(port "Step")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_slider)
+	(label "Step")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 91)
+			(height 12)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 15)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 183)
+			(height 24)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 31)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_slider
+	    {	(d =cxWidgetScalar
+		    {	(discrete =cxBoolean cx_false)
+			(boundedMin =cxBoolean cx_false)
+			(boundedMax =cxBoolean cx_false)
+			(dataType =cxPrimType cx_prim_long)
+			(t cx_prim_long
+			    {	(minVal 1)
+				(maxVal 100)
+				(step 0)
+				(initVal 1)
+			    }
+			)
+			(orientation =cxOrientation cx_horizontal)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Filename")
+	(port "Filename")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_text)
+	(label "Filename")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 91)
+			(height 9)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 5)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 183)
+			(height 18)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 10)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_text
+	    {	(initVal "${EXPLORERHOME}/data/lattice/testVol.lat")
+	    }
+	)
+    }
+)
+(@16 =cxWidgetRes [6]
+    {	(name "Z1")
+	(port "Z1")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_text)
+	(label "Z1")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 25)
+			(height 30)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 35)
+			(y 67)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 50)
+			(height 60)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 70)
+			(y 135)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_text
+	    {	(initVal "1.0")
+	    }
+	)
+    }
+    {	(name "X0")
+	(port "X0")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_text)
+	(label "X0")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 25)
+			(height 30)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 5)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 50)
+			(height 60)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 10)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_text
+	    {	(initVal "0.0")
+	    }
+	)
+    }
+    {	(name "Z0")
+	(port "Z0")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_text)
+	(label "Z0")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 25)
+			(height 30)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 67)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 50)
+			(height 60)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 135)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_text
+	    {	(initVal "0.0")
+	    }
+	)
+    }
+    {	(name "Y1")
+	(port "Y1")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_text)
+	(label "Y1")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 25)
+			(height 30)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 35)
+			(y 35)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 50)
+			(height 60)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 70)
+			(y 70)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_text
+	    {	(initVal "1.0")
+	    }
+	)
+    }
+    {	(name "X1")
+	(port "X1")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_text)
+	(label "X1")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 25)
+			(height 30)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 35)
+			(y 5)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 50)
+			(height 60)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 70)
+			(y 10)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_text
+	    {	(initVal "1.0")
+	    }
+	)
+    }
+    {	(name "Y0")
+	(port "Y0")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_text)
+	(label "Y0")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 25)
+			(height 30)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 35)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 50)
+			(height 60)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 70)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_text
+	    {	(initVal "0.0")
+	    }
+	)
+    }
+)
+(@17 =cxWidgetRes [3]
+    {	(name "Probe Type")
+	(port "Probe Type")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_option_menu)
+	(label "Probe Type")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 80)
+			(height 50)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 80)
+			(y 8)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 160)
+			(height 100)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 160)
+			(y 16)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_option_menu
+	    {	(d =cxWidgetOptionMenu
+		    {	(nMembers 3)
+			(members @24)
+			(initVal 0)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Clip?")
+	(port "Clip?")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_option_menu)
+	(label "Clip?")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 80)
+			(height 50)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 80)
+			(y 40)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 160)
+			(height 100)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 160)
+			(y 80)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_option_menu
+	    {	(d =cxWidgetOptionMenu
+		    {	(nMembers 2)
+			(members @25)
+			(initVal 1)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Clip Size")
+	(port "Clip Size")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_dial)
+	(label "Clip Size")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 70)
+			(height 62)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 6)
+			(y 6)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 140)
+			(height 125)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 12)
+			(y 12)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_dial
+	    {	(d =cxWidgetScalar
+		    {	(discrete =cxBoolean cx_false)
+			(boundedMin =cxBoolean cx_false)
+			(boundedMax =cxBoolean cx_false)
+			(dataType =cxPrimType cx_prim_double)
+			(t cx_prim_double
+			    {	(minVal 0.001)
+				(maxVal 1)
+				(step 0)
+				(initVal 1)
+			    }
+			)
+			(orientation =cxOrientation cx_horizontal)
+		    }
+		)
+	    }
+	)
+    }
+)
+(@18 =cxWidgetRes [1]
+    {	(name "Coord Type")
+	(port "Coord Type")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_option_menu)
+	(label "Coord Type")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 41)
+			(height 30)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 5)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 83)
+			(height 60)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 10)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_option_menu
+	    {	(d =cxWidgetOptionMenu
+		    {	(nMembers 3)
+			(members @26)
+			(initVal 2)
+		    }
+		)
+	    }
+	)
+    }
+)
+(@19 =cxWidgetRes [5]
+    {	(name "Csize")
+	(port "Csize")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_slider)
+	(label "Csize")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 50)
+			(height 35)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 77)
+			(y 112)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 100)
+			(height 70)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 155)
+			(y 225)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_slider
+	    {	(d =cxWidgetScalar
+		    {	(discrete =cxBoolean cx_false)
+			(boundedMin =cxBoolean cx_false)
+			(boundedMax =cxBoolean cx_false)
+			(dataType =cxPrimType cx_prim_long)
+			(t cx_prim_long
+			    {	(minVal 2)
+				(maxVal 6)
+				(step 0)
+				(initVal 2)
+			    }
+			)
+			(orientation =cxOrientation cx_horizontal)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Dimension")
+	(port "Dimension")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_option_menu)
+	(label "Dimension")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 39)
+			(height 34)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 7)
+			(y 10)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 79)
+			(height 68)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 15)
+			(y 20)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_option_menu
+	    {	(d =cxWidgetOptionMenu
+		    {	(nMembers 4)
+			(members @27)
+			(initVal 2)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Coloring")
+	(port "Coloring")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_option_menu)
+	(label "Coloring")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 65)
+			(height 34)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 60)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 130)
+			(height 68)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 120)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_option_menu
+	    {	(d =cxWidgetOptionMenu
+		    {	(nMembers 3)
+			(members @28)
+			(initVal 0)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Level")
+	(port "Level")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_radio_box)
+	(label "Level")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 55)
+			(height 30)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 80)
+			(y 10)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 110)
+			(height 61)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 160)
+			(y 20)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_radio_box
+	    {	(d =cxWidgetRadioBox
+		    {	(nMembers 2)
+			(members @29)
+			(initVal 0)
+			(orientation =cxOrientation cx_horizontal)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Component")
+	(port "Component")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_slider)
+	(label "Component")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 50)
+			(height 35)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 110)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 100)
+			(height 70)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 220)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_slider
+	    {	(d =cxWidgetScalar
+		    {	(discrete =cxBoolean cx_false)
+			(boundedMin =cxBoolean cx_false)
+			(boundedMax =cxBoolean cx_false)
+			(dataType =cxPrimType cx_prim_long)
+			(t cx_prim_long
+			    {	(minVal 1)
+				(maxVal 2)
+				(step 0)
+				(initVal 1)
+			    }
+			)
+			(orientation =cxOrientation cx_horizontal)
+		    }
+		)
+	    }
+	)
+    }
+)
+(@20 =cxWidgetRes [11]
+    {	(name "Channel")
+	(port "Channel")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_slider)
+	(label "Channel")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 50)
+			(height 35)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 7)
+			(y 192)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 100)
+			(height 70)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 15)
+			(y 385)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_slider
+	    {	(d =cxWidgetScalar
+		    {	(discrete =cxBoolean cx_false)
+			(boundedMin =cxBoolean cx_false)
+			(boundedMax =cxBoolean cx_false)
+			(dataType =cxPrimType cx_prim_long)
+			(t cx_prim_long
+			    {	(minVal 1)
+				(maxVal 1)
+				(step 0)
+				(initVal 1)
+			    }
+			)
+			(orientation =cxOrientation cx_horizontal)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Color Band")
+	(port "Color Band")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_option_menu)
+	(label "Color Band")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 57)
+			(height 25)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 102)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 115)
+			(height 50)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 205)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_option_menu
+	    {	(d =cxWidgetOptionMenu
+		    {	(nMembers 4)
+			(members @30)
+			(initVal 0)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Min Domain")
+	(port "Min Domain")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_dial)
+	(label "Min Domain")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 57)
+			(height 62)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 127)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 115)
+			(height 125)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 255)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_dial
+	    {	(d =cxWidgetScalar
+		    {	(discrete =cxBoolean cx_false)
+			(boundedMin =cxBoolean cx_false)
+			(boundedMax =cxBoolean cx_false)
+			(dataType =cxPrimType cx_prim_double)
+			(t cx_prim_double
+			    {	(minVal 0)
+				(maxVal 27)
+				(step 0)
+				(initVal 0)
+			    }
+			)
+			(orientation =cxOrientation cx_horizontal)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Edit Mode")
+	(port "Edit Mode")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_option_menu)
+	(label "Edit Mode")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 57)
+			(height 22)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 72)
+			(y 80)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 115)
+			(height 45)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 145)
+			(y 160)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_option_menu
+	    {	(d =cxWidgetOptionMenu
+		    {	(nMembers 3)
+			(members @31)
+			(initVal 0)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Pyramid Layer")
+	(port "Pyramid Layer")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_slider)
+	(label "Pyramid Layer")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 50)
+			(height 35)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 72)
+			(y 192)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 100)
+			(height 70)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 145)
+			(y 385)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_slider
+	    {	(d =cxWidgetScalar
+		    {	(discrete =cxBoolean cx_false)
+			(boundedMin =cxBoolean cx_false)
+			(boundedMax =cxBoolean cx_false)
+			(dataType =cxPrimType cx_prim_long)
+			(t cx_prim_long
+			    {	(minVal 0)
+				(maxVal 0)
+				(step 0)
+				(initVal 0)
+			    }
+			)
+			(orientation =cxOrientation cx_horizontal)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Output?")
+	(port "Output?")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_toggle_button)
+	(label "Output?")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 57)
+			(height 15)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 72)
+			(y 107)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 115)
+			(height 30)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 145)
+			(y 215)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_toggle_button
+	    {	(initVal =cxBoolean cx_true)
+	    }
+	)
+    }
+    {	(name "Scale Window")
+	(port "Scale Window")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_gl)
+	(label "Scale Window")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 125)
+			(height 10)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 67)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 250)
+			(height 20)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 135)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_gl
+	)
+    }
+    {	(name "Max Domain")
+	(port "Max Domain")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_dial)
+	(label "Max Domain")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 57)
+			(height 62)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 72)
+			(y 127)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 115)
+			(height 125)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 145)
+			(y 255)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_dial
+	    {	(d =cxWidgetScalar
+		    {	(discrete =cxBoolean cx_false)
+			(boundedMin =cxBoolean cx_false)
+			(boundedMax =cxBoolean cx_false)
+			(dataType =cxPrimType cx_prim_double)
+			(t cx_prim_double
+			    {	(minVal 0)
+				(maxVal 27)
+				(step 0)
+				(initVal 27)
+			    }
+			)
+			(orientation =cxOrientation cx_horizontal)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Palette Window")
+	(port "Palette Window")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_gl)
+	(label "Palette Window")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 125)
+			(height 25)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 5)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 250)
+			(height 50)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 10)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_gl
+	)
+    }
+    {	(name "Color Space")
+	(port "Color Space")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_option_menu)
+	(label "Color Space")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 57)
+			(height 22)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 80)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 115)
+			(height 45)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 160)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_option_menu
+	    {	(d =cxWidgetOptionMenu
+		    {	(nMembers 2)
+			(members @32)
+			(initVal 1)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name "Edit Window")
+	(port "Edit Window")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_gl)
+	(label "Edit Window")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 125)
+			(height 30)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 5)
+			(y 37)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 250)
+			(height 60)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 75)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_gl
+	)
+    }
+)
+(@21 [2] "No" "Yes")
+(@22 [2] "Color Map" "Texture Map")
+(@23 [2] "Off" "On")
+(@24 [3] "Slice" "TriPlanar" "Paddle")
+(@25 [2] "On" "Off")
+(@26 [3] "Uniform" "Perimeter" "Curvilinear")
+(@27 [4] "0" "1" "2" "3")
+(@28 [3] "Colormap" "R-G-B" "Texture")
+(@29 [2] "Vertex Data" "Level Data")
+(@30 [4] "Hue" "Saturation" "Value" "Opacity")
+(@31 [3] "Move" "Insert" "Delete")
+(@32 [2] "R-G-B" "H-S-V")

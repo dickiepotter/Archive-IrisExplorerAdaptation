@@ -1,0 +1,98 @@
+#!/usr/bin/python
+
+import os.path
+
+env = Environment()
+
+# define a preprocessor variable according to the system type (eg. #define POSIX, WIN32...)
+env.Append(CPPDEFINES = env['PLATFORM'].upper())
+
+# special flags for MSVC compiler (cl.exe) : /GR (RTTI bug), /EHsc (C++ exceptions)
+visualcpp_flags = ['/GR', '/EHsc', '/MD']
+
+if env['PLATFORM'] == 'win32' and env.subst(env['CXX']) == 'cl':
+	env.Append(CCFLAGS = visualcpp_flags)
+
+h3d_libs = Split('H3DApi freeimage')
+
+# The order of the libraries is important, do not change it!
+itk_libs = Split('ITKIO ITKNrrdIO itkgdcm itkjpeg12 itkjpeg16 itkpng itktiff itkjpeg8 ITKCommon itkvnl itksys ITKMetaIO ITKDICOMParser ITKniftiio ITKznz itkzlib itkopenjpeg')
+
+if env['PLATFORM'] == 'posix':
+	h3d_home = '/home/osomon/apps/H3D'
+	h3d_libs_dirs = Split(h3d_home + '/H3DAPI/build/linux')
+	h3d_libs = h3d_libs + Split('freetype ftgl')
+	h3d_inc_dirs = Split('/usr/include/FTGL /usr/include/freetype2')
+	itk_home = '/home/osomon/apps/ITK/InsightToolkit-2.6.0'
+	itk_libs_dirs = [os.path.join(itk_home, 'Binary', 'bin')]
+elif env['PLATFORM'] == 'win32':
+	h3d_home = 'C:\\H3D'
+	h3d_libs_dirs = Split(h3d_home + '\\H3DAPI\\build\\win32\\vc7\\Release ' + h3d_home + '\\External\\lib')
+	h3d_libs = h3d_libs + Split('freetype219MT ftgl_static_MTD')
+	h3d_inc_dirs = ['C:\\Program Files\\SensAble\\3DTouch\\include', h3d_home + '\\External\\include', h3d_home + '\\External\\include\\FTGL\\include', h3d_home + '\\External\\include\\freetype-2.1.9\\include', h3d_home + '\\External\\include\\xerces-c-src_2_7_0\\src', h3d_home + '\\External\\include\\pthread']
+	itk_home = 'C:\\ITK\\InsightToolkit-2.6.0'
+	itk_libs_dirs = [os.path.join(itk_home, 'Binary', 'bin', 'release')]
+	# Under Windows, ITK needs to be linked against several "standard" libraries
+	itk_libs = itk_libs + Split('SnmpAPI WS2_32 User32 Gdi32 AdvAPI32')
+
+h3d_inc_dirs = h3d_inc_dirs + [os.path.join(h3d_home, 'H3DAPI', 'src'), os.path.join(h3d_home, 'H3DAPI', 'src', 'Types')]
+itk_inc_dirs = [os.path.join(itk_home, 'Binary', 'Utilities', 'vxl', 'core'), os.path.join(itk_home, 'Binary', 'Utilities', 'vxl', 'vcl'), os.path.join(itk_home, 'Utilities', 'vxl', 'core'), os.path.join(itk_home, 'Utilities', 'vxl', 'vcl'), os.path.join(itk_home, 'Utilities'), os.path.join(itk_home, 'Binary', 'Utilities'), os.path.join(itk_home, 'Binary', 'Utilities', 'gdcm'), os.path.join(itk_home, 'Utilities', 'nifti', 'znzlib'), os.path.join(itk_home, 'Utilities', 'nifti', 'niftilib'), os.path.join(itk_home, 'Utilities', 'expat'), os.path.join(itk_home, 'Binary', 'Utilities', 'expat'), os.path.join(itk_home, 'Binary', 'Utilities', 'DICOMParser'), os.path.join(itk_home, 'Utilities', 'DICOMParser'), os.path.join(itk_home, 'Utilities', 'NrrdIO'), os.path.join(itk_home, 'Utilities', 'MetaIO'), os.path.join(itk_home, 'Code', 'SpatialObject'), os.path.join(itk_home, 'Code', 'Numerics', 'NeuralNetworks'), os.path.join(itk_home, 'Code', 'Numerics', 'Statistics'), os.path.join(itk_home, 'Code', 'Numerics', 'FEM'), os.path.join(itk_home, 'Code', 'IO'), os.path.join(itk_home, 'Code', 'Numerics'), os.path.join(itk_home, 'Code', 'Common'), os.path.join(itk_home, 'Code', 'BasicFilters'), os.path.join(itk_home, 'Code', 'Algorithms'), os.path.join(itk_home, 'Binary')]
+
+
+env_h3d = env.Copy()
+env_itk = env.Copy()
+
+env.Append(CPPPATH = h3d_inc_dirs + itk_inc_dirs)
+env.Append(LIBPATH = h3d_libs_dirs + itk_libs_dirs)
+env.Append(LIBS = h3d_libs + itk_libs)
+
+env_h3d.Append(CPPPATH = h3d_inc_dirs)
+env_h3d.Append(LIBPATH = h3d_libs_dirs)
+env_h3d.Append(LIBS = h3d_libs)
+
+env_itk.Append(CPPPATH = itk_inc_dirs)
+env_itk.Append(LIBPATH = itk_libs_dirs)
+env_itk.Append(LIBS = itk_libs)
+
+objects = []
+objects = objects + env_itk.Object(source = 'VolumicImageData.cpp')
+objects = objects + env.Object(source = 'VolumicImageDataImage.cpp')
+objects = objects + env.Object(source = 'CutPlane.cpp')
+objects = objects + env_h3d.Object(source = 'BoundingBox.cpp')
+objects = objects + env.Object(source = 'VolumicViewer.cpp')
+objects = objects + env.Object(source = 'WorkPlane.cpp')
+objects = objects + env_h3d.Object(source = 'StatusText.cpp')
+objects = objects + env.Object(source = 'SegmentationEnvironment.cpp')
+objects = objects + env.Object(source = 'HapticTextureEffect.cpp')
+objects = objects + env.Object(source = 'HapticTexture.cpp')
+
+objects = objects + env_h3d.Object(source = 'KeyboardHandler/GenericStringHandler.cpp')
+objects = objects + env_h3d.Object(source = 'KeyboardHandler/KeyPressedHandler.cpp')
+objects = objects + env_h3d.Object(source = 'KeyboardHandler/KeyReleasedHandler.cpp')
+objects = objects + env_h3d.Object(source = 'KeyboardHandler/GenericInt32Handler.cpp')
+objects = objects + env_h3d.Object(source = 'KeyboardHandler/ActionKeyPressedHandler.cpp')
+objects = objects + env_h3d.Object(source = 'KeyboardHandler/ActionKeyReleasedHandler.cpp')
+objects = objects + env_h3d.Object(source = 'KeyboardHandler/GenericKeyboardEvents.cpp')
+objects = objects + env_h3d.Object(source = 'KeyboardHandler/GenericKeyboardHandler.cpp')
+#objects = objects + env_h3d.Object(source = 'KeyboardHandler/KeyboardEvents.cpp')
+#objects = objects + env_h3d.Object(source = 'KeyboardHandler/KeyboardHandler.cpp')
+objects = objects + env.Object(source = 'KeyboardHandler/KeyboardSliceSelectorEvents.cpp')
+objects = objects + env.Object(source = 'KeyboardHandler/KeyboardSliceSelectorHandler.cpp')
+
+objects = objects + env_h3d.Object(source = 'MouseHandler/GenericVec2fHandler.cpp')
+objects = objects + env_h3d.Object(source = 'MouseHandler/PositionHandler.cpp')
+objects = objects + env_h3d.Object(source = 'MouseHandler/MotionHandler.cpp')
+objects = objects + env_h3d.Object(source = 'MouseHandler/GenericBoolHandler.cpp')
+objects = objects + env_h3d.Object(source = 'MouseHandler/LeftButtonHandler.cpp')
+objects = objects + env_h3d.Object(source = 'MouseHandler/MiddleButtonHandler.cpp')
+objects = objects + env_h3d.Object(source = 'MouseHandler/RightButtonHandler.cpp')
+objects = objects + env_h3d.Object(source = 'MouseHandler/ScrollUpHandler.cpp')
+objects = objects + env_h3d.Object(source = 'MouseHandler/ScrollDownHandler.cpp')
+objects = objects + env_h3d.Object(source = 'MouseHandler/GenericMouseEvents.cpp')
+objects = objects + env_h3d.Object(source = 'MouseHandler/GenericMouseHandler.cpp')
+#objects = objects + env_h3d.Object(source = 'MouseHandler/MouseEvents.cpp')
+#objects = objects + env_h3d.Object(source = 'MouseHandler/MouseHandler.cpp')
+objects = objects + env_h3d.Object(source = 'MouseHandler/MouseTransformEvents.cpp')
+objects = objects + env_h3d.Object(source = 'MouseHandler/MouseTransformHandler.cpp')
+
+env.Program(source = ['test.cpp'] + objects)

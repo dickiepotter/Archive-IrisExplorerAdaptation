@@ -1,0 +1,17 @@
+InsertInteractor
+%%------------ DESCRIPTION ------------
+<Replace this with your module description>
+%%------------ INPUTS ------------
+%PORT input
+%TYPE Parameter
+%OPTIONAL 
+<Describe the purpose of the port here>
+%%------------ WIDGETS ------------
+%%------------ OUTPUTS ------------
+%PORT geometry
+%TYPE Geometry
+<Describe the purpose of the port here>
+%%------------ PROBLEMS ------------
+<Describe any known problems/limitations here>
+%%------------ SEEALSO ------------
+<List associated or related modules here>

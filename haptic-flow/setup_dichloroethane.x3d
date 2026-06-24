@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+Copyright 2005, Karljohan Lundin
+
+
+
+ This file is part of Volume Haptics Toolkit.
+
+ Volume Haptics Toolkit is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+
+ Volume Haptics Toolkit is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with Volume Haptics Toolkit; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+
+This is not and does not claim to be a real configuration of a
+dichloroethane molecule.
+
+-->
+<Group>
+
+  <ImportLibrary library="VHTK.dll" />
+  <ImportLibrary library="KeyEventGenerator\keg.dll" />
+  <IMPORT inlineDEF='H3D_EXPORTS' exportedDEF='HDEV' AS='HDEV' />
+  <KeyEventGenerator DEF="KEY_PUTRIBBON" keys="rR" />
+
+  <Background
+      skyColor="1.0 1.0 1.0"/>
+  
+  <VolumeHaptics
+      stiffness="400" />
+  
+  <Transform
+      scale=".05 .05 .05" >
+    
+    <Group DEF="RIBBONS_GROUP" />
+    <LocalInfo DEF="INFO" />
+    
+    
+    <!-- Sticks in the stick molecule model -->
+    
+    <Shape>
+      <Appearance>
+        <LineProperties
+            linewidthScaleFactor="5" />
+      </Appearance>
+      <IndexedLineSet
+          coordIndex="2 1 0 3 -1
+                      0 5 -1
+                      0 4 -1
+                      1 6 -1
+                      1 7 -1" >
+        <Color
+            color=".2 .2 .2
+                   .2 .2 .2
+                   .8 .2 .8
+                   .8 .2 .8
+                   .8 .2 .2
+                   .8 .2 .2
+                   .8 .2 .2
+                   .8 .2 .2" />
+          <Coordinate
+              point="-0.30   0.37   0.60
+                     +0.30  -0.37  -0.60
+                     +2.07  -0.31  -0.50
+                     -2.07   0.31   0.50
+                     +0.03  -0.10   1.52
+                     +0.03   1.41   0.58
+                     -0.03   0.10  -1.52
+                     -0.03  -1.41  -0.58" />
+      </IndexedLineSet>
+    </Shape>
+    
+    
+    <!-- Balls in the stick molecule model -->
+    
+    <Transform
+        translation="-0.30   0.37   0.60" >
+      <Shape>
+        <Appearance DEF="C" >
+          <Material
+              diffuseColor=".2 .2 .2"
+              specularColor=".8 .8 .8" />
+        </Appearance>
+        <Sphere
+            DEF="SPHERE"
+            radius="0.2" />
+      </Shape>
+    </Transform>
+    <Transform
+        translation="+0.30  -0.37  -0.60" >
+      <Shape>
+        <Appearance USE="C" />
+        <Sphere USE="SPHERE" />
+      </Shape>
+    </Transform>
+    <Transform
+        translation="+2.07  -0.31  -0.50" >
+      <Shape>
+        <Appearance DEF="Cl" >
+          <Material
+              diffuseColor=".8 .2 .8"
+              specularColor=".5 .5 .5" />
+        </Appearance>
+        <Sphere USE="SPHERE" />
+      </Shape>
+    </Transform>
+    <Transform
+        translation="-2.07   0.31   0.50" >
+      <Shape>
+        <Appearance USE="Cl" />
+        <Sphere USE="SPHERE" />
+      </Shape>
+    </Transform>
+    <Transform
+        translation="+0.03  -0.10   1.52" >
+      <Shape>
+        <Appearance DEF="H" >
+          <Material
+              diffuseColor=".8 .2 .2"
+              specularColor=".5 .5 .5" />
+        </Appearance>
+        <Sphere USE="SPHERE" />
+      </Shape>
+    </Transform>
+    <Transform
+        translation="+0.03   1.41   0.58" >
+      <Shape>
+        <Appearance USE="H" />
+        <Sphere USE="SPHERE" />
+      </Shape>
+    </Transform>
+    <Transform
+        translation="-0.03   0.10  -1.52" >
+      <Shape>
+        <Appearance USE="H" />
+        <Sphere USE="SPHERE" />
+      </Shape>
+    </Transform>
+    <Transform
+        translation="-0.03  -1.41  -0.58" >
+      <Shape>
+        <Appearance USE="H" />
+        <Sphere USE="SPHERE" />
+      </Shape>
+    </Transform>
+    
+    
+    <!-- Iso surfaces  -->
+    
+    <Shape>
+      <Appearance DEF="SURFAPP">
+        <Material transparency=".7" />
+      </Appearance>
+      <IsoSurface
+          solid="FALSE"
+          isoValue="-1" >
+        <SampledScalarVolume
+            DEF="SVOLUME"
+            width="32"
+            height="32"
+            depth="32"
+            pixelComponentType="RATIONAL"
+            bitsPerPixel="32" >
+          <ScalarElectroPotential
+              size="7 7 7"
+              point="-0.30   0.37   0.60
+                     +0.30  -0.37  -0.60
+                     +2.07  -0.31  -0.50
+                     -2.07   0.31   0.50
+                     +0.03  -0.10   1.52
+                     +0.03   1.41   0.58
+                     -0.03   0.10  -1.52
+                     -0.03  -1.41  -0.58"
+              potential="+.4
+                         +.4
+                         -2
+                         -2
+                         +.8
+                         +.8
+                         +.8
+                         +.8" />
+        </SampledScalarVolume>
+      </IsoSurface>
+    </Shape>
+    
+    <Shape>
+      <Appearance USE="SURFAPP" />
+      <IsoSurface
+          solid="FALSE"
+          isoValue="+1" >
+        <ScalarElectroPotential USE="SVOLUME" />
+      </IsoSurface>
+    </Shape>
+    
+    <Shape>
+      <Appearance USE="SURFAPP" />
+      <IsoSurface
+          solid="FALSE"
+          isoValue="0" >
+        <ScalarElectroPotential USE="SVOLUME" />
+      </IsoSurface>
+    </Shape>
+    
+    
+    <!-- Volume Rendering -->
+    
+    <VolumeRenderer
+        planes="100" >
+      <Texture3DVolume
+          property="SCALAR" >
+        <WindowFunction
+            level="0"
+            width="1" />
+        <ScalarElectroPotential
+            USE="SVOLUME" />
+      </Texture3DVolume>
+      <PiecewiseFunction
+          containerField="scalar2red"
+          continuous="true"
+          segments="0.00  1.0
+                    0.50  0.0
+                    1.00  0.0" />
+      <PiecewiseFunction
+          containerField="scalar2green"
+          continuous="true"
+          segments="0.00  0.0
+                    0.50  1.0
+                    1.00  0.0" />
+      <PiecewiseFunction
+          containerField="scalar2blue"
+          continuous="true"
+          segments="0.00  0.0
+                    0.50  0.0
+                    1.00  1.0" />
+      <PiecewiseFunction
+          containerField="scalar2alpha"
+          continuous="true"
+          segments="0.00  0.10
+                    0.50  0.00
+                    1.00  0.10" />
+    </VolumeRenderer>
+    
+    
+    <!-- Haptics -->
+    
+    <VectorFollowMode
+        DEF="FOLLOW_MODE"
+        active="true" >
+      <VectorElectroPotential
+          DEF="VVOLUME"
+          point="-0.30   0.37   0.60
+                 +0.30  -0.37  -0.60
+                 +2.07  -0.31  -0.50
+                 -2.07   0.31   0.50
+                 +0.03  -0.10   1.52
+                 +0.03   1.41   0.58
+                 -0.03   0.10  -1.52
+                 -0.03  -1.41  -0.58"
+          potential="+.4
+                     +.4
+                     -2
+                     -2
+                     +.8
+                     +.8
+                     +.8
+                     +.8" />
+      <PiecewiseFunction
+          containerField="strength"
+          DEF="STRENGTH"
+          continuous="TRUE"
+          segments="0.00  0.0
+                    0.30  1.0
+                    1.00  2.0
+                    1000  5.0" />
+    </VectorFollowMode>
+    
+    <VectorFrontShapeMode
+        DEF="FRONT_SHAPE_MODE"
+        active="false"
+        twoSided="true"
+        snapdrag="true" >
+      <VectorElectroPotential
+          USE="VVOLUME" />
+      <PiecewiseFunction
+          containerField="strength"
+          USE="STRENGTH" />
+    </VectorFrontShapeMode>
+    
+  </Transform>
+  
+  
+  <PythonScript url="setup_dichloroethane.py">
+    <VectorFollowMode
+        USE="FOLLOW_MODE"
+        containerField="references" />
+    <VectorFrontShapeMode
+        USE="FRONT_SHAPE_MODE"
+        containerField="references" />
+  </PythonScript>
+  
+  
+  <PythonScript DEF="PUT" url="PutStreamRibbons.py">
+    
+    <Group USE="RIBBONS_GROUP" containerField="references" />
+    
+    <Appearance
+        containerField="references">
+      <Material
+          ambientIntensity="1"/>
+    </Appearance>
+    
+    <StreamRibbons
+        containerField="references"
+        useEuler="FALSE"
+        width="0.04"
+        step="0.1"
+        maxLength="5.0" >
+      <VHTKVectorDataNode USE="VVOLUME" />
+      <MagnitudeVolume>
+        <VHTKVectorDataNode USE="VVOLUME" />
+        <WindowFunction
+            level="1"
+            width="2" />
+      </MagnitudeVolume>
+    </StreamRibbons>
+    
+  </PythonScript>
+<!--  <ROUTE
+      fromNode="HDEV" fromField="mainButton"
+      toNode="PUT" toField="putStreamRibbons" /> -->
+  <ROUTE
+      fromNode="KEY_PUTRIBBON" fromField="event"
+      toNode="PUT" toField="putStreamRibbons" />
+  <ROUTE
+      fromNode="HDEV" fromField="trackerPosition"
+      toNode="INFO" toField="position" />
+  <ROUTE
+      fromNode="INFO" fromField="position"
+      toNode="PUT" toField="putStreamRibbons" />
+  
+</Group>

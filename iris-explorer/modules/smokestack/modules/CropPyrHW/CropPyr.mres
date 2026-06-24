@@ -1,0 +1,778 @@
+#!/usr/explorer/bin/explorer cxModuleResources ascii 5.0
+#Tag 0x10604
+# name CropPyr
+# makefile 
+# includeDirs 
+# userLibs 
+# aout CropPyr
+# mcwType cx_mcw_default
+# mdwFileName 
+# reWrapOkay cx_false
+# collaborative cx_false
+# linkageType cx_linkage_cplusplus
+# filename cropPyramid.cpp
+# language cx_lang_cplusplus
+# numFunctions 1
+# inPort cxPyramid
+# inPort cxParameter
+# inPort cxParameter
+# inPort cxParameter
+# inPort cxParameter
+# inPort cxParameter
+# inPort cxParameter
+# outPort cxPyramid
+# typeLibs libcxLattice.a
+# typeLibs libcxParameter.a
+# typeLibs libcxPyramid.a
+# installFileList 
+
+(cxModuleResources
+    {	(moduleInfo =cxAdminRes
+	    {	(name "CropPyr")
+		(type =cxModuleClass
+		    {	(className "")
+		    }
+		)
+		(author "")
+		(creationDate =cxDate "")
+		(lastModDate =cxDate "Wed Aug 18 12:03:17 2004\n")
+		(institution "")
+		(permissions =cxModulePerms
+		    {	(code 0)
+		    }
+		)
+		(machines =cxMachineSet
+		    {	(numMachines 1)
+			(machines @0)
+		    }
+		)
+	    }
+	)
+	(sourceInfo =cxSourceRes
+	    {	(buildInfo =cxBuildRes
+		    {	(makefile =cxFileName "")
+			(includeDirs "")
+			(userLibs "")
+			(headers =cxFileName "")
+			(mcwType =cxMcwType cx_mcw_default)
+			(mcwFileName =cxFileName "")
+			(mdwFileName =cxFileName "")
+			(semiWrapped =cxBoolean cx_false)
+			(reWrapOkay =cxBoolean cx_false)
+			(linkageType =cxLinkageType cx_linkage_cplusplus)
+		    }
+		)
+		(numFunctions 1)
+		(functionInfo @1)
+		(hooks =cxHookFuncRes
+		    {	(init NULL)
+			(remove NULL)
+			(connectInput NULL)
+			(connectOutput NULL)
+			(disconnectInput NULL)
+			(disconnectOutput NULL)
+			(create NULL)
+		    }
+		)
+	    }
+	)
+	(documentInfo =cxDocumentRes
+	    {	(manPage =cxFileName "CropPyr.doc")
+		(samples 1)
+		(sampleInfo @2)
+	    }
+	)
+	(nPortIn 7)
+	(portInInfo @3)
+	(nPortOut 1)
+	(portOutInfo @4)
+	(panels 1)
+	(conPanInfo @5)
+	(execInfo =cxExecRes
+	    {	(aout =cxFileName "CropPyr")
+		(firingRule =cxFiringRule
+		    {	(text NULL)
+		    }
+		)
+		(noStdio =cxBoolean cx_false)
+		(controlType =cxControlType cx_control_none)
+	    }
+	)
+    }
+)
+(@0 =cxPortedMachine [1] cx_ported_sgi)
+(@1 =cxFunctionRes [1]
+    {	(name "cropPyramid")
+	(filename =cxFileName "cropPyramid.cpp")
+	(mdwAInfo =cxFunctionArgInfo
+	    {	(hasReturn =cxBoolean cx_false)
+		(ret cx_false
+		)
+		(numArgs 0)
+	    }
+	)
+	(mdwEInfo =cxFunctionErrCodeInfo
+	    {	(returnCodeOrigin =cxReturnCodeSource
+		cx_return_code_unconnected)
+		(rc cx_return_code_unconnected
+		)
+		(testVal 0)
+		(comparesIsSuccess =cxBoolean cx_false)
+	    }
+	)
+	(mdwPInfo =cxFunctionOPortInfo
+	    {	(numPorts 1)
+		(ports @6)
+	    }
+	)
+	(direction =cxFunctionDirection cx_func_forward)
+	(language =cxFunctionLanguage cx_lang_cplusplus)
+	(clippingFlag =cxErrorCode cx_err_none)
+    }
+)
+(@2 =cxModuleName [1]
+    {	(name "croppyr.map")
+    }
+)
+(@3 =cxPortRes [7]
+    {	(type "cxPyramid")
+	(name "Input")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_true)
+	    }
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @7)
+		(nConstr 4)
+		(constraints @8)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "X Min")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_true)
+	    }
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "X Max")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_true)
+	    }
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "Y Min")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_true)
+	    }
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "Y Max")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_true)
+	    }
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "Z Min")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_true)
+	    }
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "Z Max")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_true)
+	    }
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+)
+(@4 =cxPortRes [1]
+    {	(type "cxPyramid")
+	(name "Output")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_true)
+	    }
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @9)
+		(nConstr 4)
+		(constraints @10)
+	    }
+	)
+    }
+)
+(@5 =cxConPanRes [1]
+    {	(instIcon =cxIcon
+	    {	(style cx_icon_xbm)
+		(u cx_icon_xbm
+		    {	(file =cxFileName NULL)
+		    }
+		)
+	    }
+	)
+	(frame
+	    {	(title "")
+		(style "")
+		(fgColor "")
+		(bgColor "")
+		(textColor "")
+	    }
+	)
+	(style =cxFrameStyle cx_frame_full)
+	(disabled =cxBoolean cx_false)
+	(helpMapped =cxBoolean cx_false)
+	(fireEdMapped =cxBoolean cx_false)
+	(size =cxWidgetSize
+	    {	(width 0)
+		(height 0)
+	    }
+	)
+	(position =cxWidgetPos
+	    {	(x 0)
+		(y 0)
+	    }
+	)
+	(numWidgets 6)
+	(widgets @11)
+    }
+)
+(@6 =cxFunctionOPortDetail [1]
+    {	(portID 0)
+	(numFields 0)
+    }
+)
+(@7 [1] "cxPyramid")
+(@8 =cxMemberConstraint [4]
+    {	(memberName "->baseLattice")
+	(nRange 1)
+	(range @12)
+    }
+    {	(memberName "->count")
+	(nRange 1)
+	(range @13)
+    }
+    {	(memberName "->ref.dictionary->nDim")
+	(nRange 1)
+	(range @14)
+    }
+    {	(memberName "->ref.compressType")
+	(nRange 1)
+	(range @15)
+    }
+)
+(@9 [1] "cxPyramid")
+(@10 =cxMemberConstraint [4]
+    {	(memberName "->baseLattice")
+	(nRange 1)
+	(range @16)
+    }
+    {	(memberName "->count")
+	(nRange 1)
+	(range @17)
+    }
+    {	(memberName "->ref.dictionary->nDim")
+	(nRange 1)
+	(range @18)
+    }
+    {	(memberName "->ref.compressType")
+	(nRange 1)
+	(range @19)
+    }
+)
+(@11 =cxWidgetRes [6]
+    {	(name NULL)
+	(port "Z Min")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_dial)
+	(label "Z Min")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_not_set)
+	(fixedHeight =cxTriStateBoolean cx_not_set)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 0)
+			(height 0)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 0)
+			(y 0)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 96)
+			(height 125)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 264)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_dial
+	    {	(d =cxWidgetScalar
+		    {	(discrete =cxBoolean cx_false)
+			(boundedMin =cxBoolean cx_false)
+			(boundedMax =cxBoolean cx_false)
+			(dataType =cxPrimType cx_prim_double)
+			(t cx_prim_double
+			    {	(minVal -100)
+				(maxVal 100)
+				(step 0)
+				(initVal 0)
+			    }
+			)
+			(orientation =cxOrientation cx_vertical)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name NULL)
+	(port "Z Max")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_dial)
+	(label "Z Max")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_not_set)
+	(fixedHeight =cxTriStateBoolean cx_not_set)
+	(stackingOrder 1)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 0)
+			(height 0)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 0)
+			(y 0)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 96)
+			(height 125)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 112)
+			(y 264)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_dial
+	    {	(d =cxWidgetScalar
+		    {	(discrete =cxBoolean cx_false)
+			(boundedMin =cxBoolean cx_false)
+			(boundedMax =cxBoolean cx_false)
+			(dataType =cxPrimType cx_prim_double)
+			(t cx_prim_double
+			    {	(minVal -100)
+				(maxVal 100)
+				(step 0)
+				(initVal 0)
+			    }
+			)
+			(orientation =cxOrientation cx_vertical)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name NULL)
+	(port "X Max")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_dial)
+	(label "X Max")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_not_set)
+	(fixedHeight =cxTriStateBoolean cx_not_set)
+	(stackingOrder 2)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 0)
+			(height 0)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 0)
+			(y 0)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 96)
+			(height 125)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 112)
+			(y 10)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_dial
+	    {	(d =cxWidgetScalar
+		    {	(discrete =cxBoolean cx_false)
+			(boundedMin =cxBoolean cx_false)
+			(boundedMax =cxBoolean cx_false)
+			(dataType =cxPrimType cx_prim_double)
+			(t cx_prim_double
+			    {	(minVal -100)
+				(maxVal 100)
+				(step 0)
+				(initVal 0)
+			    }
+			)
+			(orientation =cxOrientation cx_vertical)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name NULL)
+	(port "Y Max")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_dial)
+	(label "Y Max")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_not_set)
+	(fixedHeight =cxTriStateBoolean cx_not_set)
+	(stackingOrder 3)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 0)
+			(height 0)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 0)
+			(y 0)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 96)
+			(height 125)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 112)
+			(y 136)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_dial
+	    {	(d =cxWidgetScalar
+		    {	(discrete =cxBoolean cx_false)
+			(boundedMin =cxBoolean cx_false)
+			(boundedMax =cxBoolean cx_false)
+			(dataType =cxPrimType cx_prim_double)
+			(t cx_prim_double
+			    {	(minVal -100)
+				(maxVal 100)
+				(step 0)
+				(initVal 0)
+			    }
+			)
+			(orientation =cxOrientation cx_vertical)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name NULL)
+	(port "Y Min")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_dial)
+	(label "Y Min")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_not_set)
+	(fixedHeight =cxTriStateBoolean cx_not_set)
+	(stackingOrder 4)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 0)
+			(height 0)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 0)
+			(y 0)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 96)
+			(height 125)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 136)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_dial
+	    {	(d =cxWidgetScalar
+		    {	(discrete =cxBoolean cx_false)
+			(boundedMin =cxBoolean cx_false)
+			(boundedMax =cxBoolean cx_false)
+			(dataType =cxPrimType cx_prim_double)
+			(t cx_prim_double
+			    {	(minVal -100)
+				(maxVal 100)
+				(step 0)
+				(initVal 0)
+			    }
+			)
+			(orientation =cxOrientation cx_vertical)
+		    }
+		)
+	    }
+	)
+    }
+    {	(name NULL)
+	(port "X Min")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_dial)
+	(label "X Min")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_not_set)
+	(fixedHeight =cxTriStateBoolean cx_not_set)
+	(stackingOrder 5)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 0)
+			(height 0)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 0)
+			(y 0)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 96)
+			(height 125)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 10)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_dial
+	    {	(d =cxWidgetScalar
+		    {	(discrete =cxBoolean cx_false)
+			(boundedMin =cxBoolean cx_false)
+			(boundedMax =cxBoolean cx_false)
+			(dataType =cxPrimType cx_prim_double)
+			(t cx_prim_double
+			    {	(minVal -100)
+				(maxVal 100)
+				(step 0)
+				(initVal 0)
+			    }
+			)
+			(orientation =cxOrientation cx_vertical)
+		    }
+		)
+	    }
+	)
+    }
+)
+(@12 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@13 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@14 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@15 =cxRange [1]
+    {	(lo "cx_compress_none")
+	(hi "cx_compress_multiple")
+    }
+)
+(@16 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@17 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@18 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@19 =cxRange [1]
+    {	(lo "cx_compress_none")
+	(hi "cx_compress_multiple")
+    }
+)

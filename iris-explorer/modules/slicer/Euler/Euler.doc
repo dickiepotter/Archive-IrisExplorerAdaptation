@@ -1,0 +1,22 @@
+Euler
+%%------------ DESCRIPTION ------------
+<Replace this with your module description>
+%%------------ INPUTS ------------
+%%------------ WIDGETS ------------
+%PORT vector
+%TYPE Text
+<Describe the purpose of the widget here>
+%PORT saved angle
+%TYPE Text
+<Describe the purpose of the widget here>
+%%------------ OUTPUTS ------------
+%PORT Output
+%TYPE Lattice
+%CONSTRAINT 2-D
+%CONSTRAINT 1-vector
+%CONSTRAINT float
+<Describe the purpose of the port here>
+%%------------ PROBLEMS ------------
+<Describe any known problems/limitations here>
+%%------------ SEEALSO ------------
+<List associated or related modules here>

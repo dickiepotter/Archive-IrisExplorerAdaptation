@@ -1,0 +1,74 @@
+#!/usr/bin/python
+# copied/modified from Olivier Tilloy's SConstruct
+
+import os.path
+import os
+
+env = Environment()
+
+# define a preprocessor variable according to the system type (eg. #define POSIX, WIN32...)
+env.Append(CPPDEFINES = env['PLATFORM'].upper())
+
+# special flags for MSVC compiler (cl.exe) : /GR (RTTI bug), /EHsc (C++ exceptions)
+#visualcpp_flags = ['/GR', '/EHsc', '/MD', '/Zi']
+visualcpp_flags = ['/GR', '/EHsc', '/MD']
+
+if env['PLATFORM'] == 'win32' and env.subst(env['CXX']) == 'cl':
+	env.Append(CCFLAGS = visualcpp_flags)
+else:
+	env.Append(CCFLAGS = ["-g",  "-Wall"])
+
+h3d_libs = Split('H3DApi freeimage')
+
+
+if env['PLATFORM'] == 'posix':
+	h3d_home = '/home/guijemont/src'
+	h3d_libs_dirs = [ os.path.join(h3d_home,'H3DAPI/build/linux'), '/home/guijemont/src/FreeImage/Dist' ]
+	h3d_libs = h3d_libs + Split('freetype ftgl freeimage')
+	h3d_inc_dirs = Split('/usr/include/FTGL /usr/include/freetype2 /home/guijemont/src/FreeImage/Dist')
+	vhtk_home = '/home/guijemont/src/VHTK'
+elif env['PLATFORM'] == 'win32':
+	h3d_home = 'C:\\H3D'
+	h3d_libs_dirs = Split(h3d_home + '\\H3DAPI\\build\\win32\\vc7\\Release ' + h3d_home + '\\External\\lib')
+	h3d_libs = h3d_libs + Split('freetype219MT ftgl_static_MTD')
+	h3d_inc_dirs = ['C:\\Program Files\\SensAble\\3DTouch\\include', h3d_home + '\\External\\include', h3d_home + '\\External\\include\\FTGL\\include', h3d_home + '\\External\\include\\freetype-2.1.9\\include', h3d_home + '\\External\\include\\xerces-c-src_2_7_0\\src', h3d_home + '\\External\\include\\pthread']
+	vhtk_home = os.environ['VHTK_ROOT']
+
+h3d_inc_dirs = h3d_inc_dirs + [os.path.join(h3d_home, 'H3DAPI', 'src'), os.path.join(h3d_home, 'H3DAPI', 'src', 'Types')]
+
+vhtk_libs_dirs = [ os.path.join(vhtk_home, "lib") ]
+vhtk_inc_dirs = [ os.path.join(vhtk_home, "src") ]
+vhtk_libs = [ 'VHTK' ]
+
+
+#env_h3d = env.Copy()
+
+env.Append(CPPPATH = h3d_inc_dirs + vhtk_inc_dirs)
+env.Append(LIBPATH = h3d_libs_dirs + vhtk_libs_dirs)
+env.Append(LIBS = h3d_libs + vhtk_libs)
+
+#env_h3d.Append(CPPPATH = h3d_inc_dirs)
+#env_h3d.Append(LIBPATH = h3d_libs_dirs)
+#env_h3d.Append(LIBS = h3d_libs)
+
+
+src = []
+src += ["IBFVStreamSurface.cpp"]
+src += ["IBFVFBOTexture.cpp"]
+src += ["texture_debug.cpp"]
+lib=env.SharedLibrary('ibfvss', source = src)
+env.Default(lib)
+
+prog=env.Program("test_it", ["testIBFVFBOTexture.cpp"], LIBS="ibfvss", LIBPATH=h3d_libs_dirs +vhtk_libs_dirs + ["."])
+
+#if "test" in COMMAND_LINE_TARGETS:
+if env["PLATFORM"] == "posix":
+	os_env = os.environ.data
+	os_env["LD_LIBRARY_PATH"] = os_env["PWD"]
+	env.Append(ENV=os_env)
+cmd_str="test_it"
+if env["PLATFORM"] == "win32":
+	cmd_str+= ".exe"
+elif env["PLATFORM"] == "posix":
+	cmd_str = "./" + cmd_str
+env.Command("test", prog, cmd_str)

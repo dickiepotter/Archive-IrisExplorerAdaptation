@@ -1,0 +1,72 @@
+CullPyr
+%%------------ DESCRIPTION ------------
+CullPyr is used to select a portion of a pyramid datatype.
+The selection is performed in the data space and is accomplished
+by using the Data Min and Data Max dials.
+
+CullPyr is useful for converting a lattice with illegal values into a
+dataset that can be manipulated within Explorer. The standard way to
+do this is create a pyramid from the input lattice (using LatToPyr),
+then wire that pyramid into CullPyr. By setting both dials to the
+single excluded value and setting range to "Keep exclusive," the
+output pyramid will reference only legal datavalues.
+
+Culling is performed at the highest level of the pyramid.  Elements at
+the highest level either are passed through or not, based on whether
+the data values of the lattice entries it references are within
+the culling range, respectively outside of it, depending on the value
+of the Range widget. The lattice used can either be the base lattice,
+or the top-level lattice if it exists.
+If the data value of any vertex/cell lies outside the
+range, respectively inside, the element will not be passed along.
+
+The decision whether to cull a point is base on a single channel of
+the input base lattice, but all channels of the base lattice are
+preserved in the output pyramid.
+
+CullPyr is an alternate executable module depending on the CropPyr
+executable. 
+%%------------ INPUTS ------------
+%PORT Input
+%TYPE Pyramid
+%CONSTRAINT 1..-layer
+%CONSTRAINT 1..-baseLat
+%CONSTRAINT n-D compression
+%CONSTRAINT n-compression type
+This is the input pyramid.
+%%------------ WIDGETS ------------
+%PORT Data Min
+%TYPE Dial
+This is the minimum x value of the culling range.
+%PORT Data Max
+%TYPE Dial
+This is the maximum x value of the culling range.
+%PORT Channel
+%TYPE Slider
+The data variable channel to govern culling.
+%PORT Range
+%TYPE Radio Box
+%MENUITEM Keep inclusive
+%MENUITEM Keep exclusive
+The selection of whether to keep values inside the [DataMin, DataMax]
+range, or to keep values outside the range [DataMin, DataMax]. Here we
+use [] braces to mean an inclusive range.
+%PORT Level
+%MENUITEM Vertex Data
+%MENUITEM Top Level Data
+This widget decides whether to perform culling on data defined on
+the base lattice, or data defined on the top-level lattice, if any.
+%%------------ OUTPUTS ------------
+%PORT Output
+%TYPE Pyramid
+%CONSTRAINT 1..-layer
+%CONSTRAINT 1..-baseLat
+%CONSTRAINT n-D compression
+%CONSTRAINT n-compression type
+This is the culled output pyramid.
+%%------------ PROBLEMS ------------
+Culling is performed at the highest level of the pyramid.  This means
+that if the highest level contains a single entry that references everything,
+the output of this module will be everything or nothing.
+%%------------ SEEALSO ------------
+CropPyr

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Group DEF="ROOT_GROUP">
+	<Background skyColor="0 0 1" />
+
+	<ImportLibrary library='"torque\torque.dll"' />
+	<ImportLibrary library='"vhtk.dll"' />
+	<DeviceInfo>
+	<!--	<HLHapticsDevice DEF="HAPD" positionCalibration="1e-3 0 0 0 0 1e-3 0 0 0 0 1e-3 0 0 0 0 1" > -->
+<HLHapticsDevice DEF="HAPD" positionCalibration="0.0012 0 0 0 0 0.000848528137423857 -0.000848528137423857 -0.2 0 0.000848528137423857 0.000848528137423857 -0.1 0 0 0 1" orientationCalibration="1 0 0 0.785398163397448"> 
+<!--		<HLHapticsDevice
+			DEF="HAPD"
+			positionCalibration="0.00221889675595 9.12440300453e-005 0.000210024314583 0.0250031687319
+					8.65812544362e-005 0.000822421279736 -0.00202339026146 -0.14950978756
+					-1.14950853458e-005 0.00266120722517 0.00207986799069 -0.741021752357
+					0.0 0.0 0.0 1.0"
+			orientationCalibration="-0.847518324852 0.351765632629 -0.397458732128 4.70526742935">
+-->
+			<Group containerField="stylus">
+				<Transform translation="0.01 0 0">
+					<Shape>
+						<Appearance>
+							<Material/>
+						</Appearance>
+						<!--<Sphere radius="0.005"/> -->
+						<Box size="0.02 0.000001 0.02" />
+					</Shape>
+				</Transform>
+				<Transform translation="0 0 0.08" rotation="1 0 0 1.570796" >
+					<Shape>
+						<Appearance>
+							<Material/>
+						</Appearance>
+						<Cylinder radius="0.005" height="0.1"/>
+					</Shape>
+				</Transform>
+			</Group>
+		</HLHapticsDevice>
+	</DeviceInfo>
+ 
+	<!-- center -->
+
+	<Shape>
+		<Appearance>
+			<Material diffuseColor="1 0 0" />
+		</Appearance>
+		<Sphere radius="0.005" />
+	</Shape>
+    
+	<!--bounds -->
+	<Transform translation="0.08 0.08 0.08">
+		<Shape>
+		<Appearance>
+			<Material diffuseColor="0 1 0" />
+		</Appearance>
+			<Sphere radius="0.01" />
+		</Shape>
+	</Transform>
+	<Transform translation="0.08 0.08 -0.08">
+		<Shape>
+		<Appearance>
+			<Material diffuseColor="0 1 0" />
+		</Appearance>
+			<Sphere radius="0.01" />
+		</Shape>
+	</Transform>
+	<Transform translation="0.08 -0.08 0.08">
+		<Shape>
+		<Appearance>
+			<Material diffuseColor="0 1 0" />
+		</Appearance>
+			<Sphere radius="0.01" />
+		</Shape>
+	</Transform>
+	<Transform translation="0.08 -0.08 -0.08">
+		<Shape>
+		<Appearance>
+			<Material diffuseColor="0 1 0" />
+		</Appearance>
+			<Sphere radius="0.01" />
+		</Shape>
+	</Transform>
+	<Transform translation="-0.08 0.08 0.08">
+		<Shape>
+		<Appearance>
+			<Material diffuseColor="0 1 0" />
+		</Appearance>
+			<Sphere radius="0.01" />
+		</Shape>
+	</Transform>
+	<Transform translation="-0.08 0.08 -0.08">
+		<Shape>
+		<Appearance>
+			<Material diffuseColor="0 1 0" />
+		</Appearance>
+			<Sphere radius="0.01" />
+		</Shape>
+	</Transform>
+	<Transform translation="-0.08 -0.08 0.08">
+		<Shape>
+		<Appearance>
+			<Material diffuseColor="0 1 0" />
+		</Appearance>
+			<Sphere radius="0.01" />
+		</Shape>
+	</Transform>
+	<Transform translation="-0.08 -0.08 -0.08">
+		<Shape>
+		<Appearance>
+			<Material diffuseColor="0 1 0" />
+		</Appearance>
+			<Sphere radius="0.01" />
+		</Shape>
+	</Transform>
+
+	
+<!--
+	<Shape DEF="DATASHAPE"><Appearance>
+		<Image3DTexture DEF="DATA_TEXTURE" url="exemple.raw"
+			scaleToPowerOfTwo="TRUE"> 
+		</Image3DTexture> 
+	</Appearance></Shape>
+-->
+
+	<ForceTorqueField DEF="FF">
+		<FieldedVectorImageVolume DEF="VECVOL">
+<!--
+				<VHTKImageObject
+				containerField="imageObject"
+				USE="DATA_TEXTURE" />
+-->
+			<VectorVolume  url="generate_raw/Debug/test3.raw" containerField="imageObject">
+				<RawImageLoader width="64" height="64" depth="64" bitsPerPixel="96"
+					pixelType="VEC3" pixelComponentType="SIGNED"
+					pixelSize="0.0025 0.0025 0.0025" />
+			</VectorVolume>
+		</FieldedVectorImageVolume>	
+	</ForceTorqueField>
+<!--
+	<VolumeHaptics>
+		<VectorImageVolume DEF="VECVOL">
+			<VHTKImageObject
+				containerField="imageObject"
+				USE="DATA_TEXTURE" />
+		</VectorImageVolume>	
+	</VolumeHaptics>
+-->
+
+	<PythonScript DEF="PS" url="test_raw_with_vis.py">
+		<ForceTorqueField USE="FF" containerField="references" />
+		<HLHapticsDevice USE="HAPD" containerField="references" />
+		<FieldedVectorImageVolume USE="VECVOL" containerField="references" />
+	</PythonScript>
+
+<!-- stream ribbon stuff here -->
+	<PythonScript DEF="PUT" url="PutStreamRibbons.py">
+    
+	<Group USE="ROOT_GROUP" containerField="references" />
+
+	<Appearance
+	containerField="references">
+		<Material
+		ambientIntensity="1"/>
+	</Appearance>
+
+	<StreamRibbons
+	containerField="references"
+	useEuler="FALSE"
+	width="0.01"
+	step="0.1"
+	maxLength="0.04" >
+		<VHTKVectorDataNode USE="VECVOL" />
+		<MagnitudeVolume>
+			<VHTKVectorDataNode USE="VECVOL" />
+			<WindowFunction
+			level="1"
+			width="2" />
+		</MagnitudeVolume>
+	</StreamRibbons>
+
+	</PythonScript>
+	<KeySensor DEF="KEYBOARD" />
+<!--	<ROUTE
+	fromNode="KEYBOARD" fromField="isActive"
+	toNode="PUT" toField="putStreamRibbons" />
+-->
+	<ROUTE
+	fromNode="KEYBOARD" fromField="keyPress"
+	toNode="PS" toField="kbS" />
+	<ROUTE
+	fromNode="KEYBOARD" fromField="keyPress"
+	toNode="PS" toField="kbSpace" />
+	<ROUTE
+	fromNode="PS" fromField="kbSpace"
+	toNode="PUT" toField="putStreamRibbons" />
+	<ROUTE
+	fromNode="HAPD" fromField="trackerPosition"
+	toNode="PUT" toField="putStreamRibbons" />
+<!--	<ROUTE
+	fromNode="HAPD" fromField="trackerPosition"
+	toNode="INFO" toField="position" />
+	<ROUTE
+	fromNode="INFO" fromField="position"
+	toNode="PUT" toField="putStreamRibbons" /> -->
+<!-- end of the stream ribbon stuff -->
+
+<!--
+	<ROUTE fromNode="VECVOL" fromField="vector"
+		toNode="PS" toField="vf" />
+	<ROUTE fromNode="PS" fromField="calculated_force"
+		toNode="FF" toField="force" />
+	<ROUTE fromNode="HAPD" fromField="trackerOrientation"
+		toNode="PS" toField="calculated_force" />
+-->
+
+</Group>

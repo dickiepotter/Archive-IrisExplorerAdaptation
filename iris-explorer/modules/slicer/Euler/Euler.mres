@@ -1,0 +1,470 @@
+#!/usr/explorer/bin/explorer cxModuleResources ascii 5.0
+#Tag 0x10604
+# name Euler
+# makefile 
+# includeDirs 
+# userLibs NULL
+# aout Euler
+# mcwType cx_mcw_default
+# mdwFileName 
+# reWrapOkay cx_false
+# collaborative cx_false
+# linkageType cx_linkage_cc
+# filename euler.c trackball.c vect.c
+# language cx_lang_c
+# numFunctions 1
+# inPort cxParameter
+# inPort cxParameter
+# inPort cxParameter
+# outPort cxLattice
+# outPort cxParameter
+# typeLibs libcxLattice.a
+# typeLibs libcxParameter.a
+# installFileList 
+
+(cxModuleResources
+    {	(moduleInfo =cxAdminRes
+	    {	(name "Euler")
+		(type =cxModuleClass
+		    {	(className "")
+		    }
+		)
+		(author "")
+		(creationDate =cxDate "Tue Aug 12 14:55:07 2003\n")
+		(lastModDate =cxDate "Wed Aug 25 17:17:59 2004\n")
+		(institution "")
+		(permissions =cxModulePerms
+		    {	(code 0)
+		    }
+		)
+		(machines =cxMachineSet
+		    {	(numMachines 1)
+			(machines @0)
+		    }
+		)
+	    }
+	)
+	(sourceInfo =cxSourceRes
+	    {	(buildInfo =cxBuildRes
+		    {	(makefile =cxFileName "")
+			(includeDirs "")
+			(userLibs NULL)
+			(headers =cxFileName "")
+			(mcwType =cxMcwType cx_mcw_default)
+			(mcwFileName =cxFileName "")
+			(mdwFileName =cxFileName "")
+			(semiWrapped =cxBoolean cx_false)
+			(reWrapOkay =cxBoolean cx_false)
+			(linkageType =cxLinkageType cx_linkage_cc)
+		    }
+		)
+		(numFunctions 1)
+		(functionInfo @1)
+		(hooks =cxHookFuncRes
+		    {	(init NULL)
+			(remove NULL)
+			(connectInput NULL)
+			(connectOutput NULL)
+			(disconnectInput NULL)
+			(disconnectOutput NULL)
+			(create NULL)
+		    }
+		)
+	    }
+	)
+	(documentInfo =cxDocumentRes
+	    {	(manPage =cxFileName "Euler.doc")
+		(samples 0)
+	    }
+	)
+	(nPortIn 3)
+	(portInInfo @2)
+	(nPortOut 2)
+	(portOutInfo @3)
+	(panels 1)
+	(conPanInfo @4)
+	(execInfo =cxExecRes
+	    {	(aout =cxFileName "Euler")
+		(firingRule =cxFiringRule
+		    {	(text NULL)
+		    }
+		)
+		(noStdio =cxBoolean cx_false)
+		(controlType =cxControlType cx_control_none)
+	    }
+	)
+    }
+)
+(@0 =cxPortedMachine [1] cx_ported_sgi)
+(@1 =cxFunctionRes [1]
+    {	(name "euler")
+	(filename =cxFileName "euler.c trackball.c vect.c")
+	(mdwAInfo =cxFunctionArgInfo
+	    {	(hasReturn =cxBoolean cx_false)
+		(ret cx_false
+		)
+		(numArgs 0)
+	    }
+	)
+	(mdwEInfo =cxFunctionErrCodeInfo
+	    {	(returnCodeOrigin =cxReturnCodeSource
+		cx_return_code_unconnected)
+		(rc cx_return_code_unconnected
+		)
+		(testVal 0)
+		(comparesIsSuccess =cxBoolean cx_false)
+	    }
+	)
+	(mdwPInfo =cxFunctionOPortInfo
+	    {	(numPorts 2)
+		(ports @5)
+	    }
+	)
+	(direction =cxFunctionDirection cx_func_forward)
+	(language =cxFunctionLanguage cx_lang_c)
+	(clippingFlag =cxErrorCode cx_err_none)
+    }
+)
+(@2 =cxPortRes [3]
+    {	(type "cxParameter")
+	(name "vector")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "saved angle")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "ResetXY")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_input)
+	(p cx_port_input
+	    {	(cache =cxBoolean cx_false)
+	    }
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+)
+(@3 =cxPortRes [2]
+    {	(type "cxLattice")
+	(name "Output")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_output)
+	(p cx_port_output
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 1)
+		(portType @6)
+		(nConstr 7)
+		(constraints @7)
+	    }
+	)
+    }
+    {	(type "cxParameter")
+	(name "Interactor")
+	(invisible =cxBoolean cx_false)
+	(direction =cxPortDir cx_port_output)
+	(p cx_port_output
+	)
+	(optional =cxBoolean cx_false)
+	(fan =cxBoolean cx_false)
+	(coerce =cxBoolean cx_true)
+	(constraint =cxPortConstraint
+	    {	(nType 0)
+		(nConstr 0)
+	    }
+	)
+    }
+)
+(@4 =cxConPanRes [1]
+    {	(instIcon =cxIcon
+	    {	(style cx_icon_xbm)
+		(u cx_icon_xbm
+		    {	(file =cxFileName NULL)
+		    }
+		)
+	    }
+	)
+	(frame
+	    {	(title "")
+		(style "")
+		(fgColor "")
+		(bgColor "")
+		(textColor "")
+	    }
+	)
+	(style =cxFrameStyle cx_frame_full)
+	(disabled =cxBoolean cx_false)
+	(helpMapped =cxBoolean cx_false)
+	(fireEdMapped =cxBoolean cx_false)
+	(size =cxWidgetSize
+	    {	(width 0)
+		(height 0)
+	    }
+	)
+	(position =cxWidgetPos
+	    {	(x 0)
+		(y 0)
+	    }
+	)
+	(numWidgets 3)
+	(widgets @8)
+    }
+)
+(@5 =cxFunctionOPortDetail [2]
+    {	(portID 0)
+	(numFields 0)
+    }
+    {	(portID 0)
+	(numFields 0)
+    }
+)
+(@6 [1] "cxLattice")
+(@7 =cxMemberConstraint [7]
+    {	(memberName "->data")
+	(nRange 1)
+	(range @9)
+    }
+    {	(memberName "->coord")
+	(nRange 1)
+	(range @10)
+    }
+    {	(memberName "->nDim")
+	(nRange 1)
+	(range @11)
+    }
+    {	(memberName "->data->nDataVar")
+	(nRange 1)
+	(range @12)
+    }
+    {	(memberName "->data->primType")
+	(nRange 1)
+	(range @13)
+    }
+    {	(memberName "->coord->coordType")
+	(nRange 1)
+	(range @14)
+    }
+    {	(memberName "->coord->c.cx_coord_curvilinear.nCoordVar")
+	(nRange 1)
+	(range @15)
+    }
+)
+(@8 =cxWidgetRes [3]
+    {	(name "saved angle")
+	(port "saved angle")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_text)
+	(label "saved angle")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_set)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_set)
+	(stackingOrder 0)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 0)
+			(height 0)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 0)
+			(y 0)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 255)
+			(height 60)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 105)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_text
+	    {	(initVal "")
+	    }
+	)
+    }
+    {	(name "vector")
+	(port "vector")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_text)
+	(label "vector")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_set)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_set)
+	(stackingOrder 1)
+	(dimin
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 0)
+			(height 0)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 0)
+			(y 0)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_false)
+		(size =cxWidgetSize
+		    {	(width 255)
+			(height 60)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 10)
+			(y 10)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_text
+	    {	(initVal "")
+	    }
+	)
+    }
+    {	(name "ResetXY")
+	(port "ResetXY")
+	(pfunc NULL)
+	(direction cx_widget_input)
+	(type =cxWidgetType cx_widget_button)
+	(label "ResetXY")
+	(fgColor NULL)
+	(bgColor NULL)
+	(textColor NULL)
+	(font NULL)
+	(continuous =cxBoolean cx_false)
+	(honorWidth =cxTriStateBoolean cx_unspecified)
+	(honorHeight =cxTriStateBoolean cx_unspecified)
+	(fixedWidth =cxTriStateBoolean cx_unspecified)
+	(fixedHeight =cxTriStateBoolean cx_unspecified)
+	(stackingOrder 2)
+	(dimin
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 0)
+			(height 0)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 0)
+			(y 0)
+		    }
+		)
+	    }
+	)
+	(full
+	    {	(isMapped =cxBoolean cx_true)
+		(size =cxWidgetSize
+		    {	(width 160)
+			(height 90)
+		    }
+		)
+		(position =cxWidgetPos
+		    {	(x 55)
+			(y 35)
+		    }
+		)
+	    }
+	)
+	(t cx_widget_button
+	)
+    }
+)
+(@9 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@10 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)
+(@11 =cxRange [1]
+    {	(lo "2")
+	(hi "2")
+    }
+)
+(@12 =cxRange [1]
+    {	(lo "1")
+	(hi "1")
+    }
+)
+(@13 =cxRange [1]
+    {	(lo "cx_prim_float")
+	(hi "cx_prim_float")
+    }
+)
+(@14 =cxRange [1]
+    {	(lo "cx_coord_uniform")
+	(hi "cx_coord_curvilinear")
+    }
+)
+(@15 =cxRange [1]
+    {	(lo "1")
+	(hi NULL)
+    }
+)

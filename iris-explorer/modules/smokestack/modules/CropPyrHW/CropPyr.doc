@@ -1,0 +1,52 @@
+CropPyr
+%%------------ DESCRIPTION ------------
+CropPyr is used to select a portion of a pyramid datatype.
+The selection is performed in physical space and is accomplished
+by using the [x,y,z] min and max dials.
+ 
+Cropping is performed at the highest level of the pyramid.  Elements
+at the highest level either are passed through or not, based on whether
+the coordinates of the base lattice entries it references are within
+the bounding box.  If any coordinate lies outside the bounding box,
+the element will not be passed along.
+%%------------ INPUTS ------------
+%PORT Input
+%TYPE Pyramid
+%CONSTRAINT 1..-layer
+%CONSTRAINT 1..-baseLat
+%CONSTRAINT n-D compression
+%CONSTRAINT n-compression type
+This is the input pyramid.
+%%------------ WIDGETS ------------
+%PORT X Min
+%TYPE Dial
+This is the minimum x value of the bounding box.
+%PORT X Max
+%TYPE Dial
+This is the maximum x value of the bounding box.
+%PORT Y Min
+%TYPE Dial
+This is the minimum y value of the bounding box.
+%PORT Y Max
+%TYPE Dial
+This is the maximum y value of the bounding box.
+%PORT Z Min
+%TYPE Dial
+This is the minimum z value of the bounding box.
+%PORT Z Max
+%TYPE Dial
+This is the maximum z value of the bounding box.
+%%------------ OUTPUTS ------------
+%PORT Output
+%TYPE Pyramid
+%CONSTRAINT 1..-layer
+%CONSTRAINT 1..-baseLat
+%CONSTRAINT n-D compression
+%CONSTRAINT n-compression type
+This is the cropped output pyramid.
+%%------------ PROBLEMS ------------
+Cropping is performed at the highest level of the pyramid.  This means
+that if the highest level contains a single entry that references everything,
+the output of this module will be everything or nothing.
+%%------------ SEEALSO ------------
+IsosurfacePyr, ReadPyr, PyrToLat, ClipPyr, CullPyr.
